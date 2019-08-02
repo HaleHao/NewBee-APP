@@ -1,0 +1,18 @@
+page{
+  padding: 30rpx;
+  padding-bottom: 92rpx;
+}
+
+.header {
+  height: 400rpx;
+  background: url(../../../../assets/tg_bg.png) no-repeat top;
+  background-size: cover
+}
+.header > view:nth-of-type(1) {
+  padding-top: 300rpx
+}
+
+.btn button{
+  border:0;
+  border-radius: 60rpx;
+}

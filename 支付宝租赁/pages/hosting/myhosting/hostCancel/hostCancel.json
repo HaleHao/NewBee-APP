@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "取消托管",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

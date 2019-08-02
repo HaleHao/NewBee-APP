@@ -1,0 +1,47 @@
+<nav i="0"/>
+
+<view class="bgc mar-b-20">
+  <navigator class="border-b flex-jc-between flex-align-items pd-30" url="/pages/order/calendar/calendar">
+    <view>
+      <view class="mar-b-10">取消托管日期</view>
+      <view class="fc-grey">请选择日期</view>
+    </view>
+    <view class="fc-grey">
+      <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+    </view>
+  </navigator>
+  <navigator class="border-b flex-jc-between flex-align-items pd-30" url="/pages/order/address/addresslist/addresslist">
+    <view>
+      <view class="mar-b-10">退回地址</view>
+      <view>收货人 13411111111</view>
+      <view>地址</view>
+    </view>
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+  </navigator>
+  <view class="pd-30 flex-jc-between">
+    <text>退回运费</text>
+    <text>￥0.00</text>
+  </view>
+</view>
+
+<view class="bgc">
+  <view class="pd-30 border-b">请选择支付方式</view>
+  <radio-group>
+    <label class="bgc pd-30 flex-jc-between border-b">
+      <view class="flex-align-items">
+        <image src="/assets/ali.png" class="payimg" />
+        支付宝
+      </view>
+      <radio value="1"/>
+    </label>
+    <label class="bgc pd-30 flex-jc-between">
+      <view class="flex-align-items">
+        <image src="/assets/balance.png" class="payimg" />
+        余额
+      </view>
+      <radio value="2" checked/>
+    </label>
+  </radio-group>
+</view>
+
+<view class="pd-30"><view class="btn-bg flex-center btn">支付</view></view>

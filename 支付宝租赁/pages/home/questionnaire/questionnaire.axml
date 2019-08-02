@@ -1,0 +1,89 @@
+<view class="text-c title">{{info.title}}</view>
+<view a:if="{{info.title}}">
+  <view class="problems">
+    <view class="mar-b-10">1、{{info.topic_one}}</view>
+    <checkbox-group class="checkbox-group" onChange="onChangeOne">
+      <label class="flex-align-items" a:for="{{info.topic_one_answer}}" a:key="item" style="padding-left:20rpx;">
+        <checkbox  value="{{item}}" />
+        <text style="padding-left:20rpx;">{{item}}</text>
+      </label>
+    </checkbox-group>
+  </view>
+  <view class="problems">
+    <view class="mar-b-10">2、{{info.topic_two}}</view>
+    <radio-group class="radio-group" onChange="onChangeTwo">
+      <label class="flex-align-items" a:for="{{info.topic_two_answer}}" a:key="item" style="padding-left:20rpx;">
+        <radio  value="{{item}}" />
+        <text style="padding-left:20rpx;">{{item}}</text>
+      </label>
+    </radio-group>
+  </view>
+  <view class="problems">
+    <view class="mar-b-10">3、{{info.topic_three}}</view>
+    <checkbox-group class="checkbox-group" onChange="onChangeThree">
+      <label class="flex-align-items" a:for="{{info.topic_three_answer}}" a:key="item" style="padding-left:20rpx;">
+        <checkbox  value="{{item}}" />
+        <text style="padding-left:20rpx;">{{item}}</text>
+      </label>
+    </checkbox-group>
+  </view>
+  <view class="problems">
+    <view class="mar-b-10">4、{{info.topic_four}}</view>
+    <checkbox-group class="checkbox-group" onChange="onChangeFour">
+      <label class="flex-align-items" a:for="{{info.topic_four_answer}}" a:key="item" style="padding-left:20rpx;">
+        <checkbox  value="{{item}}" />
+        <text style="padding-left:20rpx;">{{item}}</text>
+      </label>
+    </checkbox-group>
+  </view>
+  <view class="problems">
+    <view class="mar-b-10">5、{{info.topic_five}}</view>
+    <radio-group class="radio-group" onChange="onChangeFive">
+      <label class="flex-align-items" a:for="{{info.topic_five_answer}}" a:key="item" style="padding-left:20rpx;">
+        <radio  value="{{item}}" />
+        <text style="padding-left:20rpx;">{{item}}</text>
+      </label>
+    </radio-group>
+  </view>
+  <view class="problems">
+    <view class="mar-b-10">6、{{info.topic_six}}</view>
+    <checkbox-group class="checkbox-group" onChange="onChangeSix">
+      <label class="flex-align-items" a:for="{{info.topic_six_answer}}" a:key="item" style="padding-left:20rpx;">
+        <checkbox  value="{{item}}" />
+        <text style="padding-left:20rpx;">{{item}}</text>
+      </label>
+    </checkbox-group>
+  </view>
+  <view class="problems">
+    <view class="mar-b-10">7、{{info.topic_seven}}</view>
+    <radio-group class="radio-group" onChange="onChangeSeven">
+      <label class="flex-align-items" a:for="{{info.topic_seven_answer}}" a:key="item" style="padding-left:20rpx;">
+        <radio  value="{{item}}" />
+        <text style="padding-left:20rpx;">{{item}}</text>
+      </label>
+    </radio-group>
+  </view>
+  <view class="problems">
+    <view class="mar-b-10">8、{{info.topic_eight}}</view>
+    <radio-group class="radio-group" onChange="onChangeEight">
+      <label class="flex-align-items" a:for="{{info.topic_eight_answer}}" a:key="item" style="padding-left:20rpx;">
+        <radio  value="{{item}}" />
+        <text style="padding-left:20rpx;">{{item}}</text>
+      </label>
+    </radio-group>
+  </view>
+  <view class="problems">
+    <view class="mar-b-10">9、{{info.topic_nine}}</view>
+    <radio-group class="radio-group" onChange="onChangeNine">
+      <label class="flex-align-items" a:for="{{info.topic_nine_answer}}" a:key="item" style="padding-left:20rpx;">
+        <radio  value="{{item}}" />
+        <text style="padding-left:20rpx;">{{item}}</text>
+      </label>
+    </radio-group>
+  </view>
+  <view class="problems">
+    <view class="mar-b-10">10、填空题</view>
+    <textarea class="textarea border" placeholder="" onInput="onChangeTen" show-count="{{false}}" />
+  </view>
+  <view class="pd-30"><view class="btn-bg flex-center btn" onTap="submitSure">确定</view></view>
+</view>

@@ -1,0 +1,240 @@
+/* pages/goodsDetail/goodsDetail.wxss */
+@import "../../wxParse/wxParse.wxss";
+
+swiper {
+  overflow: hidden;
+  /* border-radius: 10rpx; */
+  box-shadow: 0px 2rpx 14rpx 2rpx rgba(233, 235, 237, 1);
+}
+
+swiper, .slide-image {
+  width: 100%;
+  height: 480rpx;
+}
+
+.swrperVideo {
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  box-sizing: border-box;
+  padding-bottom: 30rpx;
+}
+
+.goodsname {
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.header .suggest {
+  width: 100%;
+  background-color: rgba(255, 245, 229, 1);
+  color: #e97e00;
+  padding: 10rpx 30rpx;
+  box-sizing: border-box;
+}
+
+.header .cart {
+  padding: 0 20rpx;
+  border-right: 1rpx solid #ccc;
+  margin-right: 20rpx;
+}
+
+.icon-share {
+  width: 40rpx;
+  height: 40rpx;
+  margin-bottom: 10rpx;
+}
+
+.share {
+  font-size: 26rpx;
+  line-height: normal;
+  background: #fff;
+  border: none;
+}
+
+.icon-right {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+}
+
+.lab {
+  font-size: 20rpx;
+  background: #fc3434;
+  border-radius: 20rpx;
+  color: #fff;
+  padding: 4rpx 10rpx;
+}
+
+.describe image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+}
+
+.process_det {
+  padding-bottom: 30rpx;
+}
+
+.grey_line1 {
+  position: absolute;
+  width: 100rpx;
+  border-bottom: 4rpx #aeaeae dashed;
+  height: 4rpx;
+  top: 30rpx;
+  left: 200rpx;
+}
+
+.grey_line2 {
+  position: absolute;
+  width: 100rpx;
+  border-bottom: 4rpx #aeaeae dashed;
+  height: 4rpx;
+  top: 30rpx;
+  left: 450rpx;
+}
+
+.rule {
+  padding: 30rpx 0 24rpx 20rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.img_xdlc {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.duo_mian, .word_num {
+  height: 72rpx;
+  line-height: 72rpx;
+}
+
+.img_zq {
+  width: 26rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+}
+
+.img_myj {
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 20rpx;
+}
+
+.card .headimg {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+
+.imglist {
+  margin-top: 20rpx;
+}
+
+.imglist image {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+  margin-right: 30rpx;
+}
+
+.height {
+  height: 100rpx;
+}
+
+.bottom {
+  width: 100%;
+  position: fixed;
+  bottom: 100rpx;
+  left: 0;
+  height: 50px;
+}
+
+.kefu {
+  height: 100%;
+  width: 150rpx;
+  font-size: 24rpx;
+  line-height: 33rpx;
+  margin: 0;
+}
+
+.kefu image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.bottom .btn {
+  padding: 0 30rpx;
+  height: 64rpx;
+  color: #fff;
+  border-radius: 40rpx;
+  margin: 0;
+  margin-left: 33rpx;
+}
+
+/* 规格 */
+
+.icon-close {
+  width: 44rpx;
+  height: 44rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+}
+
+.model .btn {
+  height: 84rpx;
+  line-height: 84rpx;
+  border-radius: 40rpx;
+  color: #fff;
+}
+
+.model .goodsimg {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 20rpx;
+}
+
+.model .items > view {
+  padding: 4rpx 20rpx;
+  display: inline-block;
+  border-radius: 4rpx;
+  margin-right: 20rpx;
+}
+
+button {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0px;
+  padding-right: 0px;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  line-height: 50rpx;
+  border-radius: 5px;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+button::after {
+  content: none;
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+}

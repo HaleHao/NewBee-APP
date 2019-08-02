@@ -1,0 +1,19 @@
+page{
+  padding-bottom: 92rpx;
+}
+
+.btn button{
+  color: #fff;
+  border:0;
+  border-radius: 60rpx;
+}
+
+.icon-right {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+}
+
+input {
+  padding: 0;
+}

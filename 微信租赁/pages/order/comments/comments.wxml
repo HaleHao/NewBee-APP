@@ -1,0 +1,29 @@
+<nav i="0" />
+<view class="bgc flex-center border-b ratebox">
+  <view class="position rate">
+    <view>
+      <text bindtap="changerate" data-val="1">☆</text>
+      <text bindtap="changerate" data-val="2">☆</text>
+      <text bindtap="changerate" data-val="3">☆</text>
+      <text bindtap="changerate" data-val="4">☆</text>
+      <text bindtap="changerate" data-val="5">☆</text>
+    </view>
+    <view style="width:{{rateval}}rpx">
+      <text bindtap="changerate" data-val="1">★</text>
+      <text bindtap="changerate" data-val="2">★</text>
+      <text bindtap="changerate" data-val="3">★</text>
+      <text bindtap="changerate" data-val="4">★</text>
+      <text bindtap="changerate" data-val="5">★</text>
+    </view>
+  </view>
+</view>
+<view>
+  <textarea bindinput="onTextarea" value="{{contentval}}" class="textarea" placeholder="分享使用体验，有机会上我们的头版哦！分享视频内容，更有机会上New Bee官方抖音并拿大奖！" show-count="{{false}}" />
+</view>
+<view class="imglist bgc">
+  <image src="{{item}}" wx:for="{{imgarr}}" wx:key="index" />
+  <image src="/assets/uploadimg.png" wx:if="{{isshow}}" bindtap="upload" />
+</view>
+<view class="pd-30">
+  <view class="btn-bg flex-center btn" bindtap="submit">提交</view>
+</view>

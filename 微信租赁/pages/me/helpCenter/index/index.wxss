@@ -1,0 +1,53 @@
+/* pages/me/helpCenter/index/index.wxss */
+page{
+  overflow: hidden
+}
+.box {
+  overflow: hidden;
+  margin: 30rpx;
+  border-radius: 20rpx;
+}
+.icon-right {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+}
+.item {
+  padding: 25rpx;
+  padding-left: 0;
+  margin-left: 25rpx;
+  font-size:28rpx;
+}
+
+button {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0px;
+  padding-right: 0px;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  line-height: 50rpx;
+  border-radius: 5px;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+button::after {
+  content: none;
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+}

@@ -1,0 +1,96 @@
+.top-handle {
+  height: 136rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.week {
+  height: 46rpx;
+  width: 700rpx;
+}
+
+.prev {
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  width: 50rpx;
+}
+
+.prev image {
+  width: 40rpx;
+  height: 45rpx;
+  margin-left: 20rpx;
+}
+
+.next {
+  display: flex;
+  align-items: center;
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.next image {
+  height: 45rpx;
+  width: 40rpx;
+  margin-left: 20rpx;
+}
+
+.today {
+  font-size: 36rpx;
+  /* font-weight: bolder; */
+  color: #353535;
+  margin: 0 100rpx;
+}
+
+.weeks-day {
+  width: 100rpx;
+  color: #909090;
+  font-size: 12px;
+  float: left;
+  display: flex;
+  justify-content: center;
+}
+
+.box-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  flex-flow: nowrap;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 97rpx;
+  color: #909090;
+}
+
+.item-content {
+  height: 97rpx;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1rpx solid #ebebeb; */
+  position: relative;
+  border-radius: 100px;
+}
+
+.box-flex .color {
+  color: #000;
+}
+
+.flex-item .wh_chose_day {
+  background-color: #50abf9;
+  color: #fff;
+}
+
+.item-content-current-day {
+  flex-grow: 2;
+}
+
+.bk-color-day {
+  background-color: #f7f7f7;
+}

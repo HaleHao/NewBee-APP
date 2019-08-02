@@ -1,0 +1,136 @@
+<nav i="0"/>
+<view class="header">
+  <view class="flex-jc-center signin">
+    <view class="bor">
+    </view>
+    <view class="lxqd">已连续签到                        
+    </view>
+    <view class="bor">
+    </view>
+  </view>
+  <view class="time text-c">
+    <text class="day">{{infos.signin_days}}                        
+    </text>
+    <text>天                        
+    </text>
+  </view>
+  <view class="text-c">
+    <view class="btn text-c bgc" onTap="signNow" style="color: #8bd0db" a:if="{{infos.is_signin==0}}">立即签到                        
+    </view>
+    <view class="btn text-c bgc-grey" a:else>已签到                        
+    </view>
+  </view>
+</view>
+<view class="flex-center jd_box">
+  <image src="/assets/yiqd.png" class="true_img" a:if="{{infos.signin_days >= 1}}" />
+  <view class="oneday text-c fc-blue" a:else>1            
+  </view>
+  <view class="yxian_blue" a:if="{{infos.signin_days >= 1}}">
+  </view>
+  <view class="xian_blue" a:else>
+  </view>
+  <image src="/assets/yiqd.png" class="true_img" a:if="{{infos.signin_days >= 2}}" />
+  <view class="oneday text-c fc-blue" a:else>2            
+  </view>
+  <view class="yxian_blue" a:if="{{infos.signin_days >= 2}}">
+  </view>
+  <view class="xian_blue" a:else>
+  </view>
+  <image src="/assets/yiqd.png" class="true_img" a:if="{{infos.signin_days >= 3}}" />
+  <view class="oneday text-c fc-blue" a:else>3            
+  </view>
+  <view class="yxian_blue" a:if="{{infos.signin_days >= 3}}">
+  </view>
+  <view class="xian_blue" a:else>
+  </view>
+  <image src="/assets/yiqd.png" class="true_img" a:if="{{infos.signin_days >= 4}}" />
+  <view class="oneday text-c fc-blue" a:else>4            
+  </view>
+  <view class="yxian_blue" a:if="{{infos.signin_days >= 4}}">
+  </view>
+  <view class="xian_blue" a:else>
+  </view>
+  <image src="/assets/yiqd.png" class="true_img" a:if="{{infos.signin_days >= 5}}" />
+  <view class="oneday text-c fc-blue" a:else>5            
+  </view>
+  <view class="yxian_blue" a:if="{{infos.signin_days >= 5}}">
+  </view>
+  <view class="xian_blue" a:else>
+  </view>
+  <image src="/assets/yiqd.png" class="true_img" a:if="{{infos.signin_days >= 6}}" />
+  <view class="oneday text-c fc-blue" a:else>6            
+  </view>
+  <view class="yxian_blue" a:if="{{infos.signin_days >= 6}}">
+  </view>
+  <view class="xian_blue" a:else>
+  </view>
+  <image src="/assets/yiqd.png" class="true_img" a:if="{{infos.signin_days >= 7}}" />
+  <view class="oneday text-c fc-blue" a:else>7            
+  </view>
+</view>
+<view class="qd_img text-c" onTap="goredpacket">
+  <image src="/assets/qd.png" />
+</view>
+<view class="task">
+  <view style="padding: 10rpx 0">每日任务            
+  </view>
+  <view class="item border-b flex-jc-between flex-align-items">
+    <view class="flex-align-items">
+      <image src="/assets/welfare/tupian.png" class="icon" mode="aspectFit" />
+      <text>产品分享                                    
+      </text>
+    </view>
+    <view class="btn2 flex-center" a:if='{{info.product_sharing_number==0}}' >已完成                    
+    </view>
+    <view class="btn3 flex-center" a:else onTap="gotis">去完成                        
+    </view>
+  </view>
+  <view class="item border-b flex-jc-between flex-align-items">
+    <view class="flex-align-items">
+      <image src="/assets/welfare/pinglun.png" class="icon" mode="aspectFit" />
+      <text>优质评论                                    
+      </text>
+    </view>
+    <navigator class="btn3 flex-center" url="/pages/order/orderlist/orderlist">去完成                        
+    </navigator>
+  </view>
+  <view class="item border-b flex-jc-between flex-align-items">
+    <view class="flex-align-items">
+      <image src="/assets/welfare/wenjuan.png" class="icon" mode="aspectFit" />
+      <text>问卷调查                                    
+      </text>
+    </view>
+    <view class="btn2 flex-center" a:if='{{info.questionnaire_number==0}}'>已完成                    
+    </view>
+    <view class="btn3 flex-center" a:else onTap="go">去完成                        
+    </view>
+  </view>
+  <view class="item border-b flex-jc-between flex-align-items">
+    <view class="flex-align-items">
+      <image src="/assets/welfare/haoyou_.png" class="icon" mode="aspectFit" />
+      <text>唤醒好友                                    
+      </text>
+    </view>
+    <button class="btn3 flex-center" open-type='share'>去完成                        
+    </button>
+  </view>
+  <view class="item flex-jc-between flex-align-items">
+    <view class="flex-align-items">
+      <image src="/assets/welfare/xiangji.png" class="icon" mode="aspectFit" />
+      <text>租赁商品                                    
+      </text>
+    </view>
+    <navigator class="btn3 flex-center" url="/pages/index/index">去完成                        
+    </navigator>
+  </view>
+</view>
+
+<!-- <modal show="{{modalOpened}}" showClose="{{false}}" onModalClick="onModalClick"><view>获得2积分</view><view slot="footer">确定  
+</view></modal> -->
+
+<modal show="{{modalOpened}}" onModalClick="onModalClick" onModalClose="onModalClose">
+  <view slot="header">{{model.content}}
+  </view>{{model.state==1?'获得':'减少'}} {{model.score}}积分        
+  <view slot="footer" onTap="btn">确定    
+  </view>
+</modal>

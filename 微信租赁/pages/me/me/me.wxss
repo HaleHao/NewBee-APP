@@ -1,0 +1,63 @@
+/* pages/me/me/me.wxss */
+
+.headerBge {
+  position: absolute;
+  top: 0;
+}
+
+.headerBge image {
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  height: 360rpx;
+  width: 100%;
+}
+
+.header .headimg {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-left: 28rpx;
+  overflow: hidden;
+}
+
+.header .username {
+  font-size: 40rpx;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 28rpx;
+}
+
+.icon-right {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+}
+
+.box {
+  overflow: hidden;
+  margin: 30rpx;
+  margin-top: 0;
+  position: relative;
+  top: -90rpx;
+  border-radius: 20rpx;
+}
+
+.item {
+  padding: 25rpx;
+  padding-left: 0;
+  margin-left: 25rpx;
+}
+
+.item .lefticon {
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 20rpx;
+}
+
+.box .middle {
+  height: 25rpx;
+  margin-top: 25rpx;
+}

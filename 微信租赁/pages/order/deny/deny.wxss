@@ -1,0 +1,23 @@
+page{
+  padding-bottom: 92rpx
+}
+
+.btn{
+  color: #fff;
+  height: 80rpx;
+  border-radius: 60rpx;
+}
+.textarea {
+  height: 200rpx;
+  padding: 20rpx
+}
+
+.imglist{
+  padding: 20rpx 0;
+}
+.imglist image {
+    width: 154rpx;
+    height: 154rpx;
+    margin-left: 20rpx;
+    margin-bottom: 20rpx;
+}

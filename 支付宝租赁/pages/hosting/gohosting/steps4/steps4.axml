@@ -1,0 +1,141 @@
+<nav i="0"/>
+<form onSubmit="onshow">
+  <view class="bgc">
+    <view class="pd-30 fc-grey bgc">请上传产品相关照片                    
+    </view>
+    <view class="pd-lr-30 flex-jc-between">
+      <view>
+        <view class="uploadimg bgc flex-center">
+          <image a:if='{{img1}}' src="{{img1}}" onTap="chooseImg1" class="icons">
+          </image>
+          <image a:else src="https://www.newbee-smart.com/static/img/sample1.ef1311d.png" onTap="chooseImg1" class="icon"/>
+          </image>
+        </view>
+        <view class="text-c btext">上传包含产品配件的全家福                                                          
+        </view>
+      </view>
+      <view>
+        <view class="uploadimg bgc flex-center">
+          <image a:if='{{img2}}' src="{{img2}}" onTap="chooseImg2" class="icons"/>
+          </image>
+          <image a:else src="https://www.newbee-smart.com/static/img/sample2.5efbda1.jpeg" onTap="chooseImg2" class="icon">
+          </image>
+        </view>
+        <view class="text-c btext">上传可以看清型号的照片                                                                                    
+        </view>
+      </view>
+    </view>
+    <view class="fc-grey pd-lr-30 bgc fsz24 mar-b-20">(配件分开摆放整齐，清晰可见)                                                                                
+    </view>
+    <view class="pd-lr-30 flex-jc-between">
+      <view>
+        <view class="uploadimg bgc flex-center">
+          <image a:if='{{img3}}' src="{{img3}}" onTap="chooseImg3" class="icons">
+          </image>
+          <image a:else src="https://www.newbee-smart.com/static/img/sample3.b0d29c8.png" onTap="chooseImg3" class="icon">
+          </image>
+        </view>
+        <view class="text-c btext">上传产品照片                                                                                                                      
+        </view>
+      </view>
+      <view>
+        <view class="uploadimg bgc flex-center">
+          <image a:if='{{img4}}' src="{{img4}}" onTap="chooseImg4" class="icons">
+          </image>
+          <image a:else src="https://www.newbee-smart.com/static/img/sample4.58ab472.jpeg" onTap="chooseImg4" class="icon">
+          </image>
+        </view>
+        <view class="text-c btext">上传产品损坏处的照片                                                                                                                                              
+        </view>
+      </view>
+    </view>
+    <view class="fc-grey pd-lr-30 bgc fsz24 mar-b-20">(配件分开摆放整齐，清晰可见)                                                                                                                                          
+    </view>
+    <view class="btn pd-30">
+      <button class="btn-bg" form-type="submit">提交                                                                                                                                                    
+      </button>
+    </view>
+    </form>
+    <view class="height">
+    </view>
+    <view class="model" a:if="{{isshow}}">
+      <view class="main bgc position">
+        <image src="/assets/close.jpg" class="icon-close" onTap="onclose" />
+        <view class="flex-jc-between item">
+          <text class="fc-grey">品类                                                                                                                                                                        
+          </text>{{obj.cate}}                                                                                                                                                              
+        </view>
+        <view class="flex-jc-between item">
+          <text class="fc-grey">品牌                                                                                                                                                                        
+          </text>{{obj.brand}}                                                                                                                                                            
+        </view>
+        <view class="flex-jc-between item">
+          <text class="fc-grey">型号                                                                                                                                                                        
+          </text>{{obj.model}}                                                                                                                                                                 
+        </view>
+        <view class="flex-jc-between item">
+          <text class="fc-grey">颜色                                                                                                                                                                        
+          </text>{{obj.standards}}                                                                                                                                                                 
+        </view>
+        <view class="flex-jc-between item">
+          <text class="fc-grey">数量                                                                                                                                                                        
+          </text>{{obj.num}}                                                                                                                                                                 
+        </view>
+        <view class="flex-jc-between item">
+          <text class="fc-grey">含配件                                                                                                                                                                        
+          </text>
+          <text class="flex-1 fittings">{{obj.parts_list}}                                                                                                                                                                       
+          </text>
+        </view>
+        <!-- <view class="flex-jc-between item"><text class="fc-grey">购买时间                                                                                                                                                              
+          </text>{{obj.num}}                                                                                                                                                      
+        </view> -->
+        <view class="flex-jc-between item">
+          <text class="fc-grey">购买价格                                                                                                                                                                        
+          </text>{{obg.priceval}}                                                                                                                                                              
+        </view>
+        <view class="flex-jc-between item">
+          <text class="fc-grey">外观成色                                                                                                                                                                        
+          </text>{{obj.exterior}}                                                                                                                                                              
+        </view>
+        <view class="flex-jc-between item">
+          <text class="fc-grey">功能状况                                                                                                                                                                        
+          </text>{{obj.functional_status}}                                                                                                                                                              
+        </view>
+        <view class="flex-jc-between item">
+          <text class="fc-grey">序列号                                                                                                                                                                        
+          </text>{{obj.serial_number}}                                                                                                                                                              
+        </view>
+        <view class="flex-jc-between item">
+          <text class="fc-grey">联系方式                                                                                                                                                                        
+          </text>{{obj.contact_way}}                                                                                                                                                              
+        </view>
+        <view class="imglist flex-jc-between item">
+          <image src="{{img1}}" class="border" />
+          <image src="{{img2}}" class="border" />
+        </view>
+        <view class="imglist flex-jc-between item">
+          <image src="{{img3}}" class="border" />
+          <image src="{{img3}}" class="border" />
+        </view>
+        <view class="flex-jc-between item">
+          <text class="fc-grey">托管费率                                                                                                                                                                        
+          </text>30%                                                                                                                                                        
+        </view>
+        <view class="item">审核结果将在48小时内通知您                                                                                                                                                              
+        </view>
+        <view class="item flex-align-items">
+          <view onTap="onradio" style="padding-right:20rpx">
+            <radio checked="{{ischecked}}" />
+          </view>
+          <view>我已阅读并同意                                                                                                                                                                                  
+            <text class="fc-blue">《托管合约》                                                                                                                                                                                  
+            </text>
+          </view>
+        </view>
+        <view class="btn pd-30">
+          <button class="btn-bg" onTap="submit">提交                                                                                                                                                                        
+          </button>
+        </view>
+      </view>
+    </view>

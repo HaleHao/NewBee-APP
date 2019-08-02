@@ -1,0 +1,21 @@
+<nav i="0"/>
+
+<form onSubmit="">
+<view class="pd-30 flex-jc-between bgc border-b">
+    <input type="number" placeholder="请输入身份证号码" name="idcard"></input>
+</view>
+
+<view class="pd-30 flex-jc-between bgc border-b">
+    <input type="number" placeholder="请输入新手机号" name="newphone"></input>
+</view>
+
+<view class="pd-30 flex-jc-between bgc">
+    <input type="text" placeholder="请输入验证码" name="code" ></input>
+    <view class="send bgc-blue flex-center" >重新发送</view>
+</view>
+
+<view class="btn pd-30">
+  <button class="btn-bg" formType="submit">确定修改</button>
+</view>
+
+</form>

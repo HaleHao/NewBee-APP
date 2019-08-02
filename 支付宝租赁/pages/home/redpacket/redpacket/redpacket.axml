@@ -1,0 +1,92 @@
+<view class="bg" a:if="{{isad}}" onTap="onclose">
+</view>
+
+<view class="advertising" a:if="{{AD_SHOW}}">
+  <view class='colse-btn'>
+    <image class="close-img"  onTap="adClose"  mode="scaleToFill" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAABF0lEQVQ4jaXSr09DMRAA4G/LSEACmUFiEEACCmSB4Ph3UeNHHcwhQKBwE4yAnCAhmDUpj47XN8616X3X3F0vxug/keeHENawHmOc9Od3d7jH5rIFQghDjPESQthKcA9HGC2Dz9Eb7OMZHwm+wAMOu+IZuocnnMUYZwl+w3mGX1XiTfQkxjiFfvYoxw8q8CFuS2gT7oIndLeEluAavBVdBP+FV6EwWADn+CjDV3IURbQNLuFqUBa3Io/e/KcpPvHVltQGN3tau4p/wr8GpcOeL4JL6FRhW0IIRbwEN9FTPwdVhTfhEvpaKN6K53AtWoUnuCvaivexiuslUBBjbOKXCd7ADh67ogV8nO4GmGAb75h1RRv4cTp/Ax/ajTGs6CFzAAAAAElFTkSuQmCC"/>
+  </view>
+  <image src="{{info.ad_image}}" style="margin-top:140px;" data-url="{{info.ad_path}}" onTap="toUrl">
+</view>
+
+<view class="nbox">
+  <view class='notice flex-row' a:if='{{winninginfor}}'>
+    <!-- <view class='flex-grow-0 flex-y-center notice-a'>
+      <image src='/images/icon-notice.png' style='width:36rpx;height:36rpx;margin-right:24rpx;'>
+      </image>
+      <view>公告：
+      </view>
+    </view> -->
+
+    <view class='flex-grow-1 notice-box'>
+      <view class='notice-content'>
+        <view style='display: inline-block;'>{{winninginfor}}
+        </view>
+      </view>
+    </view>
+
+    <!-- <view class='flex-grow-0 flex-y-center notice-b'>
+      <image src='/images/icon-notice-jiantou.png' style='width:10rpx;height:18rpx;margin-left:32rpx;'>
+      </image>
+    </view> -->
+
+  </view>
+</view>
+
+<!-- <view class="demo-item"><notice>因全国公民身份系统升级，添加银行卡银行卡银行卡银行卡</notice></view> -->
+<view class="page pd-lr-30">
+  <view class="box">
+    <view class="text-c fc-blue title mar-b-20">{{info.activity_title}}    
+    </view>
+    <view class="text-c fc-grey fsz24 mar-b-20">{{info.activity_start_time}}~{{info.activity_end_time}}    
+    </view>
+    <view class="text-c mar-b-10">当前参加人数      
+      <text class="fc-red">{{countUsers}}      
+      </text>
+    </view>
+
+
+    <block a:if="{{usernumber.friends_help == 0}}">
+      <block a:if="{{usernumber.number > 0}}">
+        <view class="btn btn-bg flex-center" onTap="redwars">抢红包        
+        </view>
+      </block>
+      <block a:else>
+        <button class="btn btn-bg flex-column-center" open-type='share'>
+          <text>邀请好友助力          
+          </text>
+          <text style="font-size:20rpx">(可获得一次抢红包机会)          
+          </text>
+        </button>
+      </block>
+    </block>
+
+
+    <block a:else>
+      <view class="btn bgc-grey flex-center">抢红包      
+      </view>
+    </block>
+
+
+    <view class="text-c fsz24 mar-b-10">可抢红包次数{{usernumber.number||0}}    
+    </view>
+    <view class="fsz24 fc-grey">活动说明：    
+    </view>
+    <view class="fsz24 fc-grey">{{info.activity_description}}    
+    </view>
+
+  
+  </view>
+
+
+</view>
+
+<view class="ad bgc" a:if="{{isad}}">
+  <image src="/assets/icon-close.png" class="close" onTap="onclose"/>
+  <image src="/assets/redpacket/scu.png" class="adimg"/>
+  <view class="gongxi">恭喜获得{{numbertype}}  
+  </view>
+  <view class="look">可在个人中心查看  
+  </view>
+  <button class="btncla" type="default" onTap="onclose">确认  
+  </button>
+</view>

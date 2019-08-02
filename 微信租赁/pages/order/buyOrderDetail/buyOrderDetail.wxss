@@ -1,0 +1,137 @@
+page {
+  padding-bottom: 100rpx;
+}
+.tools {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  z-index: 2
+}
+.tools > view{
+    height: 50rpx;
+    min-width: 140rpx;
+    border-radius: 40rpx;
+    box-sizing: border-box;
+    margin-left: 20rpx;
+    font-size: 24rpx;
+}
+
+.icon-right {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+}
+.header {
+  padding: 30rpx 0;
+}
+.header .status {
+  font-size: 36rpx
+}
+.main {
+  border-radius: 20rpx;
+  padding: 30rpx;
+  overflow: hidden;
+}
+
+.goods {
+  padding-bottom: 30rpx;
+}
+.goods image {
+  width: 144rpx;
+  height: 144rpx;
+}
+.spec > text{
+    display: inline-block;
+    background-color: #F2F1F1;
+    font-size: 24rpx;
+    padding: 1rpx 10rpx;
+    box-sizing: border-box;
+    border-radius: 6rpx;
+    margin-right: 16rpx;
+}
+
+.main .title {
+  font-weight: bold;
+  padding: 30rpx 0;
+  border-top: 1rpx dashed #b7b7b7;
+}
+.dot {
+  width: 28rpx;
+  height: 28rpx;
+  background-color: #f6f6f6;
+  border-radius: 50%;
+}
+.title .l {
+  position: absolute;
+  top: -14rpx;
+  left: -40rpx;
+}
+.title .r {
+  position: absolute;
+  top: -14rpx;
+  right: -40rpx;
+}
+
+.info view {
+  padding-bottom: 20rpx;
+}
+.info view > text:nth-of-type(1) {
+  width: 220rpx;
+}
+
+/* QRcode */
+.code {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  height: 100vh;
+}
+.codeimg {
+  width: 360rpx;
+  height: 360rpx;
+  margin-bottom:40rpx;
+}
+.closeimg {
+  width: 68rpx;
+  height: 68rpx;
+  position: absolute;
+  right: 40rpx;
+  top: 200rpx;
+}
+
+
+.logistics {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  height: 100vh;
+}
+.logistics > view:nth-of-type(1) {
+  width: 600rpx
+}
+.logistics .icon-close {
+  width: 33rpx;
+  height: 33rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+}
+.express {
+  box-sizing: border-box;
+  padding-bottom: 20rpx;
+  font-size: 24rpx;
+}
+.express .item {
+  padding: 20rpx;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "nav": "/components/nav/nav",
+    "van-search": "/dist/search/index"
+  },
+  "navigationBarTitleText": "门店"
+}

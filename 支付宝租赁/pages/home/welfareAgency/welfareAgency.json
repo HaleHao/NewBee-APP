@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "福利社",
+  "usingComponents": {
+      "nav": "/components/nav/nav",
+      "modal": "mini-antui/es/modal/index"
+  }
+}

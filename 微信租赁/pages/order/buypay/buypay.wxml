@@ -1,0 +1,22 @@
+<nav i="0" />
+<view class="bgc">
+  <view class="pd-30 border-b">请选择支付方式</view>
+  <radio-group bindchange="radioChange">
+    <label class="bgc pd-30 flex-jc-between border-b">
+      <view class="flex-align-items">
+        <image src="/assets/weixin.png" class="payimg" /> 微信
+      </view>
+      <radio color='#60c0fd' value="6" />
+    </label>
+    <label class="bgc pd-30 flex-jc-between">
+      <view class="flex-align-items">
+        <image src="/assets/balance.png" class="payimg" /> 余额
+        <text class="fc-red pd-lr-30"> ¥{{info.users_balance}}</text>
+      </view>
+      <radio value="3" color='#60c0fd' checked/>
+    </label>
+  </radio-group>
+</view>
+<view class="pd-30">
+  <view class="btn-bg flex-center btn" bindtap="submit">支付</view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "我的积分",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

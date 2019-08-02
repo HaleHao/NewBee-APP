@@ -1,0 +1,188 @@
+<!--pages/buy/buy.wxml-->
+<nav></nav>
+
+<view class="pd-30 bgc">
+  取货方式
+</view>
+<view class="tagbox bgc pd-lr-30">
+  <view data-typenum="0" bindtap="changetag" class="{{typenum==0?'fc-blue selected':''}}">自取</view>
+  <view data-typenum="1" bindtap="changetag" class="{{typenum==1?'fc-blue selected':''}}">快递</view>
+  <view data-typenum="2" bindtap="changetag" class="{{typenum==2?'fc-blue selected':''}}">配送</view>
+</view>
+
+<view class="bgc mar-b-20 fsz24" wx:if="{{typenum==0}}">
+  <navigator class="border-b flex-jc-between flex-align-items pd-30" url="/pages/order/locationList/locationList?id={{goods_id}}">
+    <view>
+      <view>自取地点</view>
+      <view>{{selfShop.store_name||''}}</view>
+      <view>{{(selfShop.store_province||'')+(selfShop.store_city||'')+(selfShop.store_district||'')+(selfShop.store_Address||'')}}</view>
+    </view>
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+  </navigator>
+
+  <view class="border-b flex-jc-between flex-align-items pd-30" bindtap='choosetime'>
+    <view>
+      自取时间
+    </view>
+    <view class="fc-grey">
+      <text style="padding-right:15rpx;">{{expectdate}}  </text>
+      <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+    </view>
+  </view>
+
+  <navigator class=" flex-jc-between flex-align-items pd-30" url="/pages/order/people/people">
+    <view>
+      <view>自取人</view>
+      <view>{{people.name}} {{people.phone}} </view>
+    </view>
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+  </navigator>
+</view>
+
+<view class="bgc mar-b-20 fsz24" wx:if="{{typenum==1||typenum==2}}">
+  <navigator class=" flex-jc-between flex-align-items pd-30" url="/pages/order/address/addresslist/addresslist">
+    <view>
+      <view>收货地址</view>
+      <view class='flex'>{{getaddress.ads_user||''}} {{getaddress.ads_phone||''}}
+        <text class="tag" wx:if="{{getaddress.ads_state==2}}">默认</text>
+      </view>
+      <view>{{(getaddress.ads_province||'')+(getaddress.ads_city||'')+(getaddress.ads_district||'')+(getaddress.ads_address||'')}}</view>
+    </view>
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+  </navigator>
+</view>
+
+<view class="mar-b-20 bgc fsz24">
+  <view class="border-b flex-jc-between flex-align-items pd-30">
+    <view>
+      租期
+    </view>
+    <view class="time flexbox">
+      <view class="border" style="margin-right:10rpx">
+        <picker bindchange="onWeekChange" value="{{weeki}}" range="{{weekarr}}" name="weekval">
+          <view class="selectbox flex-center text-line fsz24">
+            <text class="fc-grey" wx:if="{{weeki==-1}}">请选择</text>
+            <text wx:else>{{weekarr[weeki]}}</text>
+            <image src="/assets/icon-triangle.png" class="triangleimg" />
+          </view>
+        </picker>
+      </view>
+      <view class="border text-c">
+        <input type="number" disabled="{{isdisabled}}" bindinput="bindKeyInput" placeholder="" value="{{weekval}}" />
+      </view>
+    </view>
+  </view>
+
+  <navigator class="border-b flex-jc-between flex-align-items pd-30" bindtap='choosetime' wx:if="{{typenum==1||typenum==2}}">
+    <view>
+      <view style="margin-bottom:10rpx">期望收到的日期</view>
+      <view class="fsz24 fc-grey">收到货的次日起算租金</view>
+    </view>
+    <view class="fc-grey">
+      <text style="padding-right:15rpx;">{{expectdate}}</text>
+      <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+    </view>
+  </navigator>
+
+  <picker bindchange="timechange" value="{{timeIndex}}" range="{{timeList}}">
+    <view class="flex-jc-between flex-align-items pd-30" wx:if="{{typenum==2}}">
+      <view>
+        配送时间段
+      </view>
+      <view class="fc-grey">
+        <text style="padding-right:15rpx;">{{timetext}} </text>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+      </view>
+    </view>
+  </picker>
+</view>
+
+<view class="bgc mar-b-20 fsz24">
+  <view class="border-b flex-jc-between flex-align-items pd-30" wx:if="{{typenum==1}}">
+    <view>
+      运费
+    </view>
+    <view class="fc-grey">
+      <text style="padding-right:15rpx;">￥{{freight}}</text>
+      <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+    </view>
+  </view>
+  <view class="border-b flex-jc-between flex-align-items pd-30" wx:if="{{typenum==2}}">
+    <view>
+      配送运费
+    </view>
+    <view class="fc-grey">
+      <text style="padding-right:15rpx;">￥{{freight}}</text>
+      <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+    </view>
+  </view>
+
+  <view class="border-b flex-jc-between flex-align-items pd-30" bindtap="showcoupons">
+    <view>
+      优惠券
+    </view>
+    <view class="fc-grey">
+      <text style="padding-right:15rpx;" wx:if="{{couponmoney!=0}}">{{couponmoney}}</text>
+      <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+    </view>
+  </view>
+
+  <view class="border-b flex-jc-between flex-align-items pd-30">
+    <view>
+      <text>放心用 ￥{{detail.safe_price}}  </text>
+    </view>
+    <switch checked='{{Dinsurance}}' bindchange="switchChange" />
+  </view>
+
+  <view class="border-b  flex-align-items pd-30" wx:if="{{typenum==2}}">
+    <view>特殊需求备注</view>
+    <input type="text" placeholder="请输入" bindinput="bindremarkInput" value="{{remark}}" style="padding:0" />
+  </view>
+</view>
+
+<view class="bgc mar-b-20 fsz24">
+  <view class="border-b flex-jc-between flex-align-items pd-30">
+    <view>押金</view>
+    <view class="fc-grey">￥{{detail.gd_deposit}}</view>
+  </view>
+  <view class="border-b flex-jc-between flex-align-items pd-30">
+    <view>租金</view>
+    <view class="fc-grey">￥{{rent}}</view>
+  </view>
+  <view class=" flex-jc-between flex-align-items pd-30">
+    <view>应付总额</view>
+    <view class="fc-red">￥{{sum}}</view>
+  </view>
+</view>
+
+<view class="bgc pd-30 bottom">
+  <view class="flex-align-items mar-b-20">
+    <van-checkbox value="{{ checked }}" bind:change="onChange"></van-checkbox>
+    <view style="padding-left:20rpx;display: inline-block">同意
+      <navigator hover-class='none' class="fc-blue" url="/pages/order/agreement/agreement" style="display: inline-block">租赁协议</navigator>
+    </view>
+  </view>
+  <button class="btn-bg" form-type="submit" bindtap="nextface">信用免押认证</button>
+</view>
+
+<van-popup show="{{iscoupons}}" position="bottom">
+  <view class="bgc">
+    <view class="pd-30 border-b text-c" bindtap='showcoupons'>
+      优惠券
+      <image src="/assets/close.jpg" class="icon-close" bindtap="onclose" />
+    </view>
+    <view class="clist" wx:for='{{couponlist}}' data-item="{{item}}" bindtap='choosecoupon'>
+      <view class="card bgc flex-jc-around flex-align-items mar-b-20">
+        <view class="left fc-blue">
+          <text>{{item.coupons_money}}</text>
+          <text>元</text>
+        </view>
+        <view class="right">
+          <view style="margin-bottom:10rpx">{{item.coupon_name}} </view>
+          <view class="fc-grey fsz24" style="margin-bottom:10rpx">有效期至{{item.end_time}}</view>
+          <view class="fc-grey fsz24">满{{item.coupons_condition}}可用</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</van-popup>

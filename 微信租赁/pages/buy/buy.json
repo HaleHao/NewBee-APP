@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "nav": "/components/nav/nav",
+    "van-checkbox": "/dist/checkbox/index",
+    "van-popup": "/dist/popup/index"
+  },
+  "navigationBarTitleText": "下单"
+}

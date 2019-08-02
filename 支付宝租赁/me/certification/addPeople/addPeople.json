@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "添加紧急联系人",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

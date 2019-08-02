@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "支付",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

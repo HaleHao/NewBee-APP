@@ -1,0 +1,18 @@
+<nav i="0"/>
+<view a:if="{{commentlist.length==0}}" class="pd-30 text-c">没有该商品的评论</view>
+<view class="card bgc pd-30 border-b" a:for="{{commentlist}}">
+  <view class="flex-align-items mar-b-20">
+    <image a:if="{{!itemhead_picture}}" src="/assets/headimg.png" class="headimg" />
+    <image a:else src="{{itemhead_picture}}" class="headimg" />
+    <text style="margin:0 20rpx">{{item.user_name}}</text>
+    <view class="position rate">
+      <view>☆☆☆☆☆</view>
+      <view style="width:{{item.eva_score*32}}rpx">★★★★★</view>
+    </view>
+  </view>
+  <view class="fc-grey fsz24 mar-b-20">{{item.create_time}}</view>
+  <view>{{item.eva_content}}</view>
+  <view class="imglist" a:for="{{item.eva_picture}}" a:for-index="idx" a:for-item="items" >
+    <image src="{{items}}"/>
+  </view>
+</view>

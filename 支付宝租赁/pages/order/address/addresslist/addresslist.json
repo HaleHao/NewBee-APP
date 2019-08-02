@@ -1,0 +1,8 @@
+{
+  "defaultTitle": "收货地址",
+  "usingComponents": {
+    "list": "mini-antui/es/list/index",
+    "list-item": "mini-antui/es/list/list-item/index",
+    "swipe-action": "mini-antui/es/swipe-action/index"
+  }
+}

@@ -1,0 +1,9 @@
+<!--pages/me/setup/setup.wxml-->
+<nav></nav>
+
+<view class="pd-30 bgc flex-jc-between flex-align-items">
+  <text>通知设置</text>
+  <switch checked />
+</view>
+
+<view class="btn bgc-red text-c" bindtap='logout'>退出登陆</view>

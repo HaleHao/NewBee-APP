@@ -1,0 +1,259 @@
+<view class="tools bgc border-t">
+  <view class="flex-center border-blue fc-blue" wx:if="{{data.order_status==1}}">
+    <navigator url="../pay/pay?id={{data.order_id}}">支付</navigator></view>
+  <view class="flex-center border-blue fc-blue" bindtap="onConfirmGoods" wx:if="{{data.order_status==5}}">确认收货</view>
+  <view class="flex-center border" bindtap="getcode" data-index='1' wx:if="{{data.order_status==5}}">取货码</view>
+  <view class="flex-center border" wx:if="{{data.order_status==6}}">
+    <navigator url="../relet/relet?id={{data.order_id}}">续租</navigator></view>
+  <view class="flex-center border" wx:if="{{data.order_status==6}}">
+    <navigator url="../refund/refund?id={{data.order_id}}">退租</navigator></view>
+  <view class="flex-center border" wx:if="{{data.order_status==9&&data.user_validation==0}}">
+    <navigator url="../deny/deny?id={{data.order_id}}">否认</navigator></view>
+  <view class="flex-center border-blue fc-blue" bindtap="afterSalesConfirmation" wx:if="{{data.order_status==9&&data.user_validation==0}}">确认</view>
+  <view class="flex-center border-blue fc-blue" wx:if="{{data.order_status==9&&data.user_validation==1&&data.maintenance_pay==0&&data.service_money&&data.service_money>0}}">
+    <navigator url="../compensation/compensation?id={{data.order_id}}">维修费</navigator></view>
+  <view class="flex-center border-blue fc-blue" wx:if="{{data.order_status==11&&activeTab==5}}" bindtap="pingjia" data-order='{{data.order_id}}' data-good='{{data.goods_id}}'>评价</view>
+  <view class="flex-center border-blue fc-blue" wx:if="{{data.order_status==6}}">
+    <navigator url="../shopping/shopping?id={{data.order_id}}">购买</navigator></view>
+  <view class="flex-center border" bindtap="del" wx:if="{{data.order_status==4}}">删除订单</view>
+</view>
+<view class="header text-c">
+  <view class="mar-b-20 status" wx:if="{{data.order_status==1}}">待付款</view>
+  <view class="mar-b-20 status" wx:if="{{data.order_status==6}}">租赁中</view>
+  <view class="mar-b-20 status" wx:if="{{data.order_status==4}}">订单关闭</view>
+  <view class="mar-b-20 status" wx:if="{{data.order_status==8}}">检测中</view>
+  <view class="mar-b-20 status" wx:if="{{(data.order_status==9&&data.user_validation==0)||(data.order_status==9&&!data.user_validation)}}">售后中</view>
+  <view class="mar-b-20 status" wx:if="{{data.order_status==9&&data.user_validation==1&&data.maintenance_pay==0&&data.service_money&&data.service_money>0}}">待确认</view>
+  <view class="mar-b-20 status" wx:if="{{data.order_status==5}}">待收货</view>
+  <view class="mar-b-20 status" wx:if="{{data.order_status==2}}">预租中</view>
+  <view class="mar-b-20 status" wx:if="{{data.order_status==9&&data.maintenance_pay==1}}">退租中</view>
+  <view class="mar-b-20 status" wx:if="{{data.order_status==12&&data.backstage!='未审批'}}">待发货</view>
+  <view class="mar-b-20 status" wx:if="{{data.order_status==12&&data.backstage=='未审批'}}">取消中</view>
+  <view class="mar-b-20 status" wx:if="{{data.order_status==11}}">已完成</view>
+  <view class="fc-blue fsz24" wx:if="{{data.order_status==1}}">剩余{{minutes}}分钟{{seconds}}秒的支付时间</view>
+  <!--<view class="fsz24 fc-grey" wx:if="{{data.order_status==11}}">取消理由</view> -->
+</view>
+<view class="pd-lr-30">
+  <view class="bgc main">
+    <view class="goods flexbox">
+      <view class="flex-1">
+        <view class="mar-b-20">{{data.goods_name}}</view>
+        <!--<view class="spec mar-b-20"><text>黑色</text></view> -->
+      </view>
+      <image src="{{data.gd_img[0]}}" alt="{{data.goods_name}}"/>
+    </view>
+    <view wx:if="{{!data.express_no==''}}">
+      <view class="title position">
+        快递信息
+        <view class="l dot"></view>
+        <view class="r dot"></view>
+      </view>
+      <view class="mar-b-20"> 运单号：{{data.express_no}}</view>
+      <view class="flex-align-items mar-b-20 fc-blue" wx:if="{{logistics.length==0}}">
+        暂无物流信息
+      </view>
+      <view class="flex-align-items mar-b-20" bindtap="onlogistics">
+        <view class="flex-1">
+          <view class="fc-blue mar-b-20">{{logistics[logistics.length-1].AcceptStation}}</view>
+          <view class="fsz24">{{logistics[logistics.length-1].AcceptTime}}</view>
+        </view>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+      </view>
+    </view>
+    <view>
+      <view class="title position">
+        租赁信息
+        <view class="l dot"></view>
+        <view class="r dot"></view>
+      </view>
+      <view class="info">
+        <view class="flexbox">
+          <text>订单号</text>
+          <text class="flex-1">{{data.order_no}}</text>
+        </view>
+        <view class="flexbox">
+          <text>下单时间</text>
+          <text class="flex-1">{{data.create_time}}</text>
+        </view>
+        <view class="flexbox">
+          <text>租期</text>
+          <text class="flex-1">{{data.rent_time}}天</text>
+        </view>
+        <view class="flexbox">
+          <text>归还日期</text>
+          <text class="flex-1">{{data.returnDate}}</text>
+        </view>
+        <view class="flexbox" wx:if="{{data.delivery_way=='快递'||data.delivery_way=='平台配送'}}">
+          <text>期望收到的日期</text>
+          <text class="flex-1">{{data.qwsh_time}}</text>
+        </view>
+        <view class="flexbox">
+          <text>取货方式</text>
+          <text class="flex-1"> {{data.delivery_way}}</text>
+        </view>
+        <block wx:if="{{data.delivery_way=='快递'||data.delivery_way=='平台配送'}}">
+          <view class="flexbox">
+            <text>收货地址</text>
+            <text class="flex-1">{{data.province+data.city+data.district+data.order_address}}</text>
+          </view>
+          <view class="flexbox">
+            <text>收货人</text>
+            <text class="flex-1">{{data.order_name}}</text>
+          </view>
+          <view class="flexbox">
+            <text>收货人手机号码</text>
+            <text class="flex-1">{{data.order_phone}}</text>
+          </view>
+
+          <!-- <view class="flexbox">
+            <text>收货时间</text>
+            <text class="flex-1"> {{data.sh_time}}</text>
+          </view> -->
+
+          <view class="flexbox" wx:if="{{data.delivery_way=='平台配送'}}">
+            <text>配送时间段</text>
+            <text class="flex-1"> {{data.timelist}}</text>
+          </view>
+          <view class="flexbox" wx:if="{{data.remark}}">
+            <text>备注</text>
+            <text class="flex-1"> {{data.remark}}</text>
+          </view>
+        </block>
+        <block wx:if="{{data.delivery_way=='自取'}}">
+          <view class="flexbox">
+            <text>自取地点</text>
+            <text class="flex-1">{{data.store_province+data.store_city+data.store_district+(data.store_Address||'')}}</text>
+          </view>
+          <view class="flexbox">
+            <text>自取时间</text>
+            <text class="flex-1">{{data.qwsh_time}}</text>
+          </view>
+          <view class="flexbox">
+            <text>联系人</text>
+            <text class="flex-1">{{data.order_name}}</text>
+          </view>
+          <view class="flexbox">
+            <text>手机号码</text>
+            <text class="flex-1">{{data.order_phone}}</text>
+          </view>
+          <view class="flexbox" wx:if="{{data.order_status==6}}">
+            <text>取货时间</text>
+            <text class="flex-1"> {{data.order_delivery_time}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="title flex-jc-between position">
+      <text>  应付总额</text>
+      <text class="fc-red">¥{{data.total_price||'0.00'}}</text>
+      <view class="l dot"></view>
+      <view class="r dot"></view>
+    </view>
+    <view class="info">
+      <view class="flexbox">
+        <text>押金</text>
+        <text class="flex-1">￥{{data.order_rent||'0.00'}}</text>
+      </view>
+      <view class="flexbox">
+        <text>租金</text>
+        <text class="flex-1">￥{{data.rental||'0.00'}}</text>
+      </view>
+      <view class="flexbox">
+        <text>保险费</text>
+        <text class="flex-1">￥{{data.order_safe||'0.00'}}</text>
+      </view>
+      <view class="flexbox">
+        <text>优惠券</text>
+        <text class="flex-1">￥{{data.coupons_money||'0.00'}}</text>
+      </view>
+      <view class="flexbox" wx:if="{{data.delivery_way=='平台配送'}}">
+        <text>配送运费</text>
+        <text class="flex-1">￥{{data.way_price||'0.00'}}</text>
+      </view>
+      <view class="flexbox" wx:if="{{data.delivery_way=='快递'}}">
+        <text>快递费</text>
+        <text class="flex-1">￥{{data.way_price||'0.00'}}</text>
+      </view>
+      <view class="flexbox">
+        <text>免押额度</text>
+        <text class="flex-1">￥{{data.order_credit_rent||'0.00'}}</text>
+      </view>
+    </view>
+    <view class="title position">
+      其它信息
+      <view class="l dot"></view>
+      <view class="r dot"></view>
+    </view>
+    <view class="info">
+      <view class="flexbox" wx:if="{{data.renewalFees!=0}}">
+        <text>续租费</text>
+        <text class="flex-1">￥{{data.renewalFees}}</text>
+      </view>
+      <view class="flexbox" wx:if="{{data.renewalDay!=0}}">
+        <text>续租时间</text>
+        <text class="flex-1">{{data.renewalDay}}天</text>
+      </view>
+      <block wx:if="{{data.order_back_way!='无'}}">
+        <view class="flexbox">
+          <text>退款方式</text>
+          <text class="flex-1">{{data.order_back_way}}</text>
+        </view>
+        <view class="flexbox">
+          <text wx:if="{{data.order_back_way=='自还'}}">自还时间</text>
+          <text wx:if="{{data.order_back_way=='平台配送'}}">配送时间</text>
+          <text wx:if="{{data.order_back_way=='快递'}}">快递日期</text>
+          <text class="flex-1">{{data.sendTime}}</text>
+        </view>
+        <view class="flexbox" wx:if="{{data.order_back_way=='快递'&&data.sendExpressNumber}}">
+          <text>物流单号</text>
+          <text class="flex-1">{{data.sendExpressNumber}}</text>
+          <text class="fc-blue" bindtap="onlogistics">查看</text>
+        </view>
+      </block>
+      <view class="flexbox" wx:if="{{data.HireFreight}}">
+        <text>到付运费</text>
+        <text class="flex-1">￥{{data.HireFreight||'0.00'}}</text>
+      </view>
+      <view class="flexbox" wx:if="{{data.service_money}}">
+        <text>维修费</text>
+        <text class="flex-1">￥{{data.service_money||'0.00'}}</text>
+      </view>
+      <view class="flexbox" wx:if="{{activeTab==5||activeTab==6}}">
+        <text>退款费</text>
+        <text class="flex-1">￥{{data.refundAmount||'0.00'}}</text>
+      </view>
+    </view>
+    <!-- 售后中 -->
+    <view wx:if="{{data.order_status==9&&!salesData}}">
+      <view class="title position"> 协商信息</view>
+      <view class="mar-b-20 fc-blue">   信息上传中</view>
+    </view>
+    <view class="mar-b-20" wx:for="{{salesData}}">
+      <view wx:if="{{item.babelte==0}}">平台:{{item.content}}</view>
+      <view wx:if="{{item.babelte==1}}">我:{{item.content}}</view>
+      <view class="imglist" wx:if="{{item.image}}">
+        <image bindtap="onImagePreview" src="{{item.image}}" data-image='{{item.image}}'/>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- QRcode -->
+<view class="code flex-column-center position" catchtap="onclose" wx:if="{{iscode}}">
+  <image src="{{codeimg}}" class="codeimg bgc" />
+  <view style="color:#fff">请出示此二维码供门店扫码</view>
+</view>
+<view class="logistics flex-center" wx:if="{{showlogistics}}">
+  <view class="bgc">
+    <view class="pd-30 text-c position">
+      快递信息
+      <image src="/assets/close.jpg" class="icon-close" bindtap="onclose" />
+    </view>
+    <view wx:if="{{logistics.length==0}}" class="text-c mar-b-20">暂无物流信息</view>
+    <view class="express" wx:for="{{logistics}}">
+      <view class="item">
+        <view style="color:#666">{{item.AcceptTime}}</view>
+        <view>{{item.AcceptStation}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,87 @@
+<nav i="0"/>
+<view class="navorder bgc border-b flex-jc-center">
+  <view data-typenum="0" onTap="changetag1" class="{{typenum==0?'selected':''}}">有硬件  
+  </view>
+  <view data-typenum="1" onTap="changetag2" class="{{typenum==1?'selected':''}}">无硬件  
+  </view>
+</view>
+<view class="border-t border-b" a:if="{{typenum==0}}">
+  <tabs tabs="{{navlist}}" tabBarActiveTextColor="#333" onTabClick="handleTabClick" activeTab="{{activeTab}}" activeCls="activeclass">
+  </tabs>
+</view>
+<view class="border-t border-b" a:if="{{typenum==1}}">
+  <tabs tabs="{{navlist2}}" tabBarActiveTextColor="#333" onTabClick="handleTabClick2" activeTab="{{activeTab2}}" activeCls="activeclass">
+  </tabs>
+</view>
+<view class="list pd-30" a:if="{{typenum==0}}">
+  <navigator class="box flexbox bgc mar-b-20" url="../detail/detail?trust_id={{item.trust_id}}" a:for='{{listLeft}}'>
+    <image src="{{item.phone_picture}}" class="goods_img" />
+    <view class="pd-30 flex-column-space-between flex-1">
+      <view class="goods_title newline">{{item.model}}      
+      </view>
+      <view class="flex-jc-between flex-align-items">
+        <view class="state">
+          <text a:if="{{item.trust_status=='待审核'}}">审核中          
+          </text>
+          <text a:if="{{item.trust_status=='审核通过'}}">已通过          
+          </text>
+          <text a:if="{{item.trust_status=='审核未通过'}}">未通过          
+          </text>
+          <text a:if="{{item.trust_status=='快递中'||item.trust_status=='主机入库中'}}">待入库          
+          </text>
+          <text a:if="{{item.trust_status=='托管中'&&item.host_state=='在库'}}">在库          
+          </text>
+          <text a:if="{{item.trust_status=='托管中'&&item.host_state=='租赁中'}}">出租中          
+          </text>
+          <text a:if="{{item.trust_status=='已退回'}}">已退回          
+          </text>
+        </view>
+        <view>
+          <view class="btn border fc-grey" a:if="{{item.trust_status=='托管中'}}" onTap="cancelTg">取消托管          
+          </view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</view>
+<view class="list pd-30" a:if="{{typenum==1}}">
+  <navigator class="box flexbox bgc mar-b-20" url="../nodetail/nodetail?type=审核中" a:for='{{listRight}}'>
+    <view class="pd-30 flex-column-space-between flex-1">
+      <view class="goods_title newline mar-b-20">{{item.cate}}      
+      </view>
+      <view class="fsz24 mar-b-20">总价:{{item.trust_price||'0.00'}}      
+      </view>
+      <view class="flex-jc-between flex-align-items">
+        <view class="state">
+          <text a:if="{{item.state=='未审核'||item.state=='后台报价中'}}">审核中          
+          </text>
+          <text a:if="{{item.state=='审批通过'}}">已通过          
+          </text>
+          <text a:if="{{item.state=='审批未通过'}}">未通过          
+          </text>
+          <text a:if="{{item.state=='用户待确认'}}">待确认          
+          </text>
+          <text a:if="{{item.state=='待支付'}}">待支付          
+          </text>
+          <text a:if="{{item.state=='托管采购中'||item.state=='托管入库中'}}">待入库          
+          </text>
+          <text a:if="{{item.state=='托管中'&&item.equipment.host_state=='在库'}}">在库          
+          </text>
+          <text a:if="{{item.state=='托管中'&&item.equipment.host_state=='租赁中'}}">出租中          
+          </text>
+        </view>
+        <view>
+          <view class="btn border fc-grey" a:if="{{item.state=='用户待确认'}}" onTap="oncCancel">取消          
+          </view>
+          <view class="btn border-blue fc-blue" a:if="{{item.state=='用户待确认'}}" onTap="onConfirm">确认          
+          </view>
+          <view class="btn border-blue fc-blue" a:if="{{item.state=='待支付'}}" onTap="gopay">支付          
+          </view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</view>
+<view class="fc-grey text-c pd-30">
+没有更多了
+</view>

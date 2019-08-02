@@ -1,0 +1,20 @@
+<!--pages/me/myBalance/bankcard/bankcard.wxml-->
+<nav></nav>
+<view class="pd-30">
+  <view class="card bgc pd-30 mar-b-20" wx:for='{{list}}' wx:key='{{index}}'  bindtap="onbank" data-text='{{item.open_bank}}' data-code='{{item.bank_code}}' data-id='{{item.user_bank_id}}'>
+    <view class="flex-jc-between pd-30">
+      <text>{{item.open_bank}}</text>
+      <text class="fc-grey"> 
+            <block wx:if='{{item.bank_type==1}}'>储蓄卡</block>
+            <block wx:if='{{item.bank_type==2}}'>信用卡</block>
+          </text>
+    </view>
+    <view class="pd-30">{{item.bank_code}}</view>
+  </view>
+  
+  <navigator class="add fc-grey bgc flex-column-center" url="../addbankcard/addbankcard">
+    <image src="/assets/jiahao.png" />
+    <view class="text-c">添加银行卡</view>
+  </navigator>
+
+</view>

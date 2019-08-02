@@ -1,0 +1,34 @@
+<nav i="0"/>
+<form onSubmit="formSubmit">
+<view class="bgc mar-b-20" >
+
+  <view class="pd-30 flex-align-items border-b">
+    <text>收货人</text>
+    <input type="text" placeholder="" value="{{name}}"  name="name"/>
+  </view>
+  <view class="pd-30 flex-align-items border-b">
+    <text>手机号</text>
+    <input type="number" placeholder=""  value="{{phone}}" name="phone" />
+  </view>
+  <view class="pd-30 flex-align-items flex-jc-between border-b" onTap="city">
+    <text>所在地区</text> <text>{{provinces}} {{city}} {{area}}</text>
+    <view>
+      <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+    </view>
+  </view>
+  <view class="pd-30">
+    <input type="text" placeholder="街道、小区门牌等详情地址" value="{{detail}}" name="detail" />
+  </view>
+
+</view>
+
+<view class="pd-30 bgc flex-jc-between flex-align-items">
+  <text>设为默认地址</text>
+  <switch name="ischecked" checked="{{checked}}" onChange="switchChange"/> 
+</view>
+
+<view class="btn pd-30">
+  <button class="btn-bg" formType="submit">保存</button>
+</view>
+
+</form>

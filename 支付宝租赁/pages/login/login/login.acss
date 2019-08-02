@@ -1,0 +1,18 @@
+page {
+  background-color: #fff;
+}
+
+.yzm button {
+  color: #fff;
+  border-radius: 40rpx;
+  padding: 20rpx 30rpx;
+  font-size: 24rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.btn button {
+  color: #fff;
+  border: 0;
+  border-radius: 40rpx;
+}

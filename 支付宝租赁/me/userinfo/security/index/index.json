@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "账号安全",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

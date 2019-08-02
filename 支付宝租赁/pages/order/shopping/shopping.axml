@@ -1,0 +1,169 @@
+<nav i="0"/>
+<view class="bgc pd-30">选择购买产品</view>
+<view class="tagbox bgc pd-lr-30">
+  <view data-selected="1" onTap="choose" class="{{selected==1?'fc-blue selected':''}}">全新正品</view>
+  <view data-selected="2" onTap="choose" class="{{selected==2?'fc-blue selected':''}}">本机</view>
+</view>
+<view class="bgc pd-30">
+  <view class="goods flexbox">
+    <image src="{{info.main_img}}" />
+    <view class="flex-1">
+      <view class="mar-b-20">{{info.goods_name}}</view>
+      <!--<view class="fsz24"><text>黑色</text></view> -->
+    </view>
+  </view>
+</view>
+<view class="bgc mar-b-20 pd-30">目前销售价格
+  <text class="fc-red">￥{{info.selling_price}}</text></view>
+<block a:if="{{selected==1}}">
+  <view class="bgc pd-30">取货方式</view>
+  <view class="tagbox bgc pd-lr-30">
+    <view data-typenum="0" onTap="changetag" class="{{typenum==0?'fc-blue selected':''}}">自取</view>
+    <view data-typenum="1" onTap="changetag" class="{{typenum==1?'fc-blue selected':''}}">快递</view>
+    <view data-typenum="2" onTap="changetag" class="{{typenum==2?'fc-blue selected':''}}">配送</view>
+  </view>
+  <view class="bgc mar-b-20 fsz24" a:if="{{typenum==0}}">
+    <view class="border-b flex-jc-between flex-align-items pd-30" onTap="selfShop">
+      <view>
+        <view>自取地点</view>
+        <view>{{selfShop.store_name||''}}</view>
+        <view>{{(selfShop.store_province||'')+(selfShop.store_city||'')+(selfShop.store_district||'')+(selfShop.store_Address||'')}}</view>
+      </view>
+      <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+    </view>
+    <view class="border-b flex-jc-between flex-align-items pd-30" onTap="choosetime">
+      <view>
+      自取时间
+      </view>
+      <view class="fc-grey">
+        <text style="padding-right:15rpx;">{{expectdate}}</text>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+      </view>
+    </view>
+    <navigator class=" flex-jc-between flex-align-items pd-30" url="/pages/order/people/people">
+      <view>
+        <view>自取人</view>
+        <view>{{people.name}} {{people.phone}}</view>
+      </view>
+      <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+    </navigator>
+  </view>
+  <view class="bgc mar-b-20 fsz24" a:if="{{typenum==1||typenum==2}}">
+    <navigator class=" flex-jc-between flex-align-items pd-30" url="/pages/order/address/addresslist/addresslist">
+      <view>
+        <view>收货地址</view>
+        <view> {{getaddress.ads_user||''}} {{getaddress.ads_phone||''}}
+          <text class="tag" a:if="{{getaddress.ads_state==2}}">默认</text></view>
+        <view>{{(getaddress.ads_province||'')+(getaddress.ads_city||'')+(getaddress.ads_district||'')+(getaddress.ads_address||'')}}</view>
+      </view>
+      <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+    </navigator>
+  </view>
+  <view class="bgc mar-b-20 fsz24">
+    <view  a:if="{{typenum==2}}">
+    <picker onChange="timechange" value="{{timeIndex}}" range="{{timeList}}" range-key="val">
+      <view class=" flex-jc-between flex-align-items pd-30">
+        <view>
+      配送时间段
+        </view>
+        <view class="fc-grey">
+          <text style="padding-right:15rpx;">{{timetext}}</text>
+          <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+        </view>
+      </view>
+    </picker>
+    </view>
+    <view class="border-b flex-jc-between flex-align-items pd-30" a:if="{{typenum==1||typenum==2}}">
+      <view>
+      运费
+      </view>
+      <view class="fc-grey">
+        <text style="padding-right:15rpx;">￥{{freight}}</text>
+      </view>
+    </view>
+    <view class="border-b flex-jc-between flex-align-items pd-30" a:if="{{typenum==1||typenum==2}}">
+      <view>到货时间</view>
+      <view class="fc-grey">{{arrivaltime}}</view>
+    </view>
+    <view class="border-b flex-jc-between flex-align-items pd-30" onTap="showcoupons">
+      <view>
+      优惠券
+      </view>
+      <view class="fc-grey">
+        <text style="padding-right:15rpx;">{{couponmoney}}</text>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+      </view>
+    </view>
+    <view class="border-b flex-jc-between flex-align-items pd-30">
+      <view>租金抵扣</view>
+      <view class="fc-grey">￥{{info.ded_rent}}</view>
+    </view>
+    <view class=" flex-jc-between flex-align-items pd-30">
+      <view>应付总额</view>
+      <view class="fc-red">￥{{sum}}</view>
+    </view>
+  </view>
+</block>
+<block a:if="{{selected==2}}">
+  <view class="bgc mar-b-20">
+    <view class="border-b flex-jc-between flex-align-items pd-30">
+      <view>租金抵扣</view>
+      <view class="fc-grey">￥{{info.ded_rent}}</view>
+    </view>
+    <view class=" flex-jc-between flex-align-items pd-30">
+      <view>应付总额</view>
+      <view class="fc-red">￥{{sum}}</view>
+    </view>
+  </view>
+</block>
+<view class="bgc">
+  <view class="pd-30 border-b">请选择支付方式</view>
+  <radio-group onChange="radioChange"> 
+    <label  class="bgc pd-30 flex-jc-between border-b">
+      <view class="flex-align-items">
+        <image src="/assets/ali.png" class="payimg" />
+        支付宝
+      </view>
+      <radio color='#60c0fd' value="4"/>
+    </label>
+    <label class="bgc pd-30 flex-jc-between">
+      <view class="flex-align-items">
+        <image src="/assets/balance.png" class="payimg" />
+        余额
+        <text class="fc-red">￥{{info.users_balance}}</text>
+      </view>
+      <radio  color='#60c0fd' value="3" checked/>
+    </label>
+  </radio-group>
+</view>
+<view class="pd-30" onTap="submit">
+  <view class="btn-bg flex-center btn">支付</view>
+</view>
+<popup show="{{iscoupons}}" position="bottom" zIndex="100">
+  <view class="bgc">
+    <view class="pd-30 border-b text-c">
+      优惠券
+      <image src="/assets/close.jpg" class="icon-close" onTap="onclose" />
+    </view>
+    <view class="clist">
+      <view a:if="{{couponlist.length==0}}" class="text-c mar-b-20 ">暂无优惠券</view>
+      <view class="card bgc flex-jc-around flex-align-items mar-b-20" a:for="{{couponlist}}" data-item="{{item}}" onTap="choosecoupon">
+        <view class="left fc-blue">
+          <text>{{item.coupons_money|nozero}}</text>
+          <text>元</text>
+        </view>
+        <view class="right" a:if="{{item.activity_name==''}}">
+          <view style="margin-bottom:10rpx">{{item.coupon_name}}</view>
+          <view class="fc-grey fsz24" style="margin-bottom:10rpx">有效期至{{item.end_time}}</view>
+          <view class="fc-grey fsz24">满{{item.coupons_condition}}可用</view>
+        </view>
+        <view class="right" a:else>
+          <view style="margin-bottom:10rpx">{{item.coupon_name}}</view>
+          <view class="fc-grey fsz24" style="margin-bottom:10rpx">活动{{item.activity_name}}</view>
+          <view class="fc-grey fsz24" style="margin-bottom:10rpx">有效期至{{item.end_activity}}</view>
+          <view class="fc-grey fsz24">满{{item.coupons_condition}}可用</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</popup>

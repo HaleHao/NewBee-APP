@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "nav": "/components/nav/nav",
+    "van-rate": "/dist/rate/index",
+    "van-popup": "/dist/popup/index"
+},
+  "navigationBarTitleText": "SKU信息"
+}

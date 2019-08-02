@@ -1,0 +1,25 @@
+/* pages/me/myBalance/index/index.wxss */
+
+.header {
+  /* height: 300rpx; */
+}
+
+.header > view:nth-of-type(1) {
+  font-size: 70rpx;
+  padding-top: 50rpx;
+}
+
+.header > view:nth-of-type(2) {
+  font-size: 26rpx;
+}
+
+.header .button {
+  width: 200rpx;
+  line-height: 50rpx;
+  background: linear-gradient(90deg, #60c0fd, #4ea9f9);
+  box-shadow: 0px 0px 26rpx 0px rgba(79, 171, 249, 0.36);
+  border-radius: 30rpx;
+  color: #fff;
+  display: inline-block;
+  margin-top: 20rpx;
+}

@@ -1,0 +1,65 @@
+<nav i="0"/>
+<view class="header bgc mar-b-20">
+  <view class="pd-30">身份证拍照示例
+  </view>
+  <view class="pd-30 flex-jc-between sample">
+    <view>
+      <view class="mar-b-20 position">
+        <image src="/assets/idcard1.png" />
+        <image src="/assets/icon-true.png" class="icons"/>
+      </view>
+      <view class="fsz24 text-c">居中清晰
+      </view>
+    </view>
+    <view>
+      <view class="mar-b-20 position">
+        <image src="/assets/idcard2.png" />
+        <image src="/assets/icon-false.png" class="icons"/>
+      </view>
+      <view class="fsz24 text-c">边框缺失
+      </view>
+    </view>
+    <view>
+      <view class="mar-b-20 position">
+        <image src="/assets/idcard3.png" />
+        <image src="/assets/icon-false.png" class="icons"/>
+      </view>
+      <view class="fsz24 text-c">照片模糊
+      </view>
+    </view>
+    <view>
+      <view class="mar-b-20 position">
+        <image src="/assets/idcard4.png" />
+        <image src="/assets/icon-false.png" class="icons"/>
+      </view>
+      <view class="fsz24 text-c">闪光强烈
+      </view>
+    </view>
+  </view>
+</view>
+<view class="bgc" style="padding-top:30rpx">
+  <view >
+    <view class="pd-lr-30">上传身份证 人像面
+    </view>
+    <view class="flex-center box">
+      <view class="upload flex-center">
+        <image src="{{src1}}" class="photo" wx:if='{{src1}}' mode="aspectFit" />
+        <image src="/assets/icon-camera.png" wx:else class="icon" mode="aspectFit" bindtap='card1'/>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="pd-lr-30">上传身份证 国徽面
+    </view>
+    <view class="flex-center box">
+      <view class="upload flex-center">
+        <image src="{{src2}}" class="photo" wx:if='{{src2}}' mode="aspectFit" />
+        <image src="/assets/icon-camera.png" wx:else class="icon" mode="aspectFit" bindtap='card2'/>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="btn btn-bg text-c" bindtap="next"> 提交
+
+</view>

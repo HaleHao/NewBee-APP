@@ -1,0 +1,37 @@
+<nav i="0" />
+<view class="pd-30 fc-grey bgc"> 请选择现有的配件</view>
+<view class="bgc pd-lr-30">
+  <text class="fc-red">*</text><text class="fc-grey">设备出租需包含完整配件，若配件不齐全，我们将补充完整，需由您承担相应成本           
+  </text>
+</view>
+<view class="pd-30 bgc flex-wrap">
+  <view class=" flex-align-items item" wx:for="{{list}}" wx:key="index">
+    <view bindtap="onchange" data-index="{{index}}">
+      <radio checked="{{item.checked}}" />
+    </view>
+    <view class="flex-1 right">
+      <view>{{item.name}}
+      </view>
+      <!-- wx:if="{{item.number>1}}"  -->
+      <view data-i="{{index}}" wx:if="{{item.number>1}}">
+        <view class='adding flexbox'>
+          <view class='add_common addleft' bindtap='reduce' data-index='{{index}}'> -
+          </view>
+          <view class='addinput'>
+            <input bindinput='' disabled='true' value='{{item.number}}'>
+            </input>
+          </view>
+          <view class='add_common addright' bindtap='plus' data-index='{{index}}'> +
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if='{{list.length<=0}}' style='font-size:26rpx'>
+    暂无信息
+  </view>
+</view>
+<view class="btn pd-30">
+  <button class="btn-bg" bindtap="next">下一步
+  </button>
+</view>

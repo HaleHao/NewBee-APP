@@ -1,0 +1,27 @@
+<!--pages/login/inputCode/inputCode.wxml-->
+
+<view style="padding-top: 100rpx">
+  <view class="text text-c">请输入验证码</view>
+  <view class="text-c fsz24 fc-grey">13445612378</view>
+</view>
+
+<view style="padding-top: 50rpx" class="flex-center">
+  <view class="position box">
+    <input type="number" maxlength="6" bindinput="changeinput" class="input" />
+    <view class='inputbox flexbox'>
+      <view class="flex-center">{{val[0]}}</view>
+      <view class="flex-center">{{val[1]}}</view>
+      <view class="flex-center">{{val[2]}}</view>
+      <view class="flex-center">{{val[3]}}</view>
+      <view class="flex-center">{{val[4]}}</view>
+      <view class="flex-center">{{val[5]}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="btn" style="padding-top: 100rpx">
+  <button class="btn-bg" form-type="submit" wx:if="{{isinput}}">登陆</button>
+  <button class="bgc-grey" wx:else>登陆</button>
+</view>
+
+<view class="text-c fc-grey pd-30">重新发送</view>

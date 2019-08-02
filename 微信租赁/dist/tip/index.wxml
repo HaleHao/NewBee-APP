@@ -1,0 +1,7 @@
+<view class="am-badge {{text}} ">
+  <view class="am-badge-text ">
+    {{text}}
+    <!-- <text class="am-badge-text-padding"> {{text}}</text>
+    <text class="am-badge-text-inner">{{text }}</text> -->
+  </view>
+</view>

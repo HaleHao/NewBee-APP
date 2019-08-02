@@ -1,0 +1,31 @@
+page{
+  padding-bottom: 92rpx;
+}
+
+.card {
+
+} 
+.card .headimg {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.rate{
+  color: #FFBE38;
+  font-size: 40rpx;
+}
+.rate > view:nth-of-type(2){
+  position:absolute;
+  top:0;
+  left:0;
+  overflow: hidden;
+}
+.imglist {
+  margin-top: 20rpx;
+}
+.imglist image {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+  margin-right: 30rpx;
+}

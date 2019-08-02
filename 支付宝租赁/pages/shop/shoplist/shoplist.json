@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "门店",
+  "usingComponents": {
+    "search-bar": "mini-antui/es/search-bar/index",
+    "nav": "/components/nav/nav"
+  }
+}

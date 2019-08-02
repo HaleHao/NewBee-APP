@@ -1,0 +1,72 @@
+<nav i="0"/>
+<view class="tagbox bgc pd-lr-30 flex-jc-around">
+  <view data-typenum="0" bindtap="changetag" class="{{typenum==0?'fc-blue selected':''}}">预约快递    
+  </view>
+  <view data-typenum="1" bindtap="changetag" class="{{typenum==1?'fc-blue selected':''}}">已寄出    
+  </view>
+</view>
+<view wx:if="{{typenum==0}}">
+  <navigator class="border-b flex-jc-between flex-align-items pd-30" url="/pages/order/calendar/calendar?postdeli=true">
+    <view>  期望揽收日期            
+    </view>
+    <view class="fc-grey">
+      <text style="padding-right:15rpx;">{{Datatime}}            
+      </text>
+      <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+    </view>
+  </navigator>
+  <picker  range="{{array}}" value="{{time}}" bindchange="bindTimeChange">
+    <view class="border-b flex-jc-between flex-align-items pd-30">
+      <view> 时间段                
+      </view>
+      <view class="fc-grey">
+        <text style="padding-right:15rpx;"> {{array[index]}}              
+        </text>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+      </view>
+    </view>
+  </picker>
+  <navigator class="border-b flex-jc-between flex-align-items pd-30" url="/pages/order/address/addresslist/addresslist">
+    <!-- <view><view>选择发货地址      
+      </view><view>收货人 {{adsSelect.ads_address}}
+      </view><view>地址  {{adsSelect.ads_city}}
+      </view></view> -->
+    <view>
+      <view>选择收货地址                              
+      </view>
+      <view> {{getaddress.ads_user||''}} {{getaddress.ads_phone||''}}                                                
+        <text class="tag" wx:if="{{getaddress.ads_state==2}}">默认                                        
+        </text>
+      </view>
+      <view>{{(getaddress.ads_province||'')+(getaddress.ads_city||'')+(getaddress.ads_district||'')+(getaddress.ads_address||'')}}                              
+      </view>
+    </view>
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+  </navigator>
+  <navigator class="border-b flex-jc-between flex-align-items pd-30" url="/pages/order/locationList/locationList?chose=true">
+    <view>
+      <view>选择交付收货门店                             
+      </view>
+      <view>{{selfShop.store_name||''}}                              
+      </view>
+      <view>{{(selfShop.store_province||'')+(selfShop.store_city||'')+(selfShop.store_district||'')+(selfShop.store_Address||'')}}                              
+      </view>
+    </view>
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+  </navigator>
+  <view class="btn pd-30">
+    <button class="btn-bg" bindtap="submit">提交        
+    </button>
+  </view>
+</view>
+
+<view wx:if="{{typenum==1}}">
+  <view class="pd-lr-30">
+    <input type="number"  onInput="numbers" placeholder="请输入顺丰单号" />
+  </view>
+
+  <view class="btn pd-30">
+    <button class="btn-bg" bindtap="submitdddd">提交        
+    </button>
+  </view>
+</view>

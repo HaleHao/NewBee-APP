@@ -1,0 +1,14 @@
+page{
+  padding-bottom: 92rpx
+}
+
+.icon-right {
+  width: 20rpx;
+  height: 20rpx;
+  /* margin-right: 20rpx; */
+}
+.btn button{
+  color: #fff;
+  border:0;
+  border-radius: 60rpx;
+}

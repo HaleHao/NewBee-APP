@@ -1,0 +1,152 @@
+<view class="tools bgc border-t">
+  <view class="flex-center border-blue fc-blue" a:if="{{data.buyorder_status==1}}">
+    <navigator url="../buypay/buypay?id={{data.buyorder_id}}">支付</navigator></view>
+  <view class="flex-center border" onTap="getcode" a:if="{{data.buyorder_status==4}}">取货码</view>
+  <view class="flex-center border-blue fc-blue" a:if="{{data.buyorder_status==4}}">确认收货</view>
+  <view class="flex-center border-blue fc-blue" a:if="{{data.buyorder_status==5}}" onTap="buypingjia" data-buyid='{{data.buyorder_id}}' data-good='{{data.goods_id}}'>评价</view>
+</view>
+<view class="header text-c">
+  <view class="mar-b-20 status" a:if="{{data.buyorder_status==1}}">待付款</view>
+  <view class="mar-b-20 status" a:if="{{data.buyorder_status==2||data.buyorder_status==3}}">待发货</view>
+  <view class="mar-b-20 status" a:if="{{data.buyorder_status==4}}">待收货</view>
+  <view class="mar-b-20 status" a:if="{{data.buyorder_status==6}}">已完成</view>
+  <view class="mar-b-20 status" a:if="{{data.buyorder_status==5}}">待评价</view>
+  <view class="fc-blue fsz24" a:if="{{data.buyorder_status==1}}">剩余{{minutes}}分钟{{seconds}}秒的支付时间</view>
+</view>
+<view class="pd-lr-30">
+  <view class="bgc main">
+    <view class="goods flexbox">
+      <view class="flex-1">
+        <view class="mar-b-20">{{data.goods_name}}</view>
+        <!--<view class="spec mar-b-20"><text>黑色</text></view> -->
+        <view style="color:#666">
+          <text a:if="{{data.buyorder_type==1}}">全新正品</text>
+          <text a:if="{{data.buyorder_type==2}}">本机</text>
+        </view>
+      </view>
+      <image src="{{data.gd_img}}" />
+    </view>
+    <view a:if="{{!data.express_no==''}}">
+      <view class="title position">
+        快递信息
+        <view class="l dot"></view>
+        <view class="r dot"></view>
+      </view>
+      <view class="mar-b-20">{{data.express_company}} 运单号：{{data.express_no}}</view>
+      <view class="flex-align-items mar-b-20 fc-blue" a:if="{{logistics.length==0}}">暂无物流信息</view>
+      <view class="flex-align-items mar-b-20" a:for="{{logistics}}" onTap="onlogistics">
+        <view class="flex-1">
+          <view class="fc-blue mar-b-20">{{item.AcceptTime}}</view>
+          <view class="fsz24">{{item.AcceptStation}}</view>
+        </view>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+      </view>
+    </view>
+    <view>
+      <view class="title position">
+        订单信息
+        <view class="l dot"></view>
+        <view class="r dot"></view>
+      </view>
+      <view class="info">
+        <view class="flexbox">
+          <text>订单号</text>
+          <text class="flex-1">{{data.buyorder_no}}</text>
+        </view>
+        <view class="flexbox">
+          <text>下单时间</text>
+          <text class="flex-1">{{data.create_time}}</text>
+        </view>
+        <view class="flexbox" a:if="{{data.buyorder_type==1}}">
+          <text>取货方式</text>
+          <text class="flex-1">{{data.delivery_way==1?'快递':data.delivery_way==2?'平台配送':data.delivery_way==3?'自取':''}}</text>
+        </view>
+        <block a:if="{{(data.delivery_way==1&&data.buyorder_type==1)||(data.delivery_way==2&&data.buyorder_type==1)}}">
+          <view class="flexbox">
+            <text>收货地址</text>
+            <text class="flex-1">{{data.province+data.city+data.district+data.buyorder_address}}</text>
+          </view>
+          <view class="flexbox">
+            <text>收货人</text>
+            <text class="flex-1">{{data.buyorder_name}}</text>
+          </view>
+          <view class="flexbox">
+            <text>收货人手机号码</text>
+            <text class="flex-1"> {{data.buyorder_phone}}</text>
+          </view>
+          <view class="flexbox">
+            <text>到货时间</text>
+            <text class="flex-1"> {{data.qwsh_time}}</text>
+          </view>
+          <view class="flexbox" a:if="{{data.delivery_way==2&&data.buyorder_type==1}}">
+            <text>配送时间段</text>
+            <text class="flex-1">  {{data.timelist}}</text>
+          </view>
+        </block>
+        <block a:if="{{data.delivery_way==3&&data.buyorder_type==1}}">
+          <view class="flexbox">
+            <text>自取地点</text>
+            <text class="flex-1"> {{data.province+data.city+data.district+(data.buyorder_address||'')}}</text>
+          </view>
+          <view class="flexbox">
+            <text>自取时间</text>
+            <text class="flex-1">{{data.qwsh_time}}</text>
+          </view>
+          <view class="flexbox">
+            <text>联系人</text>
+            <text class="flex-1">{{data.buyorder_name}}</text>
+          </view>
+          <view class="flexbox">
+            <text>手机号码</text>
+            <text class="flex-1">{{data.buyorder_phone}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="title flex-jc-between position">
+      <text>  应付总额</text>
+      <text class="fc-red">¥{{data.total_price||'0.00'}}</text>
+    </view>
+    <view class="info">
+      <view class="flexbox">
+        <text>商品价格</text>
+        <text class="flex-1">￥{{data.selling_price||'0.00'}}</text>
+      </view>
+      <view class="flexbox">
+        <text>租金抵扣</text>
+        <text class="flex-1">￥{{data.rental||'0.00'}}</text>
+      </view>
+      <view class="flexbox">
+        <text>优惠券</text>
+        <text class="flex-1">￥{{data.coupons_money||'0.00'}}</text>
+      </view>
+      <view class="flexbox" a:if="{{data.delivery_way==2&&data.buyorder_type==1}}">
+        <text>配送运费</text>
+        <text class="flex-1">￥{{data.way_price||'0.00'}}</text>
+      </view>
+      <view class="flexbox" a:if="{{data.delivery_way==1&&data.buyorder_type==1}}">
+        <text>快递费</text>
+        <text class="flex-1">￥{{data.way_price||'0.00'}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- QRcode -->
+<view class="code flex-column-center position" catchTap="onclose" a:if="{{iscode}}">
+  <image src="{{codeimg}}" class="codeimg bgc" />
+  <view style="color:#fff">请出示此二维码供门店扫码</view>
+</view>
+<view class="logistics flex-center" a:if="{{showlogistics}}">
+  <view class="bgc">
+    <view class="pd-30 text-c position">
+      快递信息
+      <image src="/assets/close.jpg" class="icon-close" onTap="onclose" />
+    </view>
+    <view class="express" a:for="{{logistics}}">
+      <view class="item">
+        <view style="color:#666">{{item.AcceptTime}}</view>
+        <view>{{item.AcceptStation}}</view>
+      </view>
+    </view>
+  </view>
+</view>

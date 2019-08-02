@@ -1,0 +1,10 @@
+/* pages/me/certification/realnameSuc/realnameSuc.wxss */
+.btn {
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 60rpx;
+  color: #fff;
+  margin-top: 100rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}

@@ -1,0 +1,18 @@
+<!--pages/login/login/login.wxml-->
+<view class="welcome">
+  <view class="text text-c">Hi!</view>
+  <view class="text text-c">欢迎加入</view>
+</view>
+
+<view class="flex-center" style="padding-top: 100rpx">
+  <input type="number" placeholder="请输入手机号" class="text-c border-b input" maxlength="11" bindinput="changeinput" />
+</view>
+
+<view class="btn" style="padding-top: 100rpx">
+  <button class="btn-bg" form-type="submit" wx:if="{{isinput}}" bindtap="next">获取验证码</button>
+  <button class="bgc-grey" wx:else>获取验证码</button>
+</view>
+
+<view style="padding-top: 100rpx">
+  <navigator class="text-c fc-grey" url="../passwordLogin/passwordLogin" hover-class='none'>使用密码登陆</navigator>
+</view>

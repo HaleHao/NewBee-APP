@@ -1,0 +1,19 @@
+/* pages/me/myBalance/bankcard/bankcard.wxss */
+.add{
+  height: 224rpx;
+  box-shadow: 0px 0px 32rpx 0px rgba(220, 221, 223, 0.19);
+  border-radius: 10rpx;
+}
+
+.add image {
+  width: 44rpx;
+  height: 44rpx;
+  margin-bottom: 30rpx;
+}
+
+.card {
+  height: 224rpx;
+  box-shadow: 0px 0px 32rpx 0px rgba(220, 221, 223, 0.19);
+  border-radius: 10rpx;
+  font-size: 32rpx;
+}

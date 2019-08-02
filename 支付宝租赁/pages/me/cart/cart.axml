@@ -1,0 +1,48 @@
+<view class="pd-30 fc-grey text-c" a:if="{{list.length==0}}">快去添加订单吧~
+</view>
+<radio-group class="radio-group" onChange="radioChange">
+  <list>
+    <view a:for="{{list}}" key="{{item.content}}">
+      <swipe-action index="{{index}}" restore="{{swipeIndex === null || swipeIndex !== index}}" right="{{item.right}}" onRightItemClick="onRightItemClick" onSwipeStart="onSwipeStart" extra="item{{index}}">
+        <list-item index="{{index}}"  key="items-{{index}}" last="{{index === list.length - 1}}">
+          <label class="bgc flex-align-items card">
+          <view class="flex-0">
+            <radio value="{{index}}" />
+          </view>
+          <view class="flex-0">
+            <image src="{{item.gd_img[0]}}" />
+          </view>
+            <view class="flex-1 right ">
+              <view style='word-wrap:break-word'>
+                {{item.goods_name}}
+              </view>
+              <view class="fc-grey fsz24">
+                {{item.attr_names}}
+              </view>
+
+              <view>
+                <text class="fc-blue"> 
+                  ￥{{item.hire_price.price}}/{{item.hire_price.unt}}
+                </text>
+              </view>
+            </view>
+          </label>
+        </list-item>
+      </swipe-action>
+    </view>
+  </list>
+</radio-group>
+
+
+<view class="height">
+</view>
+
+<view class="bottom bgc flex-align-items border-t">
+  <view class="flex-1 flex-jc-center">   合计:￥{{sum}}  
+  </view>
+
+  <view class="right flex-center" onTap="buy" data-id='{{item.goods_id}}'>    去结算  
+  </view>
+
+  
+</view>

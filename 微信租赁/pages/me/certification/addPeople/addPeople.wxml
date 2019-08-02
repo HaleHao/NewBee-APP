@@ -1,0 +1,30 @@
+<nav i="0" />
+
+<form bindsubmit="{{from}}">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" name="relation">
+    <view class="pd-30 bgc border-b flex-align-items flex-jc-between">
+      <text>关系</text>
+      <view class="flex-align-items">
+        <text class="fc-grey" wx:if="{{index==-1}}">{{info.sign}}</text>
+        <text wx:else>{{array[index]}}</text>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+      </view>
+    </view>
+  </picker>
+
+  <view class="pd-30 bgc border-b flex-align-items">
+    <text>联系人姓名</text>
+    <input class='name' type="text" placeholder="请输入" value="{{info.name}}" name="name" />
+  </view>
+
+  <view class="pd-30 bgc flex-align-items">
+    <text>联系人电话</text>
+    <input class='name' type="text" placeholder="请输入" value="{{info.phone}}" name="phone" />
+  </view>
+
+
+  <view class="btn pd-30">
+    <button class="btn-bg" formType="submit">提交</button>
+  </view>
+
+</form>

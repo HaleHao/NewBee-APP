@@ -1,0 +1,28 @@
+/* pages/shop/shoplist/shoplist.wxss */
+.card {
+  padding: 20rpx 40rpx;
+}
+.card .title{
+  color: #7a7a7a;
+  font-size: 30rpx;
+}
+.card .address{
+  color: #dcdddf;
+  font-size: 24rpx;
+  padding-top: 20rpx;
+}
+.card .lookmap{
+  color: #dcdddf;
+  font-size: 24rpx;
+  padding-top: 30rpx;
+}
+
+.ck_img {
+  width: 20rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+}
+.icon-right {
+  width: 20rpx;
+  height: 20rpx;
+}

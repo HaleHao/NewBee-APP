@@ -1,0 +1,201 @@
+<!--pages/hosting/gohosting/index/index.wxml-->
+<nav></nav>
+
+<van-tabs active="{{ activeTab }}" bind:change="bindChanges">
+  <van-tab title="{{item.title}}" wx:for="{{navlist}}" wx:key="index"></van-tab>
+</van-tabs>
+
+<block wx:if="{{activeTab==0}}">
+  <form bindsubmit='submit'>
+    <view class="bgc">
+
+      <picker bindchange="bindObjPickerChange" name='cate_name' value="{{arrIndex}}" range="{{list}}" range-key="cate_name">
+        <view class="flex-jc-between flex-align-items pd-30 ">
+          <view class="fc-grey">
+            <!-- <view class="mar-b-20">品类</view> -->
+            <view wx:if='{{arrIndex>=0}}'> {{list[arrIndex].cate_name}}
+            </view>
+            <view wx:else>请选择托管品类
+            </view>
+          </view>
+          <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+        </view>
+      </picker>
+
+      <picker wx:if='{{listBrand.length>=0}}' name='brand_name' bindchange="bindBrandChange" value="{{BrandIndex}}" range="{{listBrand}}" range-key="brand_name">
+        <view class="flex-jc-between flex-align-items pd-30 ">
+          <view class="fc-grey">
+            <view wx:if='{{BrandIndex>=0}}'>{{listBrand[BrandIndex].brand_name}}
+            </view>
+            <view wx:else>请选择托管品牌
+            </view>
+          </view>
+          <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+        </view>
+      </picker>
+
+      <view wx:else bindtap="bindTip" class="flex-jc-between flex-align-items pd-30 ">
+        <view class="fc-grey">请选择托管品牌
+        </view>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+      </view>
+
+
+      <picker wx:if='{{listModel.length>=0}}' bindchange="bindModelChange" name='model_name' value="{{ModelIndex}}" range="{{listModel}}" range-key="model_name">
+        <view class="flex-jc-between flex-align-items pd-30 ">
+          <view class="fc-grey">
+            <view wx:if='{{ModelIndex>=0}}'> {{listModel[ModelIndex].model_name}}
+            </view>
+            <view wx:else>请选择托管型号
+            </view>
+          </view>
+          <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+        </view>
+      </picker>
+
+      <view wx:else bindtap="bindTipModel" class="flex-jc-between flex-align-items pd-30 ">
+        <view class="fc-grey">请选择托管型号
+        </view>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+      </view>
+
+      <view class="flex-jc-between flex-align-items bgc pd-30" bindtap="onshow">
+        <view class="fc-grey">如清单列表没有您的设备，请手动输入
+        </view>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+      </view>
+
+      <view class="pd-30 ">
+        <view>
+          <input type="text" placeholder="请输入颜色，例:黑色" name="colortext" />
+        </view>
+      </view>
+
+      <view class=" pd-30 fc-grey">
+        <view class="mar-b-20 flexbox">数量
+          <view style="padding-left: 30rpx;">1
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="btn pd-30">
+      <button class="btn-bg" form-type="submit">下一步
+      </button>
+    </view>
+
+  </form>
+
+
+  <view class="model flex-center" hidden="{{!isshow}}">
+    <view class="box position bgc">
+      <image src="/assets/close.jpg" class="icon-close" bindtap="onclose" />
+      <form bindsubmit="notsubmit">
+        <view class=" pd-30 ">
+          <!-- <view class="mar-b-20 fc-grey">品类</view> -->
+          <view>
+            <input type="text" placeholder="请输入品类" name="notypetext" />
+          </view>
+        </view>
+        <view class=" pd-30 ">
+          <!-- <view class="mar-b-20 fc-grey">品牌</view> -->
+          <view>
+            <input type="text" placeholder="请输入品牌" name="nobrandtext" />
+          </view>
+        </view>
+        <view class=" pd-30 ">
+          <!-- <view class="mar-b-20 fc-grey">型号</view> -->
+          <view>
+            <input type="text" placeholder="请输入型号" name="nomodeltext" />
+          </view>
+        </view>
+        <view class=" pd-30 ">
+          <!-- <view class="mar-b-20 fc-grey">颜色</view> -->
+          <view>
+            <input type="text" placeholder="请输入颜色，例:黑色" name="colortext" />
+          </view>
+        </view>
+        <view class="btn pd-30">
+          <button class="btn-bg" form-type="submit">下一步
+          </button>
+        </view>
+      </form>
+    </view>
+  </view>
+
+</block>
+
+<block wx:if="{{activeTab==1}}">
+  <view class='bgc'>
+    <picker bindchange="bindObjPickerChange" name='cate_name' value="{{arrIndex}}" range="{{list}}" range-key="cate_name">
+      <view class="flex-jc-between flex-align-items pd-30 ">
+        <view class="fc-grey">
+          <!-- <view class="mar-b-20">品类</view> -->
+          <view wx:if='{{arrIndex>=0}}'> {{list[arrIndex].cate_name}}
+          </view>
+          <view wx:else>请选择托管品类
+          </view>
+        </view>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+      </view>
+    </picker>
+    <view class=" pd-30 bgc">
+      <!-- <view class="mar-b-20 fc-grey">托管设备金额</view> -->
+      <view>
+        <input type="text" placeholder="请输入托管金额" bindinput="figureval" name="figureval" />
+      </view>
+    </view>
+    <picker bindchange="bindChange" name='cate_name' value="{{attIndex}}" range="{{listAtt}}" range-key="name">
+      <view class="flex-jc-between flex-align-items pd-30 bgc">
+        <view class="fc-grey">
+          <!-- <view class="mar-b-20">设备类型</view> -->
+          <view wx:if='{{attIndex>=0}}'> {{listAtt[attIndex].name}}
+          </view>
+          <view wx:else>请选择设备类型
+          </view>
+        </view>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+      </view>
+    </picker>
+    <!-- <picker> -->
+    <view class="flex-jc-between flex-align-items pd-30 bgc">
+      <view class="fc-grey">
+        <!-- <view class="mar-b-20">支付方式</view> -->
+        <view>支付方式:微信
+        </view>
+      </view>
+      <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+    </view>
+    <!-- </picker> -->
+    <view class="btn pd-30">
+      <button class="btn-bg" form-type="submit" bindtap="bindatt">提交
+      </button>
+    </view>
+    <view class="bgc" style="padding: 60rpx 30rpx;">
+      <view class="fc-grey">为了用户能达到更高的回报率，我们提供渠道底价销售的政策；
+      </view>
+
+      <view class="fc-grey">支持信用卡、花呗、消费分期等支付方式，没钱照样可以享受托管收益。
+      </view>
+
+    </view>
+    <view class="bgc pd-lr-30" wx:for='{{hotlist.length>0}}'>
+      <view class="mar-b-20">热租型号
+      </view>
+      <view class="list">
+        <view class="goods" wx:for="{{hotlist}}" data-id='{{item.recommend_id}}'>
+          <view style="font-size: 0;">
+            <image src="{{item.img}}" />
+          </view>
+          <view class="main">
+            <view>{{item.name}}
+            </view>
+            <view class="fc-grey fsz24">{{item.content}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>

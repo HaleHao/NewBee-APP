@@ -1,0 +1,24 @@
+/* pages/shop/shopDetail/shopDetail.wxss */
+@import "../../../wxParse/wxParse.wxss";
+.imgbox {
+  padding: 30rpx;
+  padding-bottom: 0;
+}
+.shopimg_b{
+  width: 100%;
+  height: 340rpx;
+  border-radius: 10rpx;
+}
+
+.ck_img {
+  width: 20rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+}
+
+.title{
+  font-size: 30rpx;
+  font-weight: 700;
+  height: 50rpx;
+  line-height: 55rpx;
+}

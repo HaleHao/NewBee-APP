@@ -1,0 +1,10 @@
+<!--pages/hosting/gohosting/successful/successful.wxml-->
+<nav></nav>
+
+<view class="text-c header pd-30 bgc" style="background: url(../../../../assets/tg_bg.png) no-repeat top;background-size: cover">
+  <view class="mar-b-20">提交成功！</view>
+  <view>请在个人中心查询审批结果</view>
+</view>
+<view class="btn pd-30">
+  <button bindtap="gotoindex">首页</button>
+</view>

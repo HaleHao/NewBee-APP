@@ -1,0 +1,18 @@
+page{
+  padding-bottom: 92rpx;
+}
+
+.title {
+  padding: 15px;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.content { 
+  color: #969799;
+  padding: 15px;
+}
+.icon-right {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+}

@@ -1,0 +1,10 @@
+<nav i="0"/>
+<view>
+  <textarea class="textarea" onInput="onTextarea" value="{{contentval}}" placeholder="输入否认的理由" show-count="{{false}}" />
+</view>
+<view class="imglist bgc">
+  <image src="{{denyimg}}" a:if="{{denyimg}}"/>
+  <image src="/assets/uploadimg.png" onTap="upload" a:if="{{!denyimg}}"/>
+</view>
+<view class="pd-30">
+  <view class="btn-bg flex-center btn" onTap="submit">提交</view></view>

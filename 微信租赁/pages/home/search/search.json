@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "nav": "/components/nav/nav",
+    "van-search": "/dist/search/index",
+    "van-rate": "/dist/rate/index"
+  },
+  "navigationBarTitleText": "搜索"
+}

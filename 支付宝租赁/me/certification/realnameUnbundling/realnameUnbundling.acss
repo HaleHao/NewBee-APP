@@ -1,0 +1,15 @@
+page{
+  padding-bottom: 92rpx;
+}
+
+.send {
+  color: #fff;
+  border-radius: 30rpx;
+  padding: 0 15rpx;
+}
+
+.btn button{
+  color: #fff;
+  border:0;
+  border-radius: 40rpx;
+}

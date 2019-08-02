@@ -1,0 +1,29 @@
+<view class="pd-30 bgc">  取货方式
+
+</view>
+<view class="tagbox bgc pd-lr-30">
+  <view data-typenum="0" onTap="changetag" class="{{typenum==0?'fc-blue selected':''}}">自取    
+  </view>
+  <view data-typenum="1" onTap="changetag" class="{{typenum==1?'fc-blue selected':''}}">快递    
+  </view>
+  <view data-typenum="2" onTap="changetag" class="{{typenum==2?'fc-blue selected':''}}">配送    
+  </view>
+</view>
+<view class="bgc mar-b-20 fsz24">
+  <view class="border-b flex-jc-between flex-align-items pd-30" onTap="choosetime">
+    <view> 自取时间            
+    </view>
+    <view class="fc-grey">
+      <text style="padding-right:15rpx;">{{datetime}}            
+      </text>
+      <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+    </view>
+  </view>
+  <view class="border-b  flex-align-items pd-30">
+    <view>特殊需求备注        
+    </view>
+    <input type="text" placeholder="请输入" onInput="bindremarkInput" value="{{remark}}" style="padding:0" />
+  </view>
+  
+  <button class="btn-bg" open-type='share' >确定    
+  </button>

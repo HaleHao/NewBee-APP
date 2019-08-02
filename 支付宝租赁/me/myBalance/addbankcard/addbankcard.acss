@@ -1,0 +1,35 @@
+page{
+  padding-bottom: 92rpx;
+}
+
+.box {
+  border-radius: 20rpx;
+}
+.box .label {
+  width: 130rpx;
+}
+
+.icon-right {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+}
+
+.btn button{
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  border:0;
+  border-radius: 40rpx;
+  margin-top: 140rpx;
+}
+
+.send {
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #fff;
+  background-color: #4ea9f9;
+  border-radius: 30rpx;
+  padding: 0px 20rpx;
+  font-size: 22rpx;
+}

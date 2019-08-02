@@ -1,0 +1,8 @@
+{
+  "defaultTitle": "下单",
+  "usingComponents": {
+        "nav": "/components/nav/nav",
+        "am-checkbox": "mini-antui/es/am-checkbox/index",
+        "popup": "mini-antui/es/popup/index"
+    }
+}

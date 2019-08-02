@@ -1,0 +1,44 @@
+<nav i="0"/>
+<view class="border-t border-b">
+  <tabs tabs="{{navlist}}" tabBarActiveTextColor="#333" onTabClick="handleTabClick" activeTab="{{activeTab}}" activeCls="activeclass">
+  </tabs>
+</view>
+<view class="list" a:if="{{activeTab!=3}}">
+  <view class="card bgc flex-jc-around flex-align-items" a:for='{{list}}'>
+    <view class="left fc-blue">
+      <text> {{item.coupons_money}}
+      </text>
+      <text>元
+      </text>
+    </view>
+    <view class="right">
+      <view style="margin-bottom:10rpx">{{item.coupon_name}}
+      </view>
+      <view class="fc-grey fsz24" style="margin-bottom:10rpx">有效期至{{item.end_time}}
+      </view>
+      <view class="fc-grey fsz24">满{{item.coupons_condition}}可用
+      </view>
+    </view>
+  </view>
+</view>
+<view class="list" a:if="{{activeTab==3}}">
+  <view class="card bgc flex-jc-around flex-align-items" a:for='{{getlist}}'  onTap="getup" data-coupons_id='{{item.coupons_id}}' data-activity_id='{{item.activity_id}}' >
+    <view class="left fc-blue">
+      <text> {{item.coupons_money}}
+      </text>
+      <text>元
+      </text>
+    </view>
+    <view class="right">
+      <view style="margin-bottom:10rpx">{{item.coupon_name}}
+      </view>
+      <view class="fc-grey fsz24" style="margin-bottom:10rpx">满{{item.coupons_condition}}可用
+      </view>
+      <view class="fc-grey fsz24">点击领取
+      </view>
+    </view>
+  </view>
+</view>
+<view class="fc-grey text-c pd-30">
+没有更多了
+</view>

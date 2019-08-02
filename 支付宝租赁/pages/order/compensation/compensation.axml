@@ -1,0 +1,28 @@
+<nav i="0"/>
+
+<view class="bgc mar-b-20 pd-30">
+  <view style="color:#666" class="mar-b-10">根据您是否购买保险</view>
+  <view>实付维修费为<text class="fc-red">￥{{money||0}}</text></view>
+</view>
+
+<view class="bgc">
+  <view class="pd-30 border-b">请选择支付方式</view>
+  <radio-group onChange="radioChange">
+    <label class="bgc pd-30 flex-jc-between border-b">
+      <view class="flex-align-items">
+        <image src="/assets/ali.png" class="payimg" />
+        支付宝
+      </view>
+      <radio value="4"/>
+    </label>
+    <label class="bgc pd-30 flex-jc-between">
+      <view class="flex-align-items">
+        <image src="/assets/balance.png" class="payimg" />
+        余额
+      </view>
+      <radio value="3" checked/>
+    </label>
+  </radio-group>
+</view>
+
+<view class="pd-30"><view class="btn-bg flex-center btn" onTap="submit">提交</view></view>

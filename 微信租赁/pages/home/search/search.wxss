@@ -1,0 +1,25 @@
+/* pages/home/search/search.wxss */
+
+.card {
+  padding: 0 20rpx;
+}
+.card .goodsimg {
+  width: 100%;
+  height: 320rpx;
+}
+.card .price {
+  font-size: 24rpx;
+}
+.pro_name {
+  line-height: 50rpx;
+  font-weight: bold;
+}
+.chat {
+  width: 32rpx;
+  height: 28rpx;
+  margin-right: 10rpx;
+}
+
+.middle{
+  height: 60rpx;
+}

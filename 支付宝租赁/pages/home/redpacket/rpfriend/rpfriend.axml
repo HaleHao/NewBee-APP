@@ -1,0 +1,14 @@
+<view class="page pd-lr-30">
+  <view class="box">
+    <view class="text-c fc-blue title mar-b-20">标题</view>
+    <view class="text-c fc-grey fsz24 mar-b-20">2018~2019</view>
+    <view class="text-c mar-b-10">当前参加人数<text class="fc-red">0</text></view>
+
+    <button class="btn btn-bg flex-column-center">
+      <text>好友助力</text>
+    </button>
+     <view class="text-c fsz24 mar-b-10">好友可获得一次抢红包机会</view>
+
+    <view class="fsz24 fc-grey">活动说明：</view>
+  </view>
+</view>

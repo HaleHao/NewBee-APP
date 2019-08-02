@@ -1,0 +1,22 @@
+<nav i="0"/>
+
+<view class="pd-30 bgc border-b flex-jc-between">
+    <text>姓名</text>
+    <text>name</text>
+</view>
+<view class="pd-30 bgc border-b flex-jc-between">
+    <text>身份证号</text>
+    <text>11111111111</text>
+</view>
+<view class="pd-30 bgc border-b flex-jc-between">
+    <text>签发机关</text>
+    <text></text>
+</view>
+<view class="pd-30 bgc flex-jc-between">
+    <text>有效期限</text>
+    <text></text>
+</view>
+
+<navigator class="btn bgc-red text-c" url="../realnameUnbundling/realnameUnbundling">
+  解绑
+</navigator>

@@ -1,0 +1,3 @@
+    <web-view id="web-view-1" src="https://api.51datakey.com/h5/importV3/index.html#/chsi?apiKey=0a95e6834f8d4c1087613fac1142f640&userId=165&backUrl=https%3A%2F%2Fnewbee.zx-xcx.com%2F%23%2Fschool&themeColor=FF0000&_k=zqpxvl" onMessage="onMessage">
+ 
+    </web-view>

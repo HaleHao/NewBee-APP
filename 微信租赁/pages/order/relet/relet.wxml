@@ -1,0 +1,43 @@
+<nav i="0" />
+
+<view class="bgc mar-b-20">
+  <view class="border-b flex-jc-between flex-align-items pd-30">
+    <view>
+      选择续租的时间
+    </view>
+    <view class="time flexbox">
+      <view class="border" style="margin-right:10rpx">
+        <picker bindchange="onWeekChange" value="{{weeki}}" range="{{weekarr}}" name="weekval">
+          <view class="selectbox flex-center text-line fsz24">
+            <text class="fc-grey" wx:if="{{weeki==-1}}">请选择</text>
+            <text wx:else>{{weekarr[weeki]}}</text>
+            <image src="/assets/icon-triangle.png" class="triangleimg" />
+          </view>
+        </picker>
+      </view>
+      <view class="border text-c">
+        <input type="number" disabled="{{isdisabled}}" bindinput="bindKeyInput" placeholder="" value="{{weekval}}" />
+      </view>
+    </view>
+  </view>
+  <view class="pd-30">租金:
+    <text class="fc-red">￥{{rent}}</text>
+  </view>
+</view>
+<view class="bgc">
+  <view class="pd-30 border-b">请选择支付方式</view>
+  <radio-group bindchange="radioChange">
+    <label class="bgc pd-30 flex-jc-between border-b" wx:key='index' wx:for="{{items}}">
+      <view class="flex-align-items">
+        <image src="{{item.imgicon}}" class="payimg" />
+        <!-- 支付宝 -->
+        {{item.type}}
+      </view>
+      <radio color='#4ea9f9' value="{{item.num}}" checked="{{item.checked}}" />
+    </label>
+  </radio-group>
+</view>
+
+<view class="pd-30">
+  <view class="btn-bg flex-center btn" bindtap="pay">提交</view>
+</view>

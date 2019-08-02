@@ -1,0 +1,33 @@
+<form onSubmit="onSubmit">
+  <view class="bgc pd-30">
+  自取联系人
+  </view>
+  <view class="tagbox bgc pd-lr-30">
+    <view data-typenum="0" onTap="changetag" class="{{typenum==0?'fc-blue selected':''}}">本人</view>
+    <view data-typenum="1" onTap="changetag" class="{{typenum==1?'fc-blue selected':''}}">朋友代取</view>
+  </view>
+  <view a:if="{{typenum==0}}">
+    <view class="pd-30 flex-align-items border-b bgc">
+      <text>姓名</text>
+      <input type="text" placeholder="" value="{{name}}" name="name"/>
+    </view>
+    <view class="pd-30 flex-align-items bgc">
+      <text>手机号码</text>
+      <input type="number" placeholder="" value="{{phone}}" name="phone"/>
+    </view>
+  </view>
+  <view a:else>
+    <view class="pd-30 flex-align-items border-b bgc">
+      <text>姓名</text>
+      <input type="text" placeholder="" name="name"/>
+    </view>
+    <view class="pd-30 flex-align-items bgc">
+      <text>手机号码</text>
+      <input type="number" placeholder="" name="phone"/>
+    </view>
+  </view>
+  
+  <view class="btn pd-30" style="padding-top:100rpx">
+    <button class="btn-bg" formType="submit">确认</button>
+  </view>
+</form>

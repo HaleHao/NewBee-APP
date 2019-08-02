@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "否认",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

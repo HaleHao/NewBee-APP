@@ -1,0 +1,49 @@
+.flex-y-center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+}
+
+.flex-x-center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  height: 98rpx;
+  z-index: 999;
+}
+
+.flexible-tabbar {
+  height: 100%;
+}
+
+.flexible-tabbar .tab-item {
+  flex: 1;
+  font-size: 24rpx;
+  text-align: center;
+  height: 100%;
+}
+
+.tab-item .tab-text {
+  font-size: 28rpx;
+  color: #8e8e93;
+}
+
+.tab-item .active {
+  color: #ad0302;
+}

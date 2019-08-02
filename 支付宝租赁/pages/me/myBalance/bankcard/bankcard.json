@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "银行卡",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

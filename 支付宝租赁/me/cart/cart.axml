@@ -1,0 +1,44 @@
+<view class="pd-30 fc-grey text-c" a:if="{{list.length==0}}" >快去添加订单吧~</view>
+
+<radio-group class="radio-group" onChange="radioChange">
+<list>
+  <view a:for="{{list}}" key="{{item.content}}">
+    <swipe-action
+      index="{{index}}"
+      restore="{{swipeIndex === null || swipeIndex !== index}}"
+      right="{{item.right}}"
+      onRightItemClick="onRightItemClick"
+      onSwipeStart="onSwipeStart"
+      extra="item{{index}}"
+    >
+      <list-item
+        index="{{index}}"
+        key="items-{{index}}"
+        last="{{index === list.length - 1}}"
+      >
+        <label class="bgc flex-align-items card">
+          <radio value="{{index}}" />
+
+          <image src="https://newbeeadmin.zx-xcx.com/uploads/images/20190307/5a312907be02497b5e5323a6df408097.jpg" />
+
+          <view class="flex-1 right">
+            <view>商品1</view>
+            <view class="fc-grey fsz24">规格</view>
+            <view><text class="fc-blue">￥1/天</text></view>
+          </view>
+        </label>
+      </list-item>
+    </swipe-action>
+  </view>
+</list>
+</radio-group>
+
+<view class="height"></view>
+<view class="bottom bgc flex-align-items border-t">
+  <view class="flex-1 flex-jc-center">
+      合计:￥{{sum}}
+  </view>
+  <view class="right flex-center">
+    去结算
+  </view>
+</view>

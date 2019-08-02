@@ -1,0 +1,3 @@
+    <web-view id="web-view-1" src="https://www.sobot.com/chat/h5/index.html?sysNum=0a99f38b20714891ace3e99607538829" onMessage="onMessage">
+      <view >在线客服 </view>
+    </web-view>

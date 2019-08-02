@@ -1,0 +1,102 @@
+page{
+  padding-bottom: 92rpx;
+  background-color: #fff;
+}
+
+.header {
+  height: 460rpx;
+  background: url(../../../assets/fls_bg.png) no-repeat top;
+  background-size: 100% 100%;
+}
+.signin {
+  padding-top: 100rpx;
+  color: #fff;
+}
+.bor {
+  width: 28rpx;
+  height: 1rpx;
+  background: #fff;
+}
+.lxqd {
+  position: relative;
+  bottom: 18rpx;
+  padding: 0 14rpx;
+}
+.time {
+  padding-bottom: 32rpx;
+  color: #fff;
+}
+.day {
+  font-size: 90rpx;
+}
+
+.header .btn {
+  width: 260rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  border-radius: 40rpx;
+  display: inline-block;
+  color: #fff;
+}
+
+.jd_box {
+  margin: 30rpx ;
+}
+.true_img {
+  width: 50rpx;
+  height: 50rpx;
+}
+.oneday {
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background: #bfe8ff;
+  font-size: 24rpx;
+  border-radius: 50%;
+}
+.jd_box .xian_blue {
+  width: 40rpx;
+  height: 4rpx;
+  background: #bfe8ff;
+}
+.jd_box .yxian_blue {
+  width: 40rpx;
+  height: 4rpx;
+  background: #54b1fa;
+}
+
+.qd_img {
+  padding: 10rpx 0 ;
+}
+.qd_img > image {
+  width: 480rpx;
+  height: 120rpx;
+}
+
+.task {
+  padding: 0 20rpx;
+}
+.task .item {
+  height: 90rpx;
+}
+.task .icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 24rpx;
+}
+
+.btn1,.btn2,.btn3 {
+  width: 120rpx;
+  height: 48rpx;
+  border-radius: 30rpx;
+  color: #fff;
+}
+.btn2 {
+  background: #d2d2d2;
+  color: #fff;
+}
+.btn3 {
+  border: #4ea9f9 solid 1px;
+  color: #4ea9f9;
+  font-size: 28rpx;
+}

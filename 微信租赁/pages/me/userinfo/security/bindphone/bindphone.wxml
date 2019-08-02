@@ -1,0 +1,10 @@
+<!--pages/me/userinfo/security/bindphone/bindphone.wxml-->
+<nav></nav>
+
+<view class="text-c header">
+  您当前绑定手机号{{phone}}
+</view>
+
+<navigator hover-class='none' class="btn pd-30" url="{{'../sendcode/sendcode?phone=' + phone}}">
+  <button class="btn-bg">获取验证码</button>
+</navigator>

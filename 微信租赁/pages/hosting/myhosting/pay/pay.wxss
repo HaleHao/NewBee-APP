@@ -1,0 +1,12 @@
+/* pages/hosting/myhosting/pay/pay.wxss */
+.btn{
+  color: #fff;
+  height: 80rpx;
+  border-radius: 60rpx;
+}
+
+.payimg{
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx
+}

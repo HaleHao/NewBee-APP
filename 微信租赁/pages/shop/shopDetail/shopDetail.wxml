@@ -1,0 +1,26 @@
+<nav i="0"/>
+<view>
+  <view class="bgc imgbox">
+    <image src="{{detail.thumb}}" class="bgc-grey shopimg_b" />
+  </view>
+  <view class="bgc mar-b-20">
+    <view class="pd-lr-30 bgc mar-b-20" style="padding-top:30rpx">
+      联系人：{{detail.store_boss}}
+    </view>
+    <view class="pd-lr-30 bgc mar-b-20">
+      联系方式：{{detail.store_phone}}
+    </view>
+    <view class="pd-lr-30" style="padding-bottom:30rpx">
+      地址：{{(detail.store_province||'') + (detail.store_city||'') + (detail.store_district||'')+(detail.store_Address||'')}}
+    </view>
+  </view>
+  <view class="bgc pd-30">
+    <view class="title mar-b-20">{{detail.store_name}}</view>
+    <!-- 引入模板 -->
+    <import src="../../../wxParse/wxParse.wxml" />
+    <view>
+      <!-- 这里data中article为bindName -->
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+  </view>
+</view>

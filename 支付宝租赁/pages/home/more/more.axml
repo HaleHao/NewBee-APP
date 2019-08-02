@@ -1,0 +1,13 @@
+<nav i="0"/>
+
+<!-- <view class="banner pd-30">
+  <image src="https://admin.newbee-smart.com/uploads/images/20190308/80be35616137c50ffa70c40b8e2e58c3.png" />
+</view> -->
+
+<view class="list pd-lr-30">
+  <navigator class="item" url="/pages/goodsDetail/goodsDetail?id={{item.goods_id}}" a:for="{{goods}}">
+    <image src="{{item.gd_img[0]}}" mode="aspectFit" />
+    <view class="text-line goodname fsz24">{{item.goods_name}}</view>
+    <view style="font-size:20rpx">低至<text class="fc-red fsz24">￥{{item.hire_price.price}}</text><text>/{{item.hire_price.unt}}</text></view>
+  </navigator>
+</view>

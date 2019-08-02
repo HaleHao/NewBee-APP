@@ -1,0 +1,10 @@
+<view class="pd-30">验证码已发送至{{phone}}</view>
+
+<view class="pd-30 flex-jc-between">
+    <input type="text" onInput="code" placeholder="请输入验证码" ></input>
+    <button size="default" onTap="resent" disabled="{{isClick}}" class="send bgc-blue flex-center">{{time}}</button>
+</view>
+
+<view class="btn pd-30">
+  <button class="btn-bg" onTap="next">下一步</button>
+</view>

@@ -1,0 +1,26 @@
+<nav i="0"/>
+<form onSubmit="formSubmit">
+  <view class="bgc box">
+    <view class="border-b item">
+      <input type="text" placeholder="姓名" value="{{name}}" name="name" /></view>
+    <view class="border-b item">
+      <input type="number" placeholder="手机号" value="{{phone}}" name="phone" /></view>
+
+    <view class="address flex-jc-between border-b" onTap="city">
+      <view>位置</view>
+      <view class="right">
+        <text class="fc-grey fsz24" a:if="{{!provinces}}">请选择省市区</text>
+        <text a:else>{{provinces}} {{city}} {{area}}</text>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+      </view>
+    </view>
+
+    <view class="item">
+      <input type="text" placeholder="请输入详细地址" value="{{detail}}" name="detail" /></view>
+    <view onTap="onradio" class="address flex-align-items">
+      <radio checked="{{ischecked}}" />设为默认地址</view>
+  </view>
+  <view class="btn pd-30">
+    <button class="btn-bg" formType="submit">保存</button>
+  </view>
+</form>

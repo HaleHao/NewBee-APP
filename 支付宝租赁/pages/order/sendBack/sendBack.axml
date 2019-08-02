@@ -1,0 +1,24 @@
+<nav i="0"/>
+<view class="border-b flex-jc-between flex-align-items pd-30 bgc" onTap="choosetime">
+  <view>
+      选择退租时间
+  </view>
+  <view class="fc-grey">
+    <text style="padding-right:15rpx;">{{expectdate}}</text>
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+  </view>
+</view>
+<view class="bgc  flex-align-items pd-30 mar-b-20">
+  <view>快递单号</view>
+  <input type="text" onInput="bindKeyInput" placeholder="请输入(必须是顺丰)"  value="{{numval}}" style="padding:0" />
+</view>
+<view class="address bgc flex-align-items pd-30">
+  <view class="left bgc-blue flex-center">收</view>
+  <view class="flex-1">
+    <view class="fc-grey" a:if="{{shopaddress==''}}">暂无收货地址</view>
+    <view class="mar-b-20">{{shopaddress.store_name}} {{shopaddress.store_phone}}</view>
+    <view>{{(shopaddress.store_partners||'')+(shopaddress.store_city||'')+(shopaddress.store_district||'')+(shopaddress.store_Address||'')}}</view>
+  </view>
+</view>
+<view class="pd-30" onTap="express">
+  <view class="btn-bg flex-center btn">确定</view></view>

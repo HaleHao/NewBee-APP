@@ -1,0 +1,36 @@
+page{
+  overflow: hidden
+}
+.height {
+  height: 100rpx;
+}
+.bottom {
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.bottom .right {
+  background-image: linear-gradient(90deg, #2dbbf1 0%, #4ea9f9 100%);
+  width: 280rpx;
+  color: #fff;
+  height: 100%;
+}
+
+.am-swipe {
+  margin: 20rpx 30rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+.card {
+  padding: 20rpx 0;
+  /* margin: 20rpx 30rpx; */
+  
+}
+.card image {
+  width: 172rpx;
+  height: 172rpx;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+}

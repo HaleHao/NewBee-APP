@@ -1,0 +1,40 @@
+<!--pages/me/myBalance/index/index.wxml-->
+<nav></nav>
+<view class="header bgc">
+  <view class="text-c">￥{{maney}}        
+  </view>
+  <view class="text-c">可提现金额        
+  </view>
+  <view class="text-c">
+    <navigator class="button" url="../cash/cash">提现                
+    </navigator>
+  </view>
+  <view class="text-c" style='padding-top: 10px;'>余额：{{resdata.users_balance}}   
+  </view>
+</view>
+
+<van-tabs active="{{ activeTab }}" bind:change="onChange">
+  <van-tab title="{{item.title}}" wx:for="{{navlist}}" wx:key="index"></van-tab>
+</van-tabs>
+
+<view class="list bgc" wx:for='{{money}}' wx:key='{{index}}'>
+  <view class=" border-b flex-jc-between flex-align-items pd-30">
+    <view>
+      <view class="title" style="margin-bottom:10rpx">{{item.content}}                        
+      </view>
+      <!-- <view class="fsz24 fc-grey">{{item.}}</view> -->
+    </view>
+    <view class="fc-blue">
+      <block wx:if='{{item.state==1}}'>+                         
+      </block>
+      <block wx:if='{{item.state==2}}'>1                         
+      </block>{{item.money}}                
+    </view>
+  </view>
+</view>
+<view class="pd-30 text-c fc-grey">    没有更多了
+
+
+
+</view>
+

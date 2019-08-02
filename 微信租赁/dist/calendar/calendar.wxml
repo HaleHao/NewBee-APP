@@ -1,0 +1,25 @@
+<view class="top-handle">
+  <view bindtap="doDay" class="prev" data-key="left">
+    <image src="/assets/icon-register-left.png"></image>
+  </view>
+  <view class="today">{{currentDate}}</view>
+  <view bindtap="doDay" class="next" data-key="right">
+    <image src="/assets/icon-register-right.png"></image>
+  </view>
+</view>
+
+<view class="week">
+  <view class="weeks-day" wx:key='index' wx:for="{{weeks}}">{{item.day}}</view>
+</view>
+
+<view class="box-flex">
+  <view class="flex-item {{vo.is_re==0?'color':''}}" wx:for="{{currentDayList}}" wx:for-index="key" wx:for-item="vo" wx:key="{{index}}">
+
+    <block>
+      <view bindtap="{{vo.is_re==0?'selectDay':'selecDayTwo'}}" class="item-content {{currentDa==vo.date?'wh_chose_day':''}}" data-day="{{vo.date}}">
+        {{vo.date}}
+      </view>
+    </block>
+    
+  </view>
+</view>

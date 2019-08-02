@@ -1,0 +1,103 @@
+page{
+  padding-bottom: 92rpx;
+  background-color: #fff;
+}
+
+.pd20{
+  padding: 20rpx
+}
+
+.header {
+  height: 340rpx;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.07);
+  border-radius: 20rpx;
+  background: rgba(255, 255, 255, 1);
+  padding-top: 40rpx;
+}
+
+.grey_f {
+  color: #bfbfbf;
+  font-size: 24rpx;
+  line-height: 50rpx;
+}
+.header .money {
+  color: #4ea9f9;
+  font-size: 40rpx;
+}
+.header .all_money {
+  color: #4ea9f9;
+  font-size: 100rpx;
+  font-weight: 200;
+}
+.header .padding_tb {
+  padding: 40rpx 0 10rpx 0;
+}
+.header .all_img {
+  width: 40rpx;
+  height: 60rpx;
+}
+.header .yuan_img {
+  width: 16rpx;
+  height: 24rpx;
+}
+
+.box {
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+.tg_yq_box {
+  height: 160rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.07);
+  border-radius: 20rpx;
+}
+.tg_yq {
+  display: flex;
+  align-items: center;
+  height: 160rpx;
+}
+.wode{
+  width: 170rpx;
+  height: 160rpx;
+  background: linear-gradient(0deg, #a1c4fd, #bbe5f9);
+  border-top-left-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+  font-size: 0;
+}
+.wode > image {
+  width: 48rpx;
+  height: 48rpx;
+}
+.img_r {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 24rpx;
+}
+
+.sharebtn{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.bg{
+    z-index: 98;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7);
+}
+
+.grcode{
+  z-index: 99;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+}

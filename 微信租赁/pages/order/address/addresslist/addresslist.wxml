@@ -1,0 +1,30 @@
+<!--pages/order/address/addresslist/addresslist.wxml-->
+<view class="fc-grey pd-30 text-c" wx:if="{{list.length==0}}">没有更多了</view>
+
+<radio-group bindchange="radioChange">
+<view class='pd-30'>
+  <van-swipe-cell right-width="{{ 50 }}" async-close bind:close="onClose" data-index='{{index}}' wx:for="{{list}}" wx:key="index">
+    <label class="bgc flex-align-items card mar-b-20">
+      <radio value="{{index}}" color="#2DBBF1" />
+     
+      <view class="flex-1 left">
+        <view style="margin-bottom:10rpx">{{item.ads_user||''}} {{item.ads_phone||''}}</view>
+        <view class='flexbox' style='padding-right:10rpx;'>
+          <text class='borders' wx:if='{{item.ads_state==2}}'>默认</text>
+          <text>{{item.ads_province+item.ads_city+item.ads_district+item.ads_address}}</text>
+        </view>
+      </view>
+
+     <view catchtap='addaddress' data-index='{{item.ads_id}}' class="tg">
+          <image src="/assets/icon-editor.png" class="editorimg" />
+     </view>
+
+    </label>
+
+    <view slot="right" class='del flex-center'>删除</view>
+  </van-swipe-cell>
+</view>
+</radio-group>
+
+<view class="height"></view>
+<navigator url="../addaddress/addaddress" class="btn text-c btn-bg">新增地址</navigator>

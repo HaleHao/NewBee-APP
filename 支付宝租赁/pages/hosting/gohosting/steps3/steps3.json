@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "配件确认",
+  "usingComponents": {
+    "nav": "/components/nav/nav",
+     "stepper": "mini-antui/es/stepper/index"
+  }
+}

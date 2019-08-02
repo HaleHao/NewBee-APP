@@ -1,0 +1,30 @@
+<!--pages/me/cart/cart.wxml-->
+<view class="pd-30 fc-grey text-c" wx:if="{{list.length==0}}" >快去添加订单吧~</view>
+
+<radio-group bindchange="radioChange">
+<view class='pd-lr-30'>
+
+  <van-swipe-cell right-width="{{ 50 }}" async-close bind:close="onClose" data-index='{{index}}' wx:for="{{list}}" wx:key="index">
+    <label class="bgc flex-align-items card">
+      <radio value="{{index}}" color="#2DBBF1" />
+      <image src="{{item.gd_img[0]}}" />
+      <view class="flex-1 right">
+        <view> {{item.goods_name}}</view>
+        <view class="fc-grey fsz24">{{item.attr_names}}</view>
+        <view><text class="fc-blue">￥{{item.hire_price.price}}/{{item.hire_price.unt}}</text></view>
+      </view>
+    </label>
+    <view slot="right" class='del flex-center'>删除</view>
+  </van-swipe-cell>
+</view>
+</radio-group>
+
+<view class="height"></view>
+<view class="bottom bgc flex-align-items border-t">
+  <view class="flex-1 flex-jc-center">
+      合计:￥{{sum}} 
+  </view>
+  <view class="right flex-center" bindtap="buy" data-id='{{item.goods_id}}'>
+    去结算
+  </view>
+</view>

@@ -1,0 +1,22 @@
+/* pages/order/people/people.wxss */
+.tagbox > view {
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  display: inline-block;
+  box-shadow: 0 1rpx 14rpx 1rpx #e8e9ea;
+  border-radius: 30rpx;
+  text-align: center;
+  box-sizing: border-box;
+  margin-right: 20rpx;
+  margin-bottom: 30rpx;
+}
+.tagbox .selected {
+  box-shadow: 0 1rpx 14rpx 1rpx #def4fd;
+}
+
+.btn button{
+  color: #fff;
+  border:0;
+  border-radius: 40rpx;
+}

@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "实名认证",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

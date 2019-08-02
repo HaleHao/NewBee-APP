@@ -1,0 +1,19 @@
+page{
+  padding-bottom: 92rpx;
+  overflow: hidden
+}
+.box {
+  overflow: hidden;
+  margin: 30rpx;
+  border-radius: 20rpx;
+}
+.icon-right {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+}
+.item {
+  padding: 25rpx;
+  padding-left: 0;
+  margin-left: 25rpx;
+}

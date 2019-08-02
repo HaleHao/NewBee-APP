@@ -1,0 +1,22 @@
+<!--pages/shop/shoplist/shoplist.wxml-->
+<nav active="1"></nav>
+
+<van-search value="{{ value }}" bind:cancel='cancel'  placeholder="请输入搜索关键词"  bind:change='onblur'  bind:search="onSearch" use-action-slot  >
+  <view slot="action" bind:tap="Search">搜索</view>
+</van-search>
+
+<view class="pd-lr-30 bgc">
+  <view wx:if="{{shoplist.length==0}}" class="pd-30 text-c fc-grey">无相关门店 </view>
+  <view class="card" wx:for="{{shoplist}}">
+    <navigator url="../shopDetail/shopDetail?id={{item.store_id}}">
+      <view class="flex-jc-between flex-align-items title">
+        {{item.store_name}}
+        <image src="../../../assets/right.png" class="icon-right" mode="aspectFit" />
+      </view>
+      <view class="address">{{(item.store_province||'')+(item.store_city||'')+(item.store_district||'')+(item.store_Address||'')}}</view>
+    </navigator>
+    <view class="text-c lookmap" bindtap="onlookmap" data-map='{{item.coordinate}}' data-text='{{item.store_name}}' data-address='{{item.store_Address}}'>
+      <image src="../../../assets/mddw.png" class="ck_img" /> 查看地图
+    </view>
+  </view>
+</view>

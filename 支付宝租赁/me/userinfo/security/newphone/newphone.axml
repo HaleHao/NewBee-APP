@@ -1,0 +1,12 @@
+<form onSubmit="formSubmit">
+  <view class="pd-30 flex-jc-between">
+    <input type="number" placeholder="请输入新手机号" onInput="bindKeyInput" value="{{newphone}}" name="newphone"></input>
+  </view>
+  <view class="pd-30 flex-jc-between">
+    <input type="text" placeholder="请输入验证码" name="code"></input>
+    <button size="default" type="primary" onTap="resent" disabled="{{isClick}}" class="send bgc-blue flex-center">{{time}}</button>
+  </view>
+  <view class="btn pd-30">
+    <button class="btn-bg" formType="submit">确定修改</button>
+  </view>
+</form>

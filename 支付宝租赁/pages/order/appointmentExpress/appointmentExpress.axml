@@ -1,0 +1,46 @@
+<nav i="0"/>
+
+<view class="mar-b-20">
+  <view class="border-b flex-jc-between flex-align-items pd-30 bgc" onTap="choosetime">
+    <view>
+      选择退租时间
+    </view>
+    <view class="fc-grey">
+      <text style="padding-right:15rpx;">{{expectdate}}</text>
+      <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+    </view>
+  </view>
+
+  <picker onChange="timechange" value="{{timeIndex}}" range="{{timeList}}" range-key="val">
+  <view class="bgc flex-jc-between flex-align-items pd-30 border-b">
+    <view>
+      时间段
+    </view>
+    <view class="fc-grey">
+      <text style="padding-right:15rpx;">{{timetext}}</text>
+      <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+    </view>
+  </view>
+   </picker>
+</view>
+
+<view class="address bgc flex-align-items pd-30" onTap="choose">
+    <view class="left bgc-brown flex-center">寄</view>
+    <view class="flex-1">
+        <view class="fc-grey" a:if="{{getaddress==''}}">请选择</view>
+        <view class="mar-b-20">{{getaddress.ads_user||''}}  {{getaddress.ads_phone||''}}</view>
+        <view>{{(getaddress.ads_province||'')+(getaddress.ads_city||'')+(getaddress.ads_district||'')+(getaddress.ads_address||'')}}</view>
+    </view>
+    <view><image src="/assets/right.png" class="icon-right" mode="aspectFit"/></view>
+</view>
+
+<view class="address bgc flex-align-items pd-30">
+    <view class="left bgc-blue flex-center">收</view>
+    <view class="flex-1">
+        <view class="fc-grey" a:if="{{shopaddress==''}}">暂无收货地址</view>
+        <view class="mar-b-20">{{shopaddress.store_name}} {{shopaddress.store_phone}}</view>
+        <view>{{(shopaddress.store_partners||'')+(shopaddress.store_city||'')+(shopaddress.store_district||'')+(shopaddress.store_Address||'')}}</view>
+    </view>
+</view>
+
+<view class="pd-30" ><view class="btn-bg flex-center btn" onTap="submit">确定</view></view>

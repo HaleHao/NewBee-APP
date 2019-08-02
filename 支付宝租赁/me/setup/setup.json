@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "设置",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

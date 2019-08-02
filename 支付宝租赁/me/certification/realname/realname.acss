@@ -1,0 +1,46 @@
+page{
+  padding-bottom: 92rpx;
+}
+
+.sample image {
+    width: 145rpx;
+    height: 104rpx;
+}
+.sample .icons {
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    bottom: -10rpx;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.btn {
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 60rpx;
+  color: #fff;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+
+.box {
+  height: 300rpx;
+}
+
+.upload {
+    width: 500rpx;
+    height: 250rpx;
+    border: 1rpx dashed #666;
+    border-radius: 12rpx;
+}
+.upload .icon {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.photo{
+  width: 100%;
+  height: 100%;
+}

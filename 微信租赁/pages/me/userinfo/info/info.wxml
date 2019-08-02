@@ -1,0 +1,67 @@
+<nav i="0" />
+<form bindsubmit="formSubmit" report-submit="true">
+  <view class="bgc box">
+    <view class="flex-jc-between flex-align-items item">
+      <view>昵称</view>
+      <view class="text-r">
+        <input type="text" placeholder="请输入" name="nickname" value="{{users_name}}" placeholder-class="placeholderclass fsz24 fc-grey text-r" />
+      </view>
+    </view>
+
+
+    <picker bindchange="sexchange" value="{{sexIndex}}" range="{{sexList}}" range-key="val">
+      <view class=" flex-jc-between flex-align-items item">
+        <view>性别</view>
+        <view class="right">
+          <text class="fc-grey fsz24" wx:if="{{!sextext}}">请选择性别</text>
+          <text wx:else> {{sextext}}</text>
+          <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+        </view>
+      </view>
+    </picker>
+
+    <view class=" flex-jc-between flex-align-items item" bindtap="city">
+      <view>位置</view>
+      <view class="right">
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+
+          <text wx:if="{{region[0]}}">{{region[0]}}{{region[1]}}{{region[2]}}</text>
+
+          <text class="fc-grey fsz24" wx:else>{{resdata.users_province}}{{resdata.users_city}}{{resdata.users_district}}</text>
+
+          <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+        </picker>
+      </view>
+    </view>
+
+    <view class="flex-jc-between flex-align-items item">
+      <view>详细地址</view>
+      <view class="text-r">
+        <input type="text" placeholder="请输入" value="{{detailval}}" name="adddetail" placeholder-class="placeholderclass fsz24 fc-grey text-r" />
+      </view>
+    </view>
+
+    <view class=" flex-jc-between flex-align-items item">
+      <view>生日</view>
+
+      <view class="right">
+
+        <picker mode="date" value="{{date}}" start="1900-09-01" end="2300-09-01" bindchange="bindDateChange">
+
+          <text wx:if="{{date}}">{{date}}</text>
+
+          <text wx:else class="fc-grey fsz24"> 请选择生日</text>
+
+          <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+
+        </picker>
+
+      </view>
+
+
+    </view>
+  </view>
+  <view class="btn pd-30">
+    <button class="btn-bg" formType="submit">提交</button>
+  </view>
+</form>

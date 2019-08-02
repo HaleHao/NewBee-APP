@@ -1,0 +1,28 @@
+<!--pages/me/helpCenter/index/index.wxml-->
+<nav></nav>
+
+<view class="bgc box">
+
+  <navigator hover-class='none' class="border-b flex-jc-between flex-align-items item" wx:for="{{helplist}}" url="../help/help?id={{item.help_id}}">
+    <view >      {{item.help_name}}                
+    </view>
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+  </navigator>
+
+
+  <button open-type='contact' hover-class='none' class="border-b flex-jc-between flex-align-items item">
+    <view>
+      在线客服
+    </view>
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+  </button>
+
+
+  <view class="flex-jc-between flex-align-items item" bindtap="cell">
+    <view>
+      电话客服
+    </view>
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+  </view>
+
+</view>

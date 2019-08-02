@@ -1,0 +1,41 @@
+<nav i="0"/>
+<form bindsubmit="formSubmit">
+<view class="bgc mar-b-20" >
+
+  <view class="pd-30 flex-align-items border-b">
+    <text>收货人</text>
+    <input type="text" placeholder="" value="{{name}}"  name="name"/>
+  </view>
+  <view class="pd-30 flex-align-items border-b">
+    <text>手机号</text>
+    <input type="number" placeholder=""  value="{{phone}}" name="phone" />
+  </view>
+
+  <view class="pd-30 flex-align-items flex-jc-between border-b" >
+    <view style='width:100%' class='flex-grow-1'>
+      <picker mode="region" style='width:100%' class='flex-align-items flex-jc-between' bindchange="bindRegionChange" value="{{region}}">
+               <block wx:if='{{provinces}}'> {{provinces}} {{city}} {{area}} </block> 
+               <block wx:else>所在地区</block>
+      </picker>
+   </view>
+
+    <view class='flex-grow-0'>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+    </view>
+  </view>
+
+  <view class="pd-30">
+    <input type="text" placeholder="街道、小区门牌等详情地址" value="{{detail}}" name="detail" />
+  </view>
+</view>
+
+<view class="pd-30 bgc flex-jc-between flex-align-items">
+  <text>设为默认地址</text>
+  <switch name="ischecked" color='#1989fa' checked="{{checked}}" bindchange="switchChange"/> 
+</view>
+
+<view class="btn pd-30">
+  <button class="btn-bg" formType="submit">保存</button>
+</view>
+
+</form>

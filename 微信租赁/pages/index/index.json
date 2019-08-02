@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "nav": "/components/nav/nav",
+    "van-tab": "/dist/tab/index",
+    "van-tabs": "/dist/tabs/index",
+    "zx-table": "/dist/zx-table/index",
+    "van-rate": "/dist/rate/index"
+  },
+  "navigationBarTitleText": "首页"
+}

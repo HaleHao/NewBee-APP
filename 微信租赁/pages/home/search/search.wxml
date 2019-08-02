@@ -1,0 +1,28 @@
+<!--pages/home/search/search.wxml-->
+<nav></nav>
+
+<van-search value="{{ value }}" bind:cancel='cancel' placeholder="请输入搜索关键词" bind:change='onblur' bind:search="onSearch" use-action-slot focus>
+  <view slot="action" bind:tap="Search">搜索</view>
+</van-search>
+
+<view class="bgc">
+  <block wx:if='{{list.length>0}}'>
+    <navigator class="card mar-b-20" url="/pages/goodsDetail/goodsDetail?id={{item.goods_id}}" wx:for="{{list}}" wx:key="index" hover-class='none'>
+      <image src="{{item.gd_img[0]}}" mode="aspectFit" class="goodsimg"></image>
+      <view class="pro_name">{{item.goods_name}}</view>
+      <view class="middle flex-align-items">
+        <van-rate value="{{item.eva_score}}" readonly size="14" />
+        <text style="margin-left:10rpx">0</text>
+        <view style="margin-left:20rpx">
+          <image src="/assets/chat.png" class="chat"></image>{{item.eva_num}}</view>
+      </view>
+      <view class="price">租金：低至
+        <text class="fc-red fsz24">￥{{item.renewal_price}}</text>
+        <text>/小时</text>
+      </view>
+    </navigator>
+  </block>
+
+  <view wx:else class="pd-30 text-c">没有相应的商品 </view>
+
+</view>

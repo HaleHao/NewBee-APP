@@ -1,0 +1,86 @@
+
+<view class="bg" a:if="{{act==1}}"  onTap="hidCha"></view>
+<nav i="0"/>
+
+<view class="pd20">
+  <view class="header">
+    <view class="flex-jc-around">
+      <view class="text-c">
+        <view class="grey_f">推广佣金</view>
+        <view>
+          <image class="yuan_img" src="/assets/qian.png"></image>
+          <text class="money">{{info.PTC}}</text>
+        </view>
+      </view>
+      <view class="text-c">
+        <view class="grey_f">订单佣金</view>
+        <view>
+          <image class="yuan_img" src="/assets/qian.png"></image>
+          <text class="money">{{info.POC}}</text>
+        </view>
+      </view>
+      <view class="text-c">
+        <view class="grey_f">未结算佣金</view>
+        <view>
+          <image class="yuan_img" src="/assets/qian.png"></image>
+          <text class="money">{{info.OC}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="grey_f padding_tb text-c">总佣金</view>
+    <view class="text-c">
+      <image class="all_img" src="/assets/qian.png"></image>
+      <text class="all_money">{{info.total}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="mar-b-20 box position" >
+  <button type="default" open-type='share' class="sharebtn">share</button>
+  <view class="tg_yq_box text-c">
+    <view class="flex-jc-between tg_yq">
+      <view class="flex-align-items">
+        <view class="wode flex-center">
+          <image src="/assets/wode.png"></image>
+        </view>
+        <view>
+          <view style="padding-left: 40rpx;">邀请好友</view>
+          <view class="grey_f" style="padding-left: 40rpx;text-align: left">去邀请</view>
+        </view>
+      </view>
+      <view>
+        <image class="img_r" src="/assets/right.png" mode="aspectFit"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="mar-b-20 box" >
+  <view class="tg_yq_box text-c">
+    <view class="flex-jc-between tg_yq">
+      <view class="flex-align-items">
+        <view class="wode flex-center">
+          <image src="/assets/wode.png"></image>
+        </view>
+        <view class="" onTap="getcode">
+          <view style="padding-left: 40rpx;">推广二维码</view>
+          <view class="grey_f" style="padding-left: 40rpx;text-align: left">查看</view>
+        </view>
+      </view>
+      <view>
+        <image class="img_r" src="/assets/right.png" mode="aspectFit"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view a:if="{{act==1}}">
+  <image src="{{images}}" class="grcode"></image>
+</view>
+
+<view class="desc fc-grey fsz24 pd20">
+  <view style="margin-bottom:8rpx">佣金计算说明：</view>
+  <view>总佣金 = 推广佣金 + 订单佣金 + 未结算佣金</view>
+</view>
+

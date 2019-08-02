@@ -1,0 +1,30 @@
+<nav i="0"/>
+<view class="bgc box">
+  <view class="border-b flex-jc-between flex-align-items item">
+    <view>  我的头像    
+    </view>
+    <image src="{{headerimg?headerimg:'/assets/headimg.png'}}" class="headimg" bindtap="upload"/>
+  </view>
+  <navigator class="border-b flex-jc-between flex-align-items item" url="/pages/me/userinfo/info/info">
+    <view>      详细信息    
+    </view>
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+  </navigator>
+  <navigator class=" flex-jc-between flex-align-items item" url="/pages/me/userinfo/address/addresslist/addresslist">
+    <view>      收货信息    
+    </view>
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+  </navigator>
+</view>
+<view class="bgc box">
+  <navigator class=" flex-jc-between flex-align-items item" url="../security/index/index">
+    <view>      账号安全    
+    </view>
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+  </navigator>
+
+  <!-- <view class=" flex-jc-between flex-align-items item"><view>
+      绑定账号
+    </view><image src="/assets/right.png" class="icon-right" mode="aspectFit"/></view> -->
+    
+</view>

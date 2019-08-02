@@ -1,0 +1,23 @@
+<nav i="0"/>
+
+<view class="bgc">
+  <view class="pd-30 border-b">请选择支付方式</view>
+  <radio-group>
+    <label class="bgc pd-30 flex-jc-between border-b">
+      <view class="flex-align-items">
+        <image src="/assets/ali.png" class="payimg" />
+        支付宝
+      </view>
+      <radio value="1"/>
+    </label>
+    <label class="bgc pd-30 flex-jc-between">
+      <view class="flex-align-items">
+        <image src="/assets/balance.png" class="payimg" />
+        余额
+      </view>
+      <radio value="2" checked/>
+    </label>
+  </radio-group>
+</view>
+
+<view class="pd-30"><view class="btn-bg flex-center btn">支付</view></view>

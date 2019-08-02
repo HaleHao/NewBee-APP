@@ -1,0 +1,11 @@
+<view class='home-bottom'>
+  <view class='home-bottom-title'>
+    <scroll-view scroll-x scroll-with-animation='true' class='home-bottom-scroll'>
+      <view class='home-bottom-hg flex-y-center'>
+        <view class="ellipsis home-bottom-left {{0==currentTab?'active':''}}" data-index='0' bindtap='bindhome' id='htt'>热门</view>
+        <view class='line-bottom' style='{{lineStyle}}'></view>
+        <view wx:for='{{page_title}}' id='htt' wx:key='{{index}}' bindtap='bindhome' data-id='{{item.id}}' data-index='{{index+1}}' class="ellipsis home-bottom-left {{index+1==currentTab?'active':''}}">{{item.title}}</view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

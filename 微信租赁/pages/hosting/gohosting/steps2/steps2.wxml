@@ -1,0 +1,74 @@
+<nav i="0"/>
+<form bindsubmit="submit">
+  <view class="bgc">
+    <picker mode="date" value="{{date}}" start="1990-09-01" end="2300-09-01" bindchange="bindDateChange" name='deta'
+    >
+      <view class="flex-jc-between flex-align-items pd-30 ">
+        <view class="fc-grey">
+          <!-- <view class="mar-b-20">购买时间</view> -->
+          <view wx:if='{{date}}'>{{date}} 
+          </view>
+          <view wx:else>请选择托管购买时间
+          </view>
+        </view>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+      </view>
+    </picker>
+    <view class=" pd-30 ">
+      <!-- <view class="mar-b-20 fc-grey">购买价格</view> -->
+      <view>
+        <input type="number" placeholder="请输入购买价格" name="priceval"/>
+      </view>
+    </view>
+    <picker bindchange="onConfirmColour" value="{{colourindex}}" range="{{colourarr}}" name="colourtext">
+      <view class="flex-jc-between flex-align-items pd-30 ">
+        <view>
+          <!-- <view class="mar-b-20 fc-grey">外观成色</view> -->
+          <view>
+            <text class="fc-grey" wx:if="{{colourindex==-1}}">请选择托管外观成色
+            </text>
+            <text wx:else>{{colourarr[colourindex]}}
+            </text>
+          </view>
+        </view>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+      </view>
+    </picker>
+    <view class=" pd-30 ">
+      <input type="text" placeholder="请输入外观成色描述" name="colourlet"/>
+    </view>
+    <picker bindchange="onConfirmState" value="{{stateindex}}" range="{{statearr}}" name="statetext">
+      <view class="flex-jc-between flex-align-items pd-30 ">
+        <view>
+          <!-- <view class="mar-b-20 fc-grey">功能状况</view> -->
+          <view>
+            <text class="fc-grey" wx:if="{{stateindex==-1}}">请选择托管功能状况
+            </text>
+            <text wx:else>{{statearr[stateindex]}}
+            </text>
+          </view>
+        </view>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+      </view>
+    </picker>
+    <view class=" pd-30 " wx:if="{{statearr[stateindex]=='不正常（说明原因）'}}">
+      <input type="text" placeholder="请输入说明原因" name="causetext"/>
+    </view>
+    <view class=" pd-30 ">
+      <!-- <view class="mar-b-20 fc-grey">序列号</view> -->
+      <view>
+        <input type="number" placeholder="请填写产品序列号" name="serialnumval"/>
+      </view>
+    </view>
+    <view class=" pd-30 ">
+      <!-- <view class="mar-b-20 fc-grey">联系方式</view> -->
+      <view>
+        <input type="number" maxlength="11" placeholder="请填写联系方式" value="{{phone}}"  name="telval"/>
+      </view>
+    </view>
+  </view>
+  <view class="btn pd-30">
+    <button class="btn-bg" form-type="submit">下一步
+    </button>
+  </view>
+</form>

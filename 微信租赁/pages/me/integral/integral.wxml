@@ -1,0 +1,23 @@
+<view class='header headerBge'>
+  <image src='../../../assets/in_bg.png'></image>
+</view>
+<view class="header">
+  <view class="text-c">{{info.score}}</view>
+  <view class="text-c">当前可用积分</view>
+  <view class="flex-jc-around">
+    <text>可抵扣：{{info.rmb}}元</text>
+    <navigator url="../integralrule/integralrule" hover-class="className">积分规则</navigator>
+  </view>
+</view>
+
+<view class="pd-30 bgc">积分明细</view>
+
+<view class="list bgc">
+  <view class="item border-b flex-jc-between flex-align-items pd-30" wx:for='{{list}}'>
+    <view>
+      <view class="title">{{item.content}}</view>
+      <view class="fsz24 fc-grey">{{item.create_time}}</view>
+    </view>
+    <view class="fc-blue">+{{item.score}}</view>
+  </view>
+</view>

@@ -1,0 +1,46 @@
+<nav i="0"/>
+<form onSubmit="formSubmit" report-submit="true">
+  <view class="bgc box">
+    <view class="flex-jc-between flex-align-items item">
+      <view>昵称</view>
+      <view class="text-r">
+        <input type="text" placeholder="请输入" name="nickname" value="{{users_name}}" placeholder-class="placeholderclass fsz24 fc-grey text-r" />
+      </view>
+    </view>
+    <picker onChange="sexchange" value="{{sexIndex}}" range="{{sexList}}" range-key="val">
+      <view class=" flex-jc-between flex-align-items item">
+        <view>性别</view>
+        <view class="right">
+          <text class="fc-grey fsz24" a:if="{{!sextext}}">请选择性别</text>
+          <text a:else> {{sextext}}</text>
+          <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+        </view>
+      </view>
+    </picker>
+    <view class=" flex-jc-between flex-align-items item" onTap="city">
+      <view>位置</view>
+      <view class="right">
+        <text class="fc-grey fsz24" a:if="{{!provinces}}">请选择省市区</text>
+        <text a:else>{{provinces}} {{city}} {{area}}</text>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+      </view>
+    </view>
+    <view class="flex-jc-between flex-align-items item">
+      <view>详细地址</view>
+      <view class="text-r">
+        <input type="text" placeholder="请输入" value="{{detailval}}" name="adddetail" placeholder-class="placeholderclass fsz24 fc-grey text-r" />
+      </view>
+    </view>
+    <view class=" flex-jc-between flex-align-items item" onTap="choosedate">
+      <view>生日</view>
+      <view class="right">
+        <text class=" fc-grey fsz24" a:if="{{!date}}">请选择生日</text>
+        <text a:else> {{date}}</text>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+      </view>
+    </view>
+  </view>
+  <view class="btn pd-30">
+    <button class="btn-bg" formType="submit">提交</button>
+  </view>
+</form>

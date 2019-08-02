@@ -1,0 +1,22 @@
+<view class="nav bgc flexbox">
+  <view onTap="choose" data-url="/pages/index/index">
+    <image src="/assets/tab/indexs.png" a:if="{{i==1}}"/>
+    <image src="/assets/tab/index.png" a:else/>
+    <view class="{{i==1?'fc-blue':''}}">首页</view>
+  </view>
+  <view onTap="choose" data-url="/pages/shop/shoplist/shoplist">
+    <image src="/assets/tab/shops.png" a:if="{{i==2}}" class="shops"/>
+    <image src="/assets/tab/shop.png" a:else/>
+    <view class="{{i==2?'fc-blue':''}}">门店</view>
+  </view>
+  <view onTap="choose" data-url="/pages/order/orderlist/orderlist">
+    <image src="/assets/tab/orders.png" a:if="{{i==3}}"/>
+    <image src="/assets/tab/order.png" a:else/>
+    <view class="{{i==3?'fc-blue':''}}">订单</view>
+  </view>
+  <view onTap="choose" data-url="/pages/me/me/me">
+    <image src="/assets/tab/mys.png" a:if="{{i==4}}"/>
+    <image src="/assets/tab/my.png" a:else/>
+    <view class="{{i==4?'fc-blue':''}}">我的</view>
+  </view>
+</view>

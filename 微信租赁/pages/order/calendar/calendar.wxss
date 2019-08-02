@@ -1,0 +1,32 @@
+@import "../../../dist/calendar/calendar.wxss";
+
+page {
+  background: #fff;
+}
+
+.register {
+  background: #fff;
+  margin: 0 24rpx;
+  border: 2rpx solid #ebebeb;
+  border-radius: 16rpx;
+}
+
+.registre-img {
+  width: 308rpx;
+  height: 308rpx;
+  margin: auto;
+  margin-bottom: 16rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendarSignDay {
+  width: 308rpx;
+  height: 308rpx;
+  color: #fff;
+  font-size: 15px;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}

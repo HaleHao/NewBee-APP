@@ -1,0 +1,11 @@
+<nav i="0" />
+<view>
+  <textarea class="textarea" bindinput="onTextarea" value="{{contentval}}" placeholder="输入否认的理由" show-count="{{false}}" />
+</view>
+<view class="imglist bgc">
+  <image src="{{denyimg}}" wx:if="{{denyimg}}" />
+  <image src="/assets/uploadimg.png" bindtap="upload" wx:if="{{!denyimg}}" />
+</view>
+<view class="pd-30">
+  <view class="btn-bg flex-center btn" bindtap="submit">提交</view>
+</view>

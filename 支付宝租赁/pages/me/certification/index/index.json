@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "认证中心",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

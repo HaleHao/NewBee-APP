@@ -1,0 +1,8 @@
+<nav i="0"/>
+
+<view class="pd-30 bgc flex-jc-between flex-align-items">
+  <text>通知设置</text>
+  <switch checked />
+</view>
+
+<view class="btn bgc-red text-c" onTap="logout">退出登陆</view>

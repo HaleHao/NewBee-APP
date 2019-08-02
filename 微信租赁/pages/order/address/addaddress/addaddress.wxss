@@ -1,0 +1,20 @@
+/* pages/order/address/addaddress/addaddress.wxss */
+page{
+  padding-bottom: 100rpx;
+}
+
+input {
+  padding: 0
+}
+
+.icon-right {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+}
+
+.btn button{
+  color: #fff;
+  border:0;
+  border-radius: 40rpx;
+}

@@ -1,0 +1,10 @@
+page{
+  background-color: #fff;
+}
+.img {
+  width: 400rpx;
+  height: 400rpx;
+  margin-bottom:40rpx;
+  margin-top: 100rpx;
+  background-color: #F3F3F3
+}

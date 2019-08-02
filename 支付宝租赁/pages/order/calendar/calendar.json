@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "时间",
+  "usingComponents":{
+    "calendar": "mini-antui/es/calendar/index"
+  }
+}

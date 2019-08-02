@@ -1,0 +1,27 @@
+<view class="list" style="margin-top:10rpx">
+  <view class="fc-grey pd-30 text-c" a:if="{{list.length==0}}">没有更多了</view>
+  <radio-group class="radio-group" onChange="radioChange">
+    <list>
+      <view a:for="{{list}}" key="{{item.index}}">
+        <swipe-action index="{{index}}" restore="{{swipeIndex === null || swipeIndex !== index}}" right="{{item.right}}" onRightItemClick="onRightItemClick" onSwipeStart="onSwipeStart" extra="{{item.ads_id}}">
+          <list-item index="{{index}}" key="items-{{index}}" last="{{index === list.length - 1}}">
+            <view class="card bgc flex-align-items item">
+              <radio value="{{index}}"/>
+              <view class="flex-1 left">
+                <view style="margin-bottom:10rpx">{{item.ads_user||''}} {{item.ads_phone||''}}</view>
+                <view>
+                  <text>{{item.ads_province+item.ads_city+item.ads_district+item.ads_address}}</text>
+                </view>
+              </view>
+              <navigator class="tg" url="/pages/order/address/addaddress/addaddress?id={{item.ads_id}}">
+                <image src="/assets/icon-editor.png" class="editorimg" />
+              </navigator>
+            </view>
+          </list-item>
+        </swipe-action>
+      </view>
+    </list>
+  </radio-group>
+</view>
+<view class="height"></view>
+<navigator url="../addaddress/addaddress" class="btn text-c btn-bg">添加</navigator>

@@ -1,0 +1,101 @@
+page {
+  padding-bottom: 92rpx;
+}
+
+.tagbox>view {
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  display: inline-block;
+  box-shadow: 0 1rpx 14rpx 1rpx #e8e9ea;
+  border-radius: 30rpx;
+  text-align: center;
+  box-sizing: border-box;
+  margin-right: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.tagbox .selected {
+  box-shadow: 0 1rpx 14rpx 1rpx #def4fd;
+}
+
+.tag {
+  background: linear-gradient(90deg, #60c0fd, #4ea9f9);
+  color: #fff;
+  padding: 4rpx 10rpx;
+  border-radius: 8rpx;
+  font-size: 20rpx;
+  box-shadow: 0 0 12rpx 0 rgba(79, 171, 249, 0.36);
+  margin-left: 10rpx;
+}
+
+.btn {
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  color: #fff;
+  border: none;
+  font-size: 28rpx;
+}
+
+.btn1 {
+  background-color: #B49A7A;
+  margin-top: 60rpx;
+}
+
+.btn2 {
+  background-color: #BBBBBB;
+  margin-top: 60rpx;
+}
+
+.choose {
+  padding-bottom: 30rpx
+}
+
+.choose>view {
+  width: 300rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  display: inline-block;
+  border-radius: 10rpx;
+  text-align: center;
+}
+
+.icon-right {
+  width: 20rpx;
+  height: 20rpx;
+  /* margin-right: 20rpx; */
+}
+
+/* QRcode */
+
+.code {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  height: 100vh;
+}
+
+.code .main {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.codeimg {
+  width: 360rpx;
+  height: 360rpx;
+  margin-bottom: 40rpx;
+}
+
+.closeimg {
+  width: 68rpx;
+  height: 68rpx;
+  position: absolute;
+  right: 40rpx;
+  top: 200rpx;
+}

@@ -1,0 +1,21 @@
+<!--pages/home/commitList/commitList.wxml-->
+<nav></nav>
+
+<view wx:if="{{commentlist.length<=0}}" class="pd-30 text-c">没有该商品的评论</view>
+
+<view class="card bgc pd-30 border-b"  wx:for="{{commentlist}}">
+  <view class="flex-align-items mar-b-20">
+    <image wx:if="{{!itemhead_picture}}" src="/assets/headimg.png" class="headimg" />
+    <image wx:else src="{{itemhead_picture}}" class="headimg" />
+    <text style="margin:0 20rpx">{{item.user_name}}</text>
+    <van-rate value="{{item.eva_score}}" readonly size="14" />
+  </view>
+
+  <view class="fc-grey fsz24 mar-b-20">{{item.create_time}}</view>
+
+  <view>{{item.eva_content}}</view>
+
+  <view class="imglist" wx:for="{{item.eva_picture}}" wx:for-index="idx" wx:for-item="items" >
+    <image src="{{items}}"/>
+  </view>
+</view>

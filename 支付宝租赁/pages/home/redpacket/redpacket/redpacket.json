@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "抢红包",
+  "usingComponents": {
+    "notice": "mini-antui/es/notice/index"
+  }
+}

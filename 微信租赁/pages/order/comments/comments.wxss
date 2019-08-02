@@ -1,0 +1,43 @@
+page {
+  padding-bottom: 92rpx;
+}
+
+.btn {
+  color: #fff;
+  height: 80rpx;
+  border-radius: 60rpx;
+  margin-top: 200rpx;
+}
+
+.rate {
+  color: #ffbe38;
+  font-size: 70rpx;
+}
+
+.rate > view:nth-of-type(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.ratebox {
+  padding: 20rpx 0;
+}
+
+.textarea {
+  height: 200rpx;
+  padding: 20rpx;
+  width: 92%;
+}
+
+.imglist {
+  padding: 20rpx 0;
+}
+
+.imglist image {
+  width: 154rpx;
+  height: 154rpx;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+}

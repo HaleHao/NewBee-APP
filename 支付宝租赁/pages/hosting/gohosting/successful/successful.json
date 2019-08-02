@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "提交成功",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

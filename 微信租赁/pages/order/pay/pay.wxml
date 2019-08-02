@@ -1,0 +1,28 @@
+<nav i="0"/>
+<view class="bgc header mar-b-20">
+  <view class="text-c mar-b-20" style="padding-top:60rpx">您的可用额度(元)</view>
+  <view class="text-c lines">{{info.users_money||'0'}}</view>
+  <view class="text-c mar-b-20" style="padding:40rpx 0">
+    <navigator url="/pages/me/certification/index/index" class="lines-btn">提升额度</navigator></view>
+  <view class="text-c" style="margin-bottom:10rpx">保险费{{info.order_safe||'-'}}元，总租金{{info.order_rental||'-'}}元，总押金{{info.order_total_rent||'-'}}元</view>
+  <view class="text-c">您需支付
+    <text class="fc-red">￥{{info.total_price||'-'}}</text></view>
+</view>
+
+<view class="bgc">
+  <view class="pd-30 border-b">请选择支付方式</view>
+  <radio-group bindchange="radioChange">
+    <label class="bgc pd-30 flex-jc-between border-b" wx:for="{{items}}">
+      <view class="flex-align-items">
+        <!-- <image src="/assets/ali.png" class="payimg" /> -->
+        <image src="{{item.imgicon}}" class="payimg" />
+        <!-- 支付宝 -->
+        {{item.type}} 
+      </view>
+      <radio value="{{item.num}}"  color='#60c0fd'  checked="{{item.checked}}"/>
+    </label>
+  </radio-group>
+</view>
+<view class="pd-30">
+  <view class="btn-bg flex-center btn" bindtap="pay">支付</view>
+</view>

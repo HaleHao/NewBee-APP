@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "快递交付",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

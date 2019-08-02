@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "评价",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

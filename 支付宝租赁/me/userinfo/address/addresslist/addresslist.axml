@@ -1,0 +1,29 @@
+<nav i="0"/>
+<view class="list pd-30">
+  <view class="fc-grey text-c pd-30" a:if="{{list.length==0}}">没有更多了</view>
+  <list>
+    <view a:for="{{list}}" key="{{item.content}}">
+      <swipe-action index="{{index}}" restore="{{swipeIndex === null || swipeIndex !== index}}" right="{{item.right}}" onRightItemClick="onRightItemClick" onSwipeStart="onSwipeStart" extra="item{{index}}">
+        <list-item index="{{index}}" key="items-{{index}}" last="{{index === list.length - 1}}">
+          <view class="card bgc flex-align-items">
+            <view class="flex-1">
+              <view class="mar-b-20 flex-align-items">
+                <text>{{item.ads_user||''}} {{item.ads_phone||''}}</text>
+                <text style="padding-left:10rpx"></text>
+                <text class="tag" a:if="{{item.ads_state==2}}">默认</text>
+              </view>
+              <view>{{item.ads_province+item.ads_city+item.ads_district+item.ads_address}}</view>
+            </view>
+            <view>
+              <navigator class="tg" url="/pages/me/userinfo/address/addaddress/addaddress?id={{item.ads_id}}">
+              <!-- <navigator class="tg" url="/pages/home/welfareAgency/welfareAgency"> -->
+                <image src="/assets/bj.png" class="right-e" mode="aspectFit"/>
+              </navigator>
+            </view>
+          </view>
+        </list-item>
+      </swipe-action>
+    </view>
+  </list>
+</view>
+<navigator url="../addaddress/addaddress" class="btn text-c btn-bg">添加</navigator>

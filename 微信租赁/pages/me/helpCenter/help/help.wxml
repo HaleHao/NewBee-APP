@@ -1,0 +1,10 @@
+<!--pages/me/helpCenter/help/help.wxml-->
+<nav></nav>
+
+<view class='pd-30 list'>
+<van-collapse value="{{ activeNames }}" bind:change="onChange" custom-class="box">
+  <van-collapse-item title="{{item.tetail_name}}" name="{{index}}" wx:for="{{list}}" wx:key="index" content-class="content">
+    {{item.tetail_content}}
+  </van-collapse-item>
+</van-collapse>
+</view>

@@ -1,0 +1,132 @@
+
+page {
+  padding-bottom: 100rpx;
+  background-color: #fff;
+}
+
+.header {
+  height: 88rpx;
+}
+
+.sear {
+  height: 64rpx;
+  padding-left: 20rpx;
+  border-radius: 30rpx;
+  background: #f6f5f5;
+}
+
+swiper {
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+
+swiper, .slide-image {
+  width: 100%;
+  height: 320rpx;
+}
+
+.tg {
+  text-align: center;
+  font-size: 22rpx;
+  line-height: 60rpx;
+  /* padding: 40rpx 0; */
+}
+
+.tg image {
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.title {
+  padding: 20rpx 20rpx 5rpx;
+}
+
+.title > text {
+  /* font-size: 34rpx; */
+}
+
+.m_txt {
+  font-size: 22rpx;
+  color: #d0d0d0;
+}
+
+.m_txt .icon-right {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 10rpx;
+}
+
+.indexbox {
+  padding: 10rpx 0;
+  box-sizing: border-box;
+}
+
+.item {
+  width: 220rpx;
+  margin-left: 20rpx;
+  box-shadow: 0 0 8rpx 2rpx #dad7d7;
+}
+
+.item .imgbox {
+  box-sizing: border-box;
+  padding: 15rpx;
+  width: 220rpx;
+  height: 220rpx;
+}
+
+.item image {
+  width: 100%;
+  height: 100%;
+  background: #f7f7f7;
+}
+
+.indexbox .price {
+  font-size: 20rpx;
+}
+
+.indexbox .goodname {
+  margin-bottom: 10rpx;
+  font-weight: bold;
+}
+
+.card {
+  padding: 0 20rpx;
+}
+
+.card .goodsimg {
+  width: 100%;
+  height: 320rpx;
+}
+
+.card .price {
+  font-size: 24rpx;
+}
+
+.pro_name {
+  line-height: 50rpx;
+  font-weight: bold;
+}
+
+.chat {
+  width: 32rpx;
+  height: 28rpx;
+  margin-right: 10rpx;
+}
+
+.middle {
+  height: 50rpx;
+}
+
+
+.rate {
+  color: #FFBE38;
+  font-size: 40rpx;
+}
+
+.rate>view:nth-of-type(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}

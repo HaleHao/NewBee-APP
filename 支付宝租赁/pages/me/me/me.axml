@@ -1,0 +1,75 @@
+<nav i="4"/>
+
+<navigator class="header position flex-align-items" url="/pages/me/userinfo/index/index">
+  <view>
+    <view class="flex-align-items">
+      <image src="{{avatar}}" class="headimg" />
+      <text class="username">{{detail.users_name}}</text>
+    </view>
+  </view>
+</navigator>
+
+<view class="bgc box">
+
+  <navigator class="border-b flex-jc-between flex-align-items item" url="../certification/index/index">
+    <view class="flex-align-items">
+      <image src="/assets/me/myrz.png" class="lefticon" />
+      免押认证
+    </view>
+    <image src="../../../assets/right.png" class="icon-right" mode="aspectFit"/>
+  </navigator>
+  <navigator class="border-b flex-jc-between flex-align-items item" url="../integral/integral">
+    <view class="flex-align-items">
+      <image src="/assets/me/jf.png" class="lefticon" />
+      我的积分
+    </view>
+    <image src="../../../assets/right.png" class="icon-right" mode="aspectFit"/>
+  </navigator>
+  <navigator class="border-b flex-jc-between flex-align-items item" url="/pages/hosting/myhosting/index/index">
+    <view class="flex-align-items">
+      <image src="/assets/me/tg.png" class="lefticon" />
+      我的托管
+    </view>
+    <image src="../../../assets/right.png" class="icon-right" mode="aspectFit"/>
+  </navigator>
+  <navigator class="border-b flex-jc-between flex-align-items item" url="../cart/cart">
+    <view class="flex-align-items">
+      <image src="/assets/me/gwc.png" class="lefticon" />
+      购物车
+    </view>
+    <image src="../../../assets/right.png" class="icon-right" mode="aspectFit"/>
+  </navigator>
+  <navigator class="border-b flex-jc-between flex-align-items item" url="../myBalance/index/index">
+    <view class="flex-align-items">
+      <image src="/assets/me/ye.png" class="lefticon" />
+      账户余额
+    </view>
+    <image src="../../../assets/right.png" class="icon-right" mode="aspectFit"/>
+  </navigator>
+  <navigator class=" flex-jc-between flex-align-items item" url="../coupon/coupon">
+    <view class="flex-align-items">
+      <image src="/assets/me/yhq.png" class="lefticon" />
+      优惠券
+    </view>
+    <image src="../../../assets/right.png" class="icon-right" mode="aspectFit"/>
+  </navigator>
+
+  <view class="middle border-t"></view>
+
+  <navigator class=" flex-jc-between flex-align-items item border-b" url="/pages/me/helpCenter/index/index">
+    <view class="flex-align-items">
+      <image src="/assets/me/bz.png" class="lefticon" />
+      帮助中心
+    </view>
+    <image src="../../../assets/right.png" class="icon-right" mode="aspectFit"/>
+  </navigator>
+  <navigator class=" flex-jc-between flex-align-items item" url="/pages/me/setup/setup">
+
+    <view class="flex-align-items">
+      <image src="/assets/me/sz.png" class="lefticon" />
+      设置
+    </view>
+    <image src="../../../assets/right.png" class="icon-right" mode="aspectFit"/>
+  </navigator>
+
+</view>

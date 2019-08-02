@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "nav": "/components/nav/nav",
+    "van-tab": "/dist/tab/index",
+    "van-tabs": "/dist/tabs/index",
+    "van-popup": "/dist/popup/index"
+  },
+  "navigationBarTitleText": "订单"
+}

@@ -1,0 +1,116 @@
+<favorite>收藏小程序，下次使用更方便</favorite>
+<nav i="1"/>
+<!-- <navigator class="flex-1 fsz24 flex-align-items sear" url="/pages/login/login/login">
+  <text style="margin-left:15rpx">注册手机号</text>
+</navigator> -->
+<view class="flex-align-items header pd-lr-30">
+  <view class="flex-1 fsz24 flex-align-items">
+    附近门店：
+    <text class="flex-1 fc-blue">{{nearShop}}</text>
+  </view>
+  <navigator class="flex-1 fsz24 flex-align-items sear" url="/pages/home/search/search">
+    <icon type="search" size="14" />
+    <text style="margin-left:15rpx">搜索你想要的商品</text>
+  </navigator>
+</view>
+<view class="banner pd-30" style="padding-top:0">
+  <swiper
+  indicator-dots
+  autoplay
+  circular interval="3000">
+    <swiper-item a:for="{{images}}" a:key="index">
+      <navigator url="/pages/goodsDetail/goodsDetail?id={{item.adpic_goodsid}}">
+        <image src="{{item.adpic_img}}" class="swiper-item"/>
+      </navigator>
+    </swiper-item>
+  </swiper>
+</view>
+<view class="flex-jc-around">
+  <navigator class="tg" url="/pages/hosting/gohosting/index/index">
+    <image src="/assets/tuoguan.png" />
+    <view>我要托管</view>
+  </navigator>
+  <navigator class="tg" url="/pages/home/extension/extension">
+    <image src="/assets/wytg.png" />
+    <view>我要推广</view>
+  </navigator>
+  <navigator class="tg" url="/pages/home/welfareAgency/welfareAgency">
+    <image src="/assets/fls.png" />
+    <view>福利社</view>
+  </navigator>
+</view>
+<view class="border-t border-b flexbox">
+  <tabs tabs="{{navlist}}" tabBarActiveTextColor="#333" onTabClick="handleTabClick" activeTab="{{activeTab}}" activeCls="activeclass">
+    <!--<tab-content><view class="tab-content">热门</view></tab-content> -->
+  </tabs>
+</view>
+<view a:if="{{activeTab==0}}">
+  <block a:for="{{selectlist}}">
+    <view class="title flex-jc-between flex-align-items">
+      <text>{{item.scene_name}}</text>
+      <navigator class="m_txt flex-align-items" url="/pages/home/more/more?id={{item.scene_id}}">
+        更多
+        <image src="../../../assets/right.png" class="icon-right" mode="aspectFit"/>
+      </navigator>
+    </view>
+    <scroll-view scroll-x="{{true}}" style="width: 100%">
+      <view style="height: 360rpx;" class="indexbox flexbox">
+        <navigator class="item" url="/pages/goodsDetail/goodsDetail?id={{items.goods_id}}" a:for="{{item.goods}}" a:for-index="idx" a:for-item="items">
+          <view class="imgbox">
+            <image src="{{items.gd_img[0]}}" mode="aspectFit" /></view>
+          <view style="padding:0 10rpx">
+            <view class="newline goodname fsz24">{{items.category_name}}</view>
+            <view class="price">低至
+              <text class="fc-red">￥
+                <text class="fsz24">{{items.hire_price.price}}</text></text>
+              <text >/{{items.hire_price.unt}}</text></view>
+          </view>
+        </navigator>
+      </view>
+    </scroll-view>
+  </block>
+</view>
+<view a:else>
+  <view>
+    <view class="title">
+      <text>热门推荐</text></view>
+    <scroll-view scroll-x="{{true}}" style="width: 100%">
+      <view a:if="{{hostlist.length==0}}" class="fc-grey text-c pd-30" style="background-color: #f6f6f6;">暂无热门产品</view>
+      <view style="height: 360rpx;" class="flexbox indexbox" a:for="{{hostlist}}">
+        <navigator class="item" url="/pages/goodsDetail/goodsDetail?id={{item.goods_id}}">
+          <view class="imgbox">
+            <image src="{{item.gd_img[0]}}" mode="aspectFit" />
+          </view>
+          <view style="padding:0 10rpx">
+            <view class="newline goodname fsz24">{{item.goods_name}}</view>
+            <view class="price">低至
+              <text class="fc-red"> {{item.hire_price.price}}￥
+                <text class="fsz24">1</text></text>
+              <text >/{{item.hire_price.unt}}</text></view>
+          </view>
+        </navigator>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="title">
+    <text>所有产品</text></view>
+  <view a:for="{{goodslist}}">
+    <navigator class="card mar-b-20" url="/pages/goodsDetail/goodsDetail?id={{item.goods_id}}">
+      <image src="{{item.gd_img[0]}}" mode="aspectFit" class="goodsimg"/>
+      <view class="pro_name">{{item.goods_name}}</view>
+      <view class="middle flex-align-items">
+        <view class="position rate">
+          <view>☆☆☆☆☆</view>
+          <view style="width:{{item.eva_score*32}}rpx">★★★★★</view>
+        </view>
+        <text style="margin-left:10rpx">{{item.eva_score}}</text>
+        <view style="margin-left:20rpx">
+          <image src="/assets/chat.png" class="chat" />{{item.eva_num}}</view>
+      </view>
+      <view class="price">租金：低至
+        <text class="fc-red">￥
+          <text class="fsz24">{{item.hire_price.price}}</text></text>/{{item.hire_price.unt}}</text></view>
+    </navigator>
+  </view>
+  <view a:if="{{goodslist.length==0}}" class="fc-grey text-c pd-30" style="background-color: #f6f6f6;">没有更多了</view>
+</view>

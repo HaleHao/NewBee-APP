@@ -1,0 +1,60 @@
+/* pages/hosting/gohosting/steps3/steps3.wxss */
+page{
+  padding-bottom: 100rpx;
+}
+
+.btn button{
+  color: #fff;
+  border:0;
+  border-radius: 60rpx;
+}
+
+.item {
+    width: 50%;
+    box-sizing: border-box;
+    margin-bottom: 10rpx;
+}
+
+.checkbox {
+  padding-right: 20rpx
+}
+
+
+
+.adding {
+  width: 175rpx;
+  height: 48rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 1rpx solid rgba(225, 225, 225, 1);
+  border-radius: 10rpx;
+  margin-right: 45rpx;
+}
+
+.addinput {
+  width: 75rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.addinput input {
+height: 100%;
+padding: 0;
+background: none;
+}
+
+
+
+.add_common {
+  width: 50rpx;
+  height: 100%;
+  text-align: center;
+  line-height: 48rpx;
+}
+
+.addleft {
+  border-right: 1rpx solid rgba(225, 225, 225, 1);
+}
+
+.addright {
+  border-left: 1rpx solid rgba(225, 225, 225, 1);
+}

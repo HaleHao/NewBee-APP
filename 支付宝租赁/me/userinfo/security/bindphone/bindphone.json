@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "当前绑定手机号",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

@@ -1,0 +1,8 @@
+<view class='pd-30 bgc'>请选择日期</view>
+<view class="register">
+  <include src="/dist/calendar/calendar"></include>
+</view>
+
+<view class="fc-red pd-30" wx:if="{{!displayarr}}">
+
+  如当前没有您所需要的档期，请选择预租下单，我们将在24小时内回复是否可以满足您的需求.</view>

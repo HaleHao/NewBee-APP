@@ -1,0 +1,24 @@
+<nav i="0"/>
+<view>
+  <search-bar value="{{searchVal}}"
+    focus placeholder="请输入搜索关键词" onInput="handleInput" onClear="handleClear" onCancel="handleCancel" />
+</view>
+<view class="bgc">
+  <view class="pd-30 text-c" a:if="{{searchVal&&goodslist.length==0}}">没有相应的商品 </view>
+  <navigator class="card mar-b-20" url="/pages/goodsDetail/goodsDetail?id={{item.goods_id}}" a:for="{{goodslist}}" a:key="index">
+    <image src="{{item.gd_img[0]}}" mode="aspectFit" class="goodsimg"/>
+    <view class="pro_name">{{item.goods_name}}</view>
+    <view class="middle flex-align-items">
+      <view class="position rate">
+        <view>☆☆☆☆☆</view>
+        <view style="width:{{item.eva_score*32}}rpx">★★★★★</view>
+      </view>
+      <text style="margin-left:10rpx">{{item.eva_score}}</text>
+      <view style="margin-left:20rpx">
+        <image src="/assets/chat.png" class="chat" />{{item.eva_num}}</view>
+    </view>
+    <view class="price">租金：低至
+      <text class="fc-red fsz24">￥{{item.hire_price.price}}</text>
+      <text>/{{item.hire_price.unt}}</text></view>
+  </navigator>
+</view>

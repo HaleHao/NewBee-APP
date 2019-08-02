@@ -1,0 +1,38 @@
+/* pages/order/address/addresslist/addresslist.wxss */
+
+.height{
+  height: 80rpx;
+}
+.btn {
+  position: fixed;
+  bottom:0rpx;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+}
+
+.card {
+  border-radius: 16rpx;
+  overflow: hidden;
+  padding: 15rpx;
+}
+.editorimg {
+  width: 40rpx;
+  height: 40rpx;
+}
+.borders{
+    color:rgb(255, 68, 68);
+    font-size: 20rpx;
+    padding: 2rpx 10rpx;
+    border-radius: 7rpx;
+    display: inline-block;
+    border:1rpx solid rgb(255, 68, 68);
+    margin-right:10rpx;
+}
+.del{
+  width:100rpx;
+  color:#fff;
+  height:100%;
+background:red;
+}

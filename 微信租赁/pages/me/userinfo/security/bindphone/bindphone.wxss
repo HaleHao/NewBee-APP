@@ -1,0 +1,15 @@
+/* pages/me/userinfo/security/bindphone/bindphone.wxss */
+page{
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.header {
+  line-height: 200rpx;
+}
+
+.btn button{
+  color: #fff;
+  border:0;
+  border-radius: 40rpx;
+}

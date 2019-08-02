@@ -1,0 +1,11 @@
+<nav i="0"/>
+
+<view class="pd-30">
+  <view class="mar-b-20" a:for="{{list}}" a:key="index">
+    <view class="title bgc flex-jc-between flex-align-items" onTap="onclick" data-i="{{index}}">
+      <view>{{item.tetail_name}}</view>
+      <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+    </view>
+    <view class="content" hidden="{{!item.isshow}}">{{item.tetail_content}}</view>
+  </view>
+</view>

@@ -1,0 +1,167 @@
+<!--pages/goodsDetail/goodsDetail.wxml-->
+<nav></nav>
+
+<view class='pd-30 bgc'>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}">
+    <block wx:for="{{swrper}}" wx:key="{{index}}">
+      <swiper-item>
+        <navigator url="/pages/goodsDetail/goodsDetail" hover-class='none'>
+          <image src="{{item}}" class='slide-image' />
+        </navigator>
+      </swiper-item>
+    </block>
+    <swiper-item>
+      <video id='video' class='swrperVideo' bindplay="bindplay" bindpause="bindPause" bindended="bindEnded" src="{{swrperVideo}}" controls>
+      </video>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="header bgc mar-b-20">
+  <view class="pd-lr-30 flex-jc-between">
+    <text class="flex-1 goodsname">{{detail.goods_name}} </text>
+    <view class="flexbox">
+      <view class="flex-center cart" bindtap="addcart">
+        <image src="/assets/cart.png" class="icon-share" />
+      </view>
+      <button hover-class="none" open-type='share' id='1' data-text='{{item.goods_name}}' data-id='{{item.goods_id}}' class="flex-column-center bgc share">
+        <image src="/assets/fenxiang.png" class="icon-share" /> 分享
+      </button>
+    </view>
+  </view>
+
+  <view class="pd-30 flex-jc-between fsz24">
+    <text>低至<text class="fc-red">￥{{detail.renewal_price?detail.renewal_price:'-'}}</text>/{{detail.renewal_price?detail.hire_price.unt:'-'}}</text>
+    <text>押金: ¥{{detail.gd_deposit}} </text>
+  </view>
+  <view class="suggest">如果您计划远期使用，为了确保档期，建议您先预付定金预定设备</view>
+</view>
+
+<view class="border-b flex-jc-between flex-align-items bgc pd-30" bindtap="{{discountlist.length>0?'showactivity':''}}">
+  <view class="flex-align-items">
+    <text class="lab" wx:if='{{discountlist.length>0}}'>活动</text>
+    <text style="margin-left:10rpx" wx:else>{{discountlist.length==0?'暂无活动':discountlist[0].activity_name}}   
+    </text>
+  </view>
+  <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+</view>
+
+<view class="mar-b-20 bgc describe pd-30 flex-jc-around fc-grey">
+  <view class="flex-align-items">
+    <image src="/assets/ziti.png" mode="aspectFit" />多门店自取
+  </view>
+  <view class="flex-align-items">
+    <image src="/assets/tuikuan.png" mode="aspectFit" />免押金
+  </view>
+</view>
+
+
+<view class="bgc mar-b-20">
+  <view class="rule">租赁流程和规则</view>
+  <view class="flex-jc-around position process_det">
+    <view class="text-c">
+      <view>
+        <image class="img_xdlc" src="/assets/chenggong.png" />
+      </view>
+      <view>下单</view>
+    </view>
+    <view class="grey_line1"></view>
+    <view class="text-c">
+      <view>
+        <image class="img_xdlc" src="/assets/chenggong_c.png" />
+      </view>
+      <view>送货</view>
+    </view>
+    <view class="grey_line2"></view>
+    <view class="text-c">
+      <view>
+        <image class="img_xdlc" src="/assets/chenggong_copy.png" />
+      </view>
+      <view>归还</view>
+    </view>
+  </view>
+</view>
+
+<navigator class="border-b flex-jc-between flex-align-items bgc pd-30" url="/pages/home/commitList/commitList?id={{detail.goods_id}}" hover-class='none'>
+  <view>
+    口碑
+  </view>
+  <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+</navigator>
+
+<view class="card bgc pd-30 border-b" wx:for="{{detail.comment}}" wx:key='{{index}}'>
+  <block wx:if='{{index<4}}'>
+    <view class="flex-align-items mar-b-20">
+      <image wx:if="{{!item.head_picture}}" src="/assets/headimg.png" class="headimg" />
+      <image wx:else src="{{item.head_picture}}" class="headimg" />
+      <text style="margin:0 20rpx">{{item.user_name}}</text>
+      <van-rate value="{{item.eva_score}}" readonly size="14" />
+    </view>
+    <view class="fc-grey fsz24 mar-b-20">{{item.create_time}}</view>
+    <view>{{item.eva_content}}</view>
+    <view class="imglist" wx:for="{{item.eva_picture}}" wx:key='{{index}}' wx:for-index="idx" wx:for-item="items">
+      <image src="{{items}}" />
+    </view>
+  </block>
+</view>
+
+<view class="bgc" style="margin-top:20rpx;">
+  <view class="rule">产品详情</view>
+  <view>
+    <import src="../../wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:details.nodes}}" />
+  </view>
+</view>
+
+<view class="height"></view>
+
+<view class="bottom bgc border-t flex-align-items">
+  <button open-type='contact' class="kefu flex-column-center" hover-class='none'>
+    <image src="/assets/kefu.png" />
+    <view>在线客服</view>
+  </button>
+  <view class="kefu flex-column-center" bindtap="cell">
+    <image src="/assets/tel.png" />
+    <view>电话客服</view>
+  </view>
+  <button open-type="share" class="btn flex-center fsz24" id='2' style="background: #b49a7a;">给朋友送礼</button>
+  <view class="btn btn-bg flex-center fsz24" bindtap="onbuy">立即租赁</view>
+</view>
+
+<van-popup show="{{ isactivity }}" position="bottom">
+  <view class="bgc">
+    <view class="pd-30 text-c border-b">优惠活动</view>
+    <view class="border-b pd-30" wx:for="{{discountlist}}" wx:key='{{index}}'>
+      <view>{{item.activity_name}}</view>
+      <view class="fc-grey">{{item.activity_time}} </view>
+    </view>
+    <view class="pd-30 text-c" bindtap="onclose">取消</view>
+  </view>
+</van-popup>
+
+<van-popup show="{{isshow||iscartshow||showfriend}}" position="bottom">
+  <view class="model bgc position">
+    <image src="/assets/close.jpg" class="icon-close" bindtap="onclose" />
+    <view class="pd-30 flexbox">
+      <image src="{{detail.gd_img[0]}}" class="goodsimg" />
+      <view class="flex-1">
+        <view class="mar-b-20">{{detail.goods_name}}</view>
+      </view>
+    </view>
+    <block wx:for="{{speclist}}" wx:key='{{index}}'>
+      <view class="pd-lr-30">
+        <view class="mar-b-20 fsz24">{{item.spec_name}}</view>
+        <view class="items">
+          <view class="border" wx:for="{{item.spec}}" wx:key='{{items}}' wx:for-index="idx" wx:for-item="items">
+            <view class="border-blue fc-blue">{{items.attr_name}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class="pd-30">
+      <view class="btn btn-bg text-c" wx:if="{{isshow}}" bindtap="buy">开始下单</view>
+      <view class="btn btn-bg text-c" wx:if="{{iscartshow}}" bindtap="addCart">加入购物车</view>
+      <view class="btn btn-bg text-c" wx:if="{{showfriend}}" bindtap="sent">朋友送礼</view>
+    </view>
+  </view>
+</van-popup>

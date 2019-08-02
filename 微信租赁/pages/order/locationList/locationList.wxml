@@ -1,0 +1,26 @@
+<!--pages/order/locationList/locationList.wxml-->
+
+<view class="fc-grey pd-30 text-c" wx:if="{{list.length==0}}">没有更多了</view>
+
+<view class="bgc tag fsz24" wx:if="{{list.length!=0}}"><text>推荐</text></view>
+
+<radio-group bindchange="radioChange">
+<label wx:for="{{list}}">
+<view class="item flex-align-items border-b bgc">
+  <radio value="{{index}}" checked="{{checked}}" color="#2DBBF1"/>
+  <view class="flex-align-items flex-jc-between flex-1">
+    <view class="left flex-1">
+      <view>{{item.store_name}}</view>
+      <view class="fsz24">{{(item.store_province||'')+(item.store_city||'')+(item.store_district||'')+(item.store_Address||'')}}</view>
+    </view>
+    <view class="fsz24 right">
+      距您{{item.juli | distance}}m
+    </view>
+  </view>
+</view>
+  </label>
+</radio-group>
+
+<view class="height"></view>
+
+<view class="btn text-c btn-bg" bindtap="goback">完成</view>

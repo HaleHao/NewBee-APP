@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "预约快递",
+  "usingComponents": {
+        "nav": "/components/nav/nav"
+    }
+}

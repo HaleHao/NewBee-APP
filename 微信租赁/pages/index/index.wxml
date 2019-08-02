@@ -1,0 +1,128 @@
+<!--index.wxml-->
+<nav active="0"></nav>
+
+<view class="flex-align-items header pd-lr-30">
+  <view class="flex-1 fsz24 flex-align-items">
+    附近门店：
+    <text class="flex-1 fc-blue">{{nearShop}}</text>
+  </view>
+
+  <view class="flex-1 fsz24 flex-align-items sear" url="/pages/home/search/search" hover-class='none'>
+    <icon type="search" size="14" />
+    <input bindconfirm='bindfirm' style='margin-left:15rpx' placeholder='搜索你想要的商品'></input>
+    <!-- <text style="margin-left:15rpx">搜索你想要的商品</text> -->
+  </view>
+
+</view>
+
+<view class='pd-30' style="padding-top:0">
+  <swiper autoplay circular>
+    <block wx:for="{{imgUrls}}" wx:key="index">
+      <swiper-item>
+        <navigator url="/pages/goodsDetail/goodsDetail?id={{item.adpic_goodsid}}" hover-class='none'>
+          <image src="{{item.adpic_img}}" class='slide-image' />
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class="flex-jc-around">
+  <navigator class="tg" url="/pages/hosting/gohosting/index/index" hover-class='none'>
+    <image src="/assets/tuoguan.png" />
+    <view>托管理财</view>
+  </navigator>
+  <navigator class="tg" url="/pages/home/extension/extension" hover-class='none'>
+    <image src="/assets/wytg.png" />
+    <view>推广收佣</view>
+  </navigator>
+  <navigator class="tg" url="/pages/home/welfareAgency/welfareAgency" hover-class='none'>
+    <image src="/assets/fls.png" />
+    <view>领取福利</view>
+  </navigator>
+</view>
+
+<!-- <van-tabs active="{{activeTab}}" bind:change="handleTabClick">
+  <van-tab title="{{item.title}}" wx:for="{{navlist}}" wx:key="{{item.title}}"></van-tab>
+</van-tabs> -->
+
+
+<zx-table bind:table='handleTabClick' page_title="{{navlist}}"></zx-table>
+
+<view wx:if="{{activeTab==0}}">
+  <block wx:for="{{selectlist}}" wx:key="{{index}}">
+    <view class="title flex-jc-between flex-align-items">
+      <text>{{item.scene_name}}</text>
+      <navigator class="m_txt flex-align-items" url="/pages/home/more/more?id={{item.scene_id}}" hover-class='none'>
+        更多
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit" />
+      </navigator>
+    </view>
+
+    <scroll-view scroll-x="{{true}}" style="width: 100%">
+      <view style="height: 360rpx;" class="indexbox flexbox">
+        <navigator class="item" url="/pages/goodsDetail/goodsDetail?id={{items.goods_id}}" wx:for="{{item.goods}}" wx:for-index="idx" wx:for-item="items" wx:key='{{item.goods_id}}'>
+          <view class="imgbox">
+            <image src="{{items.gd_img[0]}}" mode="aspectFit" />
+          </view>
+          <view style="padding:0 10rpx">
+            <view class="newline goodname fsz24">{{items.category_name}}</view>
+            <view class="price">低至
+              <text class="fc-red">￥<text class="fsz24">{{items.renewal_price}}</text></text>
+              <text>/{{items.hire_price.unt}}</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </scroll-view>
+  </block>
+</view>
+
+
+<view wx:else>
+  <view wx:if='{{hostlist.length>0}}'>
+    <view class="title">
+      <text>热门推荐</text>
+    </view>
+    <scroll-view scroll-x="{{true}}" style="width: 100%">
+      <view wx:if="{{hostlist.length==0}}" class="fc-grey text-c pd-30" style="background-color: #f6f6f6;">暂无热门产品</view>
+      <view style="height: 360rpx;" class="flexbox indexbox" wx:for="{{hostlist}}" wx:key='{{item.goods_id}}'>
+        <navigator class="item" url="/pages/goodsDetail/goodsDetail?id={{item.goods_id}}">
+          <view class="imgbox">
+            <image src="{{item.gd_img[0]}}" mode="aspectFit" />
+          </view>
+          <view style="padding:0 10rpx">
+            <view class="newline goodname fsz24">{{item.goods_name}}</view>
+            <view class="price">低至
+              <text class="fc-red"> {{item.renewal_price}}￥<text class="fsz24">1</text></text>
+              <text>/{{item.hire_price.unt}}</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="title">
+    <text>所有产品</text>
+  </view>
+  <view wx:for="{{goodslist}}" wx:key='{{item.goods_id}}'>
+    <navigator hover-class='none' class="card mar-b-20" url="/pages/goodsDetail/goodsDetail?id={{item.goods_id}}">
+      <image src="{{item.gd_img[0]}}" mode="aspectFit" class="goodsimg" />
+      <view class="pro_name">{{item.goods_name}}</view>
+      <view class="middle flex-align-items">
+        <view class="position rate">
+          <view>☆☆☆☆☆</view>
+          <view style="width:{{item.eva_score*32}}rpx">★★★★★</view>
+        </view>
+        <text style="margin-left:10rpx;margin-top:7rpx;">{{item.eva_score}}</text>
+        <view style="margin-left:20rpx;margin-top:7rpx;">
+          <image src="/assets/chat.png" class="chat" />{{item.eva_num}}</view>
+      </view>
+      <view class="price">租金：低至
+        <text class="fc-red">￥<text class="fsz24">{{item.renewal_price}}</text></text>/{{item.hire_price.unt}}
+      </view>
+    </navigator>
+  </view>
+  <view wx:if="{{goodslist.length==0}}" class="fc-grey text-c pd-30" style="background-color: #f6f6f6;">没有更多了</view>
+</view>

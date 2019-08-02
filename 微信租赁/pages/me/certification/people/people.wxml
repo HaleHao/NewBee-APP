@@ -1,0 +1,29 @@
+<nav i="0"/>
+
+<view class="pd-30">
+
+<view class="card bgc mar-b-20 flex-align-items" wx:for='{{list}}' wx:key='{{item.urgent_id}}'>
+
+  <view class="flex-1 left" >
+    
+    <view>关系: {{item.urgent_sign}}</view>
+
+    <view>联系人电话:{{item.urgent_phone}}</view>
+    <view>联系人姓名:{{item.urgent_name}}</view>
+  </view>
+
+  <view class="tools">
+    <image src="/assets/icon-editor.png"  bindtap="editor" data-id='{{item.urgent_id}}'  data-sign='{{item.urgent_sign}}'  data-name='{{item.urgent_name}}'  data-phone='{{item.urgent_phone}}' />
+    <image src="/assets/icon-del.png" bindtap="delel"  data-id='{{item.urgent_id}}' />
+  </view>
+</view>
+
+
+<navigator class="bgc add flex-center" url="../addPeople/addPeople">
+  <view class="flex-align-items">
+    <image src="/assets/add-o.png" class="add-img"/>
+    新增紧急联系人
+  </view>
+</navigator>
+
+</view>

@@ -1,0 +1,25 @@
+<nav i="0"/>
+
+<view class="bgc box">
+ 
+  <navigator class="border-b flex-jc-between flex-align-items item" url="../bindphone/bindphone?phone={{phone}}">
+    <view>
+      绑定手机号
+    </view>
+    <view class="flex-align-items">
+      <text class="fc-grey fsz24">{{phone}}</text>
+      <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+    </view>
+  </navigator>
+
+  <navigator class=" flex-jc-between flex-align-items item" url="../newpassword/newpassword">
+    <view>
+      登陆密码
+    </view>
+    <view class="flex-align-items">
+      <text class="fc-grey fsz24">修改</text>
+      <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+    </view>
+  </navigator>
+
+</view>

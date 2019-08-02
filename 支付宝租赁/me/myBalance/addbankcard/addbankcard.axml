@@ -1,0 +1,56 @@
+<nav i="0"/>
+<form onSubmit="onsubmit">
+  <view class="pd-30">
+    <view class="bgc box">
+      <view class="item pd-30 border-b flex-align-items flex-jc-between">
+        <view class=" flex-align-items">
+          <view class="label">开卡银行          
+          </view>
+          <picker onChange="bindPickerChange" value="{{index}}" range="{{banklist}}" range-key="bank_name">
+            <view>
+              <input type="text" placeholder="请选择开卡银行" value="{{banklist[index].bank_name}}">
+                </view>
+                </picker>
+                </view>
+                <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+                </view>
+                <view class="item pd-30 border-b flex-align-items">
+                  <view class="label">卡号                  
+                  </view>
+                  <input type="text" placeholder="请输入银行卡号" name="cardnum"/>
+                </view>
+                <view class="item pd-30 border-b flex-align-items">
+                  <view class="label">姓名                  
+                  </view>
+                  <input type="text" placeholder="请输入姓名" name="name" />
+                </view>
+                <view class="item pd-30 border-b flex-align-items">
+                  <view class="label">身份证号                  
+                  </view>
+                  <input type="text" placeholder="请输入身份证号" name="idcard"/>
+                </view>
+                <view class="item pd-30 border-b flex-align-items">
+                  <view class="label">手机号                  
+                  </view>
+                  <input type="text" onInput="phones" placeholder="请输入手机号" name="phone"/>
+                </view>
+                <view class="item pd-30 border-b flex-align-items flex-jc-between">
+                  <view class=" flex-align-items">
+                    <view class="label">验证码                    
+                    </view>
+                    <input type="text" placeholder="请输入验证码" name="code" />
+                  </view>
+                  <view class="send"onTap="{{isShow?'':'getCode'}}">                     
+                    <block a:if='{{isShow}}'>{{second}}s
+                    </block>
+                    <block a:else>获取验证码
+                    </block>
+                  </view>
+                </view>
+                </view>
+                <view class="btn pd-30">
+                  <button class="btn-bg" formType="submit">保存                  
+                  </button>
+                </view>
+                </view>
+                </form>

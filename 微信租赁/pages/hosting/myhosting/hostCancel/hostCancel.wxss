@@ -1,0 +1,19 @@
+/* pages/hosting/hostCancel/hostCancel.wxss */
+
+.btn{
+  color: #fff;
+  height: 80rpx;
+  border-radius: 60rpx;
+}
+
+.icon-right {
+  width: 20rpx;
+  height: 20rpx;
+  /* margin-right: 20rpx; */
+}
+
+.payimg{
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx
+}

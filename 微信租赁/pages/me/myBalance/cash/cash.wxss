@@ -1,0 +1,26 @@
+/* pages/me/myBalance/cash/cash.wxss */
+page{
+  overflow: hidden;
+}
+
+.box {
+  overflow: hidden;
+  margin: 30rpx;
+  border-radius: 20rpx;
+}
+
+.btn {
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 60rpx;
+  color: #fff;
+  margin-top: 100rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+}
+
+.icon-right {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+}

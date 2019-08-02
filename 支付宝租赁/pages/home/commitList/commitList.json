@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "口碑",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

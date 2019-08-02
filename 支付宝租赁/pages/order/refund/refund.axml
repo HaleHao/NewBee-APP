@@ -1,0 +1,63 @@
+<nav i="0"/>
+<view class="pd-30 bgc">
+  选择退租方式
+</view>
+<view class="tagbox bgc pd-lr-30">
+  <view data-typenum="0" onTap="changetag" class="{{typenum==0?'fc-blue selected':''}}">自还</view>
+  <view data-typenum="1" onTap="changetag" class="{{typenum==1?'fc-blue selected':''}}">快递</view>
+  <view data-typenum="2" onTap="changetag" class="{{typenum==2?'fc-blue selected':''}}">配送</view>
+</view>
+<view a:if="{{typenum==0}}">
+  <view class="choose bgc flex-jc-around mar-b-20">
+    <view data-selected="0" onTap="choose" class="border {{selected==0?'fc-blue border-blue':''}}">本人</view>
+    <view data-selected="1" onTap="choose" class="border {{selected==1?'fc-blue border-blue':''}}">朋友代还</view>
+  </view>
+  <view class="text-c fsz24">温馨提示:选择朋友代还您需要发送给朋友打开才能还</view>
+  <view class="pd-30" a:if="{{selected==0}}">
+    <view class="btn-bg flex-center btn" onTap="showcode">确定</view></view>
+  <view class="pd-30" a:if="{{selected==1}}">
+    <button type="default" open-type='share' class="btn btn-bg">确定</button></view>
+</view>
+<view a:if="{{typenum==1}}">
+  <view class="pd-30">
+    <navigator url="../appointmentExpress/appointmentExpress?id={{orderid}}" class="flex-center btn btn1">快捷预约顺丰上门取件入口</navigator></view>
+  <view class="pd-30">
+    <navigator url="../sendBack/sendBack?id={{orderid}}" class="flex-center btn btn2">自行寄回</navigator></view>
+</view>
+<view a:if="{{typenum==2}}">
+  <view class="border-b flex-jc-between flex-align-items pd-30 bgc" onTap="choosetime">
+    <view>
+      选择退租时间
+    </view>
+    <view class="fc-grey">
+      <text style="padding-right:15rpx;">{{expectdate}}</text>
+      <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+    </view>
+  </view>
+  <picker onChange="timechange" value="{{timeIndex}}" range="{{timeList}}" range-key="val">
+    <view class="bgc flex-jc-between flex-align-items pd-30 border-b">
+      <view>
+      时间段
+      </view>
+      <view class="fc-grey">
+        <text style="padding-right:15rpx;">{{timetext}}</text>
+        <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+      </view>
+    </view>
+  </picker>
+  <navigator class="bgc flex-jc-between flex-align-items pd-30" url="/pages/order/address/addresslist/addresslist?refund=refund">
+    <view>
+      <view>收货地址</view>
+      <view>{{getaddress.ads_user||''}}  {{getaddress.ads_phone||''}}
+        <text class="tag" a:if="{{getaddress.ads_state==2}}">默认</text></view>
+      <view>{{(getaddress.ads_province||'')+(getaddress.ads_city||'')+(getaddress.ads_district||'')+(getaddress.ads_address||'')}}</view>
+    </view>
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+  </navigator>
+  <view class="pd-30">
+    <view class="btn-bg flex-center btn" onTap="submit">确定</view></view>
+</view>
+<!-- QRcode -->
+<view class="code flex-column-center position" catchTap="onclose" a:if="{{iscode}}">
+  <image src="{{codeimg}}" class="codeimg bgc" />
+</view>

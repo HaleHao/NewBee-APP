@@ -1,0 +1,22 @@
+<nav i="0"/>
+<view class="bgc box">
+  <navigator class="border-b flex-jc-between flex-align-items item" a:for="{{helplist}}" url="../help/help?id={{item.help_id}}">
+    <view >      {{item.help_name}}    
+    </view>
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+  </navigator>
+
+  <navigator class="border-b flex-jc-between flex-align-items item" url="../webs/webs">
+    <!-- <web-view id="web-view-1" src="https://www.sobot.com/chat/h5/index.html?sysNum=0a99f38b20714891ace3e99607538829" onMessage="onMessage"> -->
+      <view >在线客服 </view>
+    <!-- </web-view> -->
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+  </navigator>
+
+
+  <view class="flex-jc-between flex-align-items item" onTap="cell">
+    <view >      电话客服    
+    </view>
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+  </view>
+</view>

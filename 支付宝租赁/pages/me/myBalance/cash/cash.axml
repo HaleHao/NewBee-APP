@@ -1,0 +1,32 @@
+<nav i="0"/>
+<view class="box bgc" data-info='{{info.id}}'>
+
+  <navigator class="pd-30 flex-jc-between flex-align-items" a:if="{{bank}}" url="../bankcard/bankcard">
+    <view>{{bank.open_bank}} (*{{bank.bank_code}})
+    </view>
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+  </navigator>
+
+
+  <navigator class="fc-blue pd-30" a:else url="../bankcard/bankcard">+ 选择银行卡
+  </navigator>
+
+  <view class="pd-30">提现金额
+  </view>
+  <view class="pd-30 flex-jc-between flex-align-items">
+    <view class="flex-align-items">
+      <text style="font-size:60rpx">￥
+      </text>
+      <input type="text" onInput="all" placeholder="可提现{{allmoney}}元" value="{{value}}"/>
+    </view>
+    <view class="fc-blue" onTap="alls">全部
+    </view>
+  </view>
+</view>
+<view class="pd-30 text-c fc-grey">3个工作日内到账，节假日顺延
+</view>
+
+
+<view class="btn btn-bg text-c" onTap="next">  确认提现
+
+</view>

@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "提现",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

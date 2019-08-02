@@ -1,0 +1,9 @@
+/* pages/me/helpCenter/help/help.wxss */
+.list .content { 
+  color: #969799;
+  background-color: #f6f6f6
+}
+.list .box {
+  overflow: hidden;
+  border-radius: 20rpx;
+}

@@ -1,0 +1,38 @@
+page{
+  padding-bottom: 92rpx;
+}
+
+.add {
+  height: 128rpx;
+  color: #2dbbf1;
+  border-radius: 10rpx;
+}
+.add-img {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 15rpx;
+}
+
+.card {
+  padding: 20rpx;
+  height: 270rpx;
+  box-sizing: border-box;
+}
+
+.card .tools > image {
+  width: 44rpx;
+  height: 44rpx;
+}
+.card .left {
+  padding-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+.tools {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}

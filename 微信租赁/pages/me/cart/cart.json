@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "购物车",
+  "usingComponents": {
+    "van-swipe-cell": "/dist/swipe-cell/index"
+  }
+}

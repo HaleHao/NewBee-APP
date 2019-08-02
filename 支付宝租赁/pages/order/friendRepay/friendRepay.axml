@@ -1,0 +1,4 @@
+<view class="text-c">
+  <image src="" class="img" />
+  <view class="fsz24">请出示此二维码供门店扫码</view>
+</view>

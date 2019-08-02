@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "nav": "/components/nav/nav",
+    "van-stepper": "/dist/stepper/index",
+    "van-checkbox": "/dist/checkbox/index"
+  },
+  "navigationBarTitleText": "配件确认"
+}

@@ -1,0 +1,18 @@
+<form bindsubmit="formSubmit">
+  <view class="pd-30 flex-jc-between">
+    <input bindinput="bindKeyInput"  type="number" placeholder="请输入新手机号" value="{{newphone}}" name="newphone">
+    </input>
+  </view>
+  <view class="pd-30 flex-jc-between yzm">
+    <input bindinput='bindyzm' type="number" placeholder="请输入验证码" name="code">
+    </input>
+    <button size="default" type="number"  bindtap="resent" disabled="{{isClick}}" class="btn-bg flex-center">{{time}}
+    </button>
+  </view>
+  
+  <view class="btn pd-30">
+    <button class="btn-bg" wx:if='{{is_getuserinfo}}' bindgetuserinfo="{{is_getuserinfo?'bindgetuserinfo':''}}" open-type="getUserInfo">确定</button>
+    <button class="btn-bg" wx:else formType="submit">确定</button>
+  </view>
+
+</form>

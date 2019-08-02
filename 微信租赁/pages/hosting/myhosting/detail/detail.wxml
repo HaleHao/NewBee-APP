@@ -1,0 +1,110 @@
+<nav i="0"/>
+<view class="pd-30">
+  <view class="box bgc mar-b-20">
+    <image src="{{detail.phone_picture}}" class="himg" />
+    <view class="title">{{detail.model}}        
+    </view>
+    <view class="detail">
+      <view style="line-height: 60rpx;">品类：{{detail.cate}}            
+      </view>
+      <view style="line-height: 60rpx;">品牌：{{detail.brand}}            
+      </view>
+      <view style="line-height: 60rpx;">序列号：{{detail.serial_number}}            
+      </view>
+      <view style="line-height: 60rpx;">颜色：{{detail.standards}}            
+      </view>
+      <view style="line-height: 60rpx;">成色：{{detail.exterior}}            
+      </view>
+      <view style="line-height: 60rpx;">功能：{{detail.functional_status}}            
+      </view>
+      <view style="line-height: 60rpx;">配件：{{detail.parts_list==''?'无':detail.parts_list}}            
+      </view>
+    </view>
+  </view>
+  <!-- <block > -->
+  <!-- 审核中 -->
+  <view class="state text-c bgc" wx:if="{{detail.trust_status=='待审核'}}">
+    <view class="mar-b-10">您的物品正在审核中          
+    </view>
+    <view>请耐心等候！          
+    </view>
+  </view>
+  <!-- </block>/ -->
+  <!-- 审核未通过 -->
+  <view class="state text-c bgc" wx:if="{{detail.trust_status=='审核未通过'}}">
+    <view class="mar-b-10">很抱歉！          
+    </view>
+    <view class="mar-b-10">您的资料未通过审核          
+    </view>
+    <view>原因：资料不全          
+    </view>
+  </view>
+  <!-- 审核通过 -->
+  <view class="tagbox bgc pd-30" wx:if="{{detail.trust_status=='审核通过'}}">
+    <view data-typenum="0" bindtap="changetag" class="{{typenum==0?'fc-blue selected':''}}">现场交付          
+    </view>
+    <view data-typenum="1" bindtap="changetag" class="{{typenum==1?'fc-blue selected':''}}">快递交付          
+    </view>
+    <view data-typenum="2" bindtap="changetag" class="{{typenum==2?'fc-blue selected':''}}">平台配送          
+    </view>
+  </view>
+  
+    <view class="pd-30" wx:if="{{detail.trust_status=='审核通过'}}">
+      <view class="btn-bg flex-center btn" bindtap="submit">下一步      
+      </view>
+    </view>
+
+  <!-- QRcode -->
+  <view class="code flex-column-center position" catchtap="onclose" wx:if="{{iscode}}">
+    <image src="{{codeimg}}" class="codeimg bgc" />
+    <view style="color:#fff">请出示此二维码供门店扫码          
+    </view>
+  </view>
+  <!-- 托管成功弹窗 -->
+  <view class="model flex-center" wx:if="{{ismodel}}">
+    <view class="bgc mask_box position">
+      <image src="/assets/icon-close.png" bindtap="close" class="close"/>
+      <view class="flex-center mar-b-20">
+        <image src="/assets/tg_success.png" class="tg_success" />
+      </view>
+      <view class="text-c gongxi">恭喜，审核成功！              
+      </view>
+      <view class="text-c gongxi">请将设备交给我们保管吧！              
+      </view>
+    </view>
+  </view>
+  <block wx:if="{{type=='在库'||type=='出租中'}}">
+    <view style="padding: 20rpx 0">出租记录        
+    </view>
+    <view class="box bgc">
+      <view class="flex-jc-between flex-align-items pd-30">
+        <view>
+          <view class="mar-b-10">共计1天                    
+          </view>
+          <view class="fc-grey fsz24">2018～2019                    
+          </view>
+        </view>
+        <view>
+          <view class="fc-blue text-c mar-b-10">+2                    
+          </view>
+          <view class="fc-grey fsz24">租金5                    
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{type=='已退回'}}">
+    <view style="padding: 20rpx 0">快递：顺丰        
+    </view>
+    <view class="mar-b-20">运单号：        
+    </view>
+    <view class="box bgc">
+      <view class="flex-align-items pd-30">
+        <view class="left">2014/06/25 08:05:37                
+        </view>
+        <view class="flex-1">已签收                
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

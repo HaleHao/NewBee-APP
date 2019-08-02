@@ -1,0 +1,23 @@
+
+  <view style="padding-top: 100rpx">
+    <view class="text text-c">请输入验证码</view>
+    <view class="text-c fsz24 fc-grey">{{tel}}</view>
+  </view>
+  <view style="padding-top: 50rpx" class="flex-center">
+    <view class="position box">
+      <input type="number" maxlength="6" onInput="changeinput" class="input" />
+      <view class='inputbox flexbox'>
+        <view class="flex-center">{{val[0]}}</view>
+        <view class="flex-center">{{val[1]}}</view>
+        <view class="flex-center">{{val[2]}}</view>
+        <view class="flex-center">{{val[3]}}</view>
+        <view class="flex-center">{{val[4]}}</view>
+        <view class="flex-center">{{val[5]}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="btn" style="padding-top: 100rpx">
+    <button class="btn-bg" onTap="submit" a:if="{{isinput}}">登陆</button>
+    <button class="bgc-grey" a:else>登陆</button>
+  </view>
+  <view class="text-c fc-grey pd-30" onTap="resent">重新发送</view>

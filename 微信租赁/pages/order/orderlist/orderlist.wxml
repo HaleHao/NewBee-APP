@@ -1,0 +1,172 @@
+<!--pages/order/orderlist/orderlist.wxml-->
+<nav active="2"></nav>
+
+<view class="navorder bgc border-b flex-jc-center">
+  <view data-typenum="0" bindtap="changetag" class="{{typenum==0?'selected':''}}">租赁单</view>
+  <view data-typenum="1" bindtap="changetag" class="{{typenum==1?'selected':''}}">租转售</view>
+</view>
+
+<van-tabs active="{{ activeTab }}" bind:change="onChange" wx:if="{{typenum==0}}">
+  <van-tab title="{{item.title}}" wx:for="{{navlist}}" textp='{{item.badgeText}}' wx:key="index"></van-tab>
+</van-tabs>
+
+<van-tabs active="{{ activeTab2 }}" bind:change="onChange2" wx:if="{{typenum==1}}">
+  <van-tab title="{{item.title}}" wx:for="{{navlist2}}" textp='{{item.badgeText}}' wx:key="index"></van-tab>
+</van-tabs>
+
+
+<view wx:if="{{typenum==0}}" class="pd-30">
+
+  <view class="ordernull" wx:if="{{list.length<=0}}">
+    <image src="/assets/order-null.png" class="mar-b-20" />
+    <view class="text-c fc-grey">暂无订单</view>
+  </view>
+
+  <view class="card bgc pd-30 mar-b-20" wx:for="{{list}}" wx:key="index">
+    <navigator bindtap="todetil" data-orderid="{{item.order_id}}" hover-class='none'>
+      <view class="flex-jc-between border-b title mar-b-20">
+        <text>订单号:{{item.order_no}}</text>
+        <text class="fc-blue" wx:if="{{item.order_status==1}}">待付款</text>
+        <text class="fc-blue" wx:if="{{item.order_status==6}}">租赁中</text>
+        <text class="fc-blue" wx:if="{{item.order_status==4}}">订单关闭</text>
+        <text class="fc-blue" wx:if="{{item.order_status==8}}">检测中</text>
+        <text class="fc-blue" wx:if="{{(item.order_status==9&&item.user_validation==0)||(item.order_status==9&&!item.user_validation)}}">售后中</text>
+        <text class="fc-blue" wx:if="{{item.order_status==9&&item.user_validation==1&&item.maintenance_pay==0&&item.service_money&&item.service_money>0}}">待确认</text>
+        <text class="fc-blue" wx:if="{{item.order_status==5}}">待收货</text>
+        <text class="fc-blue" wx:if="{{item.order_status==2}}">预租中</text>
+        <text class="fc-blue" wx:if="{{item.order_status==9&&item.maintenance_pay==1}}">退租中</text>
+        <text class="fc-blue" wx:if="{{item.order_status==12&&item.backstage!='未审批'}}">待发货</text>
+        <text class="fc-blue" wx:if="{{item.order_status==12&&item.backstage=='未审批'}}">取消中</text>
+        <text class="fc-blue" wx:if="{{item.order_status==11}}">已完成</text>
+      </view>
+      <view class="flexbox">
+        <image src="{{item.gd_img}}" class="img" />
+        <view class="flex-1 right">
+          <view class="mar-b-20">{{item.goods_name}}</view>
+          <view class="fsz24 rental mar-b-20">
+            <text>租金:￥{{item.rental}}</text>
+            <text style="padding-left:10rpx">押金:￥{{item.order_rent}}</text>
+          </view>
+          <view>实付总额:
+            <text class="fc-red">￥{{item.total_price}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="fc-red text-c overdue" wx:if="{{activeTab==4}}">
+        您的订单已超期2天!
+      </view>
+    </navigator>
+
+    <view class="tools">
+      <view class="flex-center border" bindtap="oncancel" data-orderid="{{item.order_id}}" wx:if="{{item.order_status==1}}">取消订单</view>
+      <view class="flex-center border" bindtap="oncancel" data-orderid="{{item.order_id}}" wx:if="{{item.order_status==12&&item.users_surrender_id==0}}">取消订单</view>
+      <view class="flex-center border-blue fc-blue" wx:if="{{item.order_status==1}}">
+        <navigator class='flex-center' style='width:100%' url="../pay/pay?id={{item.order_id}}" hover-class='none'>支付</navigator>
+      </view>
+      <view class="flex-center border-blue fc-blue" wx:if="{{item.order_status==5}}" bindtap="onConfirmGoods" data-orderid="{{item.order_id}}">确认收货</view>
+      <view class="flex-center border" bindtap="getcode" data-orderid="{{item.order_id}}" wx:if="{{item.order_status==5}}">取货码</view>
+      <view class="flex-center border" wx:if="{{item.order_status==6}}">
+        <navigator class='flex-center' style='width:100%' url="../relet/relet?id={{item.order_id}}" hover-class='none'>续租</navigator>
+      </view>
+      <view class="flex-center border" wx:if="{{item.order_status==6}}">
+        <navigator class='flex-center' style='width:100%' url="../refund/refund?id={{item.order_id}}" hover-class='none'>退租</navigator>
+      </view>
+      <view class="flex-center border" wx:if="{{item.order_status==9&&item.user_validation==0}}">
+        <navigator class='flex-center' style='width:100%' url="../deny/deny?id={{item.order_id}}" hover-class='none'>否认</navigator>
+      </view>
+      <view class="flex-center border-blue fc-blue" bindtap="onConfirmsales" data-orderid="{{item.order_id}}" wx:if="{{item.order_status==9&&item.user_validation==0}}">确认</view>
+      <view class="flex-center border-blue fc-blue" wx:if="{{item.order_status==9&&item.user_validation==1&&item.maintenance_pay==0&&item.service_money&&item.service_money>0}}">
+        <navigator class='flex-center' style='width:100%' url="../compensation/compensation?id={{item.order_id}}" hover-class='none'>维修费</navigator>
+      </view>
+      <view class="flex-center border-blue fc-blue" wx:if="{{activeTab==5}}">
+        <navigator class='flex-center' style='width:100%' bindtap="pingjia" data-order='{{item.order_id}}' data-good='{{item.goods_id}}' hover-class='none'>评价</navigator>
+      </view>
+
+      <view class="flex-center border-blue fc-blue" wx:if="{{item.order_status==6}}">
+        <navigator class='flex-center' style='width:100%' url="../shopping/shopping?id={{item.order_id}}" hover-class='none'>购买</navigator>
+      </view>
+
+      <view class="flex-center border" bindtap="del" data-orderid="{{item.order_id}}" wx:if="{{item.order_status==4}}">删除订单</view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{typenum==1}}" class="pd-30">
+  <view class="ordernull" wx:if="{{buylist.length==0}}">
+    <image src="/assets/order-null.png" class="mar-b-20" />
+    <view class="text-c fc-grey">暂无订单</view>
+  </view>
+  <view class="card bgc pd-30 mar-b-20" wx:for="{{buylist}}">
+    <navigator url="../buyOrderDetail/buyOrderDetail?buyid={{item.buyorder_id}}">
+      <view class="flex-jc-between border-b title mar-b-20">
+        <text>订单号:{{item.buyorder_no}}
+        </text>
+        <text class="fc-blue" wx:if="{{item.buyorder_status==1}}">待付款</text>
+        <text class="fc-blue" wx:if="{{item.buyorder_status==2}}">待发货</text>
+        <text class="fc-blue" wx:if="{{item.buyorder_status==4}}">待收货</text>
+        <text class="fc-blue" wx:if="{{item.buyorder_status==6}}">已完成</text>
+        <text class="fc-blue" wx:if="{{item.buyorder_status==5}}">待评价</text>
+      </view>
+      <view class="flexbox">
+        <image src="{{item.gd_img}}" class="img" />
+        <view class="flex-1 right">
+          <view class="mar-b-20">{{item.goods_name}}
+          </view>
+          <!--<view class="spec mar-b-20"><text>白</text></view> -->
+          <view>实付总额:
+            <text class="fc-red">￥{{item.total_price}}</text>
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <view class="tools" wx:if="{{item.buyorder_status==1}}">
+      <view class="flex-center border" data-buyid="{{item.buyorder_id}}" bindtap="oncancel">取消订单
+      </view>
+      <view class="flex-center border-blue fc-blue">
+        <navigator class='flex-center' style='width:100%' url="../buypay/buypay?id={{item.buyorder_id}}">支付
+        </navigator>
+      </view>
+    </view>
+    <view class="tools" wx:if="{{item.buyorder_status==4}}">
+      <view class='flex-center' style='width:100%' class="flex-center border" data-buyid="{{item.buyorder_id}}" bindtap="getbuycode">取货码</view>
+      <view class="flex-center border-blue fc-blue" data-buyid="{{item.buyorder_id}}" bindtap="onGoods">确认收货</view>
+    </view>
+    <view class="tools" wx:if="{{item.buyorder_status==5}}">
+      <view class="flex-center border-blue fc-blue">
+        <view class='flex-center' style='width:100%' bindtap="buypingjia" data-buyid='{{item.buyorder_id}}' data-good='{{item.goods_id}}'>评价</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- QRcode -->
+<view class="code flex-column-center position" catchtap="onclose" wx:if="{{iscode}}">
+  <image src="{{codeimg}}" class="codeimg bgc" />
+  <view style="color:#fff">请出示此二维码供门店扫码</view>
+</view>
+
+<!-- 取消订单 -->
+
+<van-popup show="{{iscancel}}" position="bottom">
+  <view class="bgc model">
+    <view class="text-c position pd-30">
+      取消订单
+      <image src="/assets/close.jpg" class="icon-close" bindtap="onclose" />
+    </view>
+    <view class="pd-lr-30">
+      <view class="mar-b-20">请选择取消订单的原因,帮助我们改进(必选):</view>
+
+      <radio-group bindchange="cancelradioChange">
+        <label class="bgc flex-jc-between flex-align-items mar-b-20" wx:for="{{canceltext}}" wx:key="index">
+          <view>
+            {{index+1}}、{{item}}
+          </view>
+          <radio value="{{item}}" checked="{{index==0}}" color="#2DBBF1" />
+        </label>
+      </radio-group>
+    </view>
+    <view class="btn">
+      <button class="btn-bg" bindtap="cancelOrder" form-type="submit">确认</button>
+    </view>
+  </view>
+</van-popup>

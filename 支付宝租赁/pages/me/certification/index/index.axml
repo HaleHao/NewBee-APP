@@ -1,0 +1,54 @@
+<nav i="0"/>
+<view class=" pd-30 bgc">
+  <view class="box">
+    <view class="text-c">我的额度
+    </view>
+    <view class="text-c">{{users_money}}
+    </view>
+  </view>
+</view>
+<view class="pd-30" style="background: #f6f6f6;">认证免押金方式
+</view>
+<navigator class="border-b flex-jc-between flex-align-items pd-30 bgc" url="{{is_idcard==0?'../realname/realname':'../realnameSuc/realnameSuc'}}">
+  <view>实名认证
+  </view>
+
+  <view class="flex-align-items">
+    <text class="fc-blue" a:if="{{is_idcard==0}}">去认证
+    </text>
+    <text class="fc-grey" a:else>已认证
+    </text>
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+  </view>
+</navigator>
+
+<navigator class="flex-jc-between flex-align-items pd-30 bgc" url="../web/web">
+  <view>学籍认证
+  </view>
+  <view class="flex-align-items">
+    <text class="fc-blue" a:if="{{is_chsi==0}}">去认证
+    </text>
+    <text class="fc-grey" a:else>已认证
+    </text>
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+  </view>
+
+</navigator>
+
+<button open-type='share' class="flex-jc-between flex-align-items pd-30 bgc share">
+  <view>邀请好友
+  </view>
+  <view class="flex-align-items">
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+  </view>
+</button>
+
+
+
+<navigator class="border-b flex-jc-between flex-align-items pd-30 bgc" url="../people/people">
+  <view>添加紧急联系人
+  </view>
+  <view class="flex-align-items">
+    <image src="/assets/right.png" class="icon-right" mode="aspectFit"/>
+  </view>
+</navigator>

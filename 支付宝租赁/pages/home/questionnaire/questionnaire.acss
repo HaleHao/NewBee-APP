@@ -1,0 +1,21 @@
+page{
+  background-color: #fff
+}
+.btn{
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  color: #fff;
+  border: none;
+  font-size: 28rpx;
+}
+.title {
+    font-weight: bold;
+    padding: 30rpx 0;
+}
+.problems{
+  padding: 20rpx;
+}
+.textarea{
+  margin: 10rpx;
+}

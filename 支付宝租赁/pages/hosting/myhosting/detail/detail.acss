@@ -1,0 +1,124 @@
+page {
+  padding-bottom: 92rpx
+}
+
+.box {
+  border-radius: 20rpx;
+  box-shadow: 0px 0px 26rpx 0px rgba(188, 188, 188, 0.32);
+  overflow: hidden;
+}
+
+.box .himg {
+  width: 100%;
+  height: 460rpx;
+}
+
+.box .title {
+  font-size: 32rpx;
+  padding: 20rpx;
+}
+
+.box .detail {
+  padding: 20rpx;
+  color: #383838;
+}
+
+.state {
+  box-shadow: 0px 0px 26rpx 0px rgba(188, 188, 188, 0.32);
+  color: #4ea9f9;
+  padding: 60rpx 0;
+  border-radius: 20rpx;
+}
+
+.btn {
+  color: #fff;
+  height: 80rpx;
+  border-radius: 60rpx;
+}
+
+.tagbox>view {
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  display: inline-block;
+  box-shadow: 0 1rpx 14rpx 1rpx #e8e9ea;
+  border-radius: 30rpx;
+  text-align: center;
+  box-sizing: border-box;
+  margin-right: 20rpx;
+}
+
+.tagbox .selected {
+  box-shadow: 0 1rpx 14rpx 1rpx #def4fd;
+}
+
+/* QRcode */
+
+.code {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  height: 100vh;
+}
+
+.code .main {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.codeimg {
+  width: 360rpx;
+  height: 360rpx;
+  margin-bottom: 40rpx;
+}
+
+.closeimg {
+  width: 68rpx;
+  height: 68rpx;
+  position: absolute;
+  right: 40rpx;
+  top: 200rpx;
+}
+
+.model {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  height: 100vh;
+}
+
+.mask_box {
+  width: 480rpx;
+}
+
+.tg_success {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 15rpx
+}
+
+.gongxi {
+  line-height: 60rpx;
+}
+
+.close {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+}
+
+.left {
+  width: 120rpx;
+  font-size: 24rpx;
+  word-wrap: break-word;
+}

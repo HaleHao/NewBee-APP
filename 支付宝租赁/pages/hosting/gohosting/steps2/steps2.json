@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "我要托管",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

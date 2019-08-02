@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "解绑实名认证",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

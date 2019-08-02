@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "托管详情",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

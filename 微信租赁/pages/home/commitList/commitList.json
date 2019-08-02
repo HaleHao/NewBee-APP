@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "nav": "/components/nav/nav",
+    "van-rate": "/dist/rate/index"
+  },
+  "navigationBarTitleText": "口碑"
+}

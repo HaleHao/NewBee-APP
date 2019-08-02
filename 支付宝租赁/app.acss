@@ -1,0 +1,192 @@
+@import "./wxParse/wxParse.acss";
+page {
+  /* font-family: "pingFang SC" "pingFang"; */
+  background-color: #f6f6f6;
+  font-size: 28rpx;
+}
+
+/*color*/
+
+.fc-red {
+  color: #FF2A2A
+}
+
+.fc-blue {
+  color: #4EA9F9
+}
+
+.fc-grey {
+  color: #979797;
+}
+
+/*background-color*/
+
+.bgc {
+  background-color: #fff;
+}
+
+.bgc-grey {
+  background-color: #979797;
+}
+
+.bgc-brown {
+  background-color: #B49A7A
+}
+
+.bgc-blue {
+  background-color: #4EA9F9;
+}
+
+.bgc-red {
+  background-color: #FF2A2A;
+}
+
+.btn-bg {
+  background-image: linear-gradient(90deg, #2dbbf1 0%, #4ea9f9 100%);
+}
+
+/* border */
+
+.border {
+  border: 1rpx solid #b7b7b7;
+}
+
+.border-blue {
+  border: 1rpx solid #4EA9F9;
+}
+
+.border-b {
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.border-t {
+  border-top: 1rpx solid #f0f0f0;
+}
+
+.border-l {
+  border-left: 1rpx solid #f0f0f0;
+}
+
+/* position */
+
+.position {
+  position: relative;
+}
+
+/* flexbox */
+
+.flexbox {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1
+}
+
+.flex-jc-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-jc-around {
+  display: flex;
+  justify-content: space-around
+}
+
+.flex-jc-center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-align-items {
+  display: flex;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column-space-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* padding && margin */
+
+.mar-b-10 {
+  margin-bottom: 10rpx;
+}
+
+.mar-b-20 {
+  margin-bottom: 20rpx;
+}
+
+.pd-30 {
+  padding: 30rpx
+}
+
+.pd-lr-30 {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+/*text*/
+
+.fsz24 {
+  font-size: 24rpx;
+}
+
+.text-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.newline {
+  /* 英文情况换行 */
+  word-wrap: break-word;
+  word-break: break-all;
+  /* 多行文本溢出省略 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.text-c {
+  text-align: center;
+}
+
+.text-r {
+  text-align: right;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "nav": "/components/nav/nav",
+    "van-notice-bar": "/dist/notice-bar/index"
+  },
+  "navigationBarTitleText": "抢红包"
+}

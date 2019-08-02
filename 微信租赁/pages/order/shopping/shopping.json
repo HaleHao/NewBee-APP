@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "购买",
+  "usingComponents": {
+    "nav": "/components/nav/nav",
+    "popup": "/dist/popup/index"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "nav": "/components/nav/nav",
+    "van-tab": "/dist/tab/index",
+    "van-tabs": "/dist/tabs/index"
+  },
+  "navigationBarTitleText": "优惠卷"
+}

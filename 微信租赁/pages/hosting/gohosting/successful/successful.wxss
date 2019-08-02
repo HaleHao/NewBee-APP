@@ -1,0 +1,13 @@
+/* pages/hosting/gohosting/successful/successful.wxss */
+
+page {
+  /* padding: 30rpx; */
+}
+
+.header {
+  height: 400rpx;
+}
+
+.header > view:nth-of-type(1) {
+  padding-top: 300rpx;
+}

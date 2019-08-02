@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "维修费",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}

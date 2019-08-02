@@ -1,0 +1,9 @@
+{
+  "defaultTitle": "订单",
+  "usingComponents": {
+    "nav": "/components/nav/nav",
+    "tabs": "mini-antui/es/tabs/index",
+    "tab-content": "mini-antui/es/tabs/tab-content/index",
+    "popup": "mini-antui/es/popup/index"
+  }
+}

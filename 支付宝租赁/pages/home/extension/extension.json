@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "我要推广",
+  "usingComponents": {
+    "nav": "/components/nav/nav"
+  }
+}
